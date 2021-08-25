@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C106B7026D68005004B0CD6 /* DegreeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C106B6F26D68005004B0CD6 /* DegreeScene.sks */; };
+		0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C106B7326D680AC004B0CD6 /* DegreeScene.swift */; };
 		0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */; };
 		0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */; };
 		0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1F26D52C20007A4CEA /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C106B6F26D68005004B0CD6 /* DegreeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DegreeScene.sks; sourceTree = "<group>"; };
+		0C106B7326D680AC004B0CD6 /* DegreeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeScene.swift; sourceTree = "<group>"; };
 		0C3CCE1826D52C20007A4CEA /* TimMaia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimMaia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C106B6B26D67F62004B0CD6 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				0C106B6C26D67F75004B0CD6 /* LiseMeitner */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		0C106B6C26D67F75004B0CD6 /* LiseMeitner */ = {
+			isa = PBXGroup;
+			children = (
+				0C106B6E26D67FBD004B0CD6 /* Scenes */,
+			);
+			path = LiseMeitner;
+			sourceTree = "<group>";
+		};
+		0C106B6D26D67FAE004B0CD6 /* DegreeScene */ = {
+			isa = PBXGroup;
+			children = (
+				0C106B6F26D68005004B0CD6 /* DegreeScene.sks */,
+				0C106B7326D680AC004B0CD6 /* DegreeScene.swift */,
+			);
+			path = DegreeScene;
+			sourceTree = "<group>";
+		};
+		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0C106B6D26D67FAE004B0CD6 /* DegreeScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		0C3CCE0F26D52C20007A4CEA = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +93,7 @@
 		0C3CCE1A26D52C20007A4CEA /* TimMaia */ = {
 			isa = PBXGroup;
 			children = (
+				0C106B6B26D67F62004B0CD6 /* Stories */,
 				0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */,
 				0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */,
 				0C3CCE1F26D52C20007A4CEA /* ViewController.swift */,
@@ -124,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C106B7026D68005004B0CD6 /* DegreeScene.sks in Resources */,
 				0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */,
 				0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */,
 				0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */,
@@ -139,6 +178,7 @@
 			files = (
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
+				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
