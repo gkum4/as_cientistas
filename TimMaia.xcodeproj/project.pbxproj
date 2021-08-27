@@ -15,6 +15,8 @@
 		0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2126D52C20007A4CEA /* Main.storyboard */; };
 		0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2426D52C22007A4CEA /* Assets.xcassets */; };
 		0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2626D52C22007A4CEA /* LaunchScreen.storyboard */; };
+		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
+		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0C3CCE2426D52C22007A4CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C3CCE2726D52C22007A4CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3CCE2926D52C22007A4CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
+		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0468626D6817500697E6F /* PeriodicTableScene */,
 				0C106B6D26D67FAE004B0CD6 /* DegreeScene */,
 			);
 			path = Scenes;
@@ -103,6 +108,15 @@
 				0C3CCE2926D52C22007A4CEA /* Info.plist */,
 			);
 			path = TimMaia;
+			sourceTree = "<group>";
+		};
+		C4A0468626D6817500697E6F /* PeriodicTableScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */,
+				C4A0468926D681C600697E6F /* PeriodicTableScene.swift */,
+			);
+			path = PeriodicTableScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +180,7 @@
 				0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */,
 				0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */,
 				0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */,
+				C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +195,7 @@
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
+				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
