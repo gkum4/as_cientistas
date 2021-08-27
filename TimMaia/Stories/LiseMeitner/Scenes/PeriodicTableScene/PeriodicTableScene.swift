@@ -18,18 +18,22 @@ class PeriodicTableScene: SKScene {
     return self.periodicTable.children.first as! SKSpriteNode
   }()
   
-  private var initialElemPos: CGPoint? = nil
-  
-  
-  private var nodeTouched: SKNode?
+  private var initialElemPos: CGPoint?
+  private var initialElemSize: CGSize?
+  private var nodeTouched: SKSpriteNode?
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
     initialElemPos = periodicElement.position
+    initialElemSize = periodicElement.size
   }
   
   func touchDown(atPoint pos : CGPoint) {
-    nodeTouched = self.atPoint(pos)
+    nodeTouched = self.atPoint(pos) as? SKSpriteNode
+    if nodeTouched == periodicElement {
+      periodicElement.scale(to: CGSize(width: periodicElement.size.width * 1.3,
+                                       height: periodicElement.size.height * 1.3))
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
@@ -53,8 +57,14 @@ class PeriodicTableScene: SKScene {
           return
         }
         
+        guard let size = initialElemSize else {
+          return
+        }
+        
         let movement = SKAction.move(to: position, duration: 0.6)
-        periodicElement.run(movement)
+        let rescale = SKAction.scale(to: size, duration: 0.6)
+        let group = SKAction.group([movement, rescale])
+        periodicElement.run(group)
       }
     }
     
