@@ -19,12 +19,15 @@ class PeriodicTableScene: SKScene {
   }()
   
   private var initialElemPos: CGPoint?
+  private var tablePosition: CGPoint?
   private var initialElemSize: CGSize?
   private var nodeTouched: SKSpriteNode?
+  private var firstTouchPos: CGPoint?
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
     initialElemPos = periodicElement.position
+    tablePosition = periodicTable.position
     initialElemSize = periodicElement.size
   }
   
@@ -38,7 +41,10 @@ class PeriodicTableScene: SKScene {
   
   func touchMoved(toPoint pos : CGPoint) {
     if nodeTouched == periodicTable { // Table is only moved on x-axis
-      periodicTable.position.x = pos.x
+      if firstTouchPos == nil {
+        firstTouchPos = pos
+      }
+      periodicTable.position.x = tablePosition!.x + (pos.x - firstTouchPos!.x)
     }
     else {
       periodicElement.position = pos
@@ -67,7 +73,11 @@ class PeriodicTableScene: SKScene {
         periodicElement.run(group)
       }
     }
+    else {
+      tablePosition = periodicTable.position
+    }
     
+    firstTouchPos = nil
     nodeTouched = nil
   }
   
