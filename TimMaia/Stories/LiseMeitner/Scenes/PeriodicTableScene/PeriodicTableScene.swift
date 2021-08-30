@@ -54,9 +54,11 @@ class PeriodicTableScene: SKScene {
   func touchUp(atPoint pos : CGPoint) {
     if nodeTouched == periodicElement {
       let convertedCoord = convert(periodicElement.position, to: periodicTable)
+      
       if elementOnTable.contains(convertedCoord) {
         elementOnTable.alpha = 1
         periodicElement.alpha = 0
+        HapticsManager.shared.vibrateByType(for: .success)
       }
       else { // Moves to initial position on wrong placement
         guard let position = initialElemPos else {
@@ -67,6 +69,7 @@ class PeriodicTableScene: SKScene {
           return
         }
         
+        HapticsManager.shared.vibrateByType(for: .error)
         let movement = SKAction.move(to: position, duration: 0.6)
         let rescale = SKAction.scale(to: size, duration: 0.6)
         let group = SKAction.group([movement, rescale])

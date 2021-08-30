@@ -17,6 +17,7 @@
 		0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2626D52C22007A4CEA /* LaunchScreen.storyboard */; };
 		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
 		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
+		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0C3CCE2926D52C22007A4CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
 		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
+		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		0C3CCE1A26D52C20007A4CEA /* TimMaia */ = {
 			isa = PBXGroup;
 			children = (
+				C4B12D2B26DC5AB10061F46B /* Managers */,
 				0C106B6B26D67F62004B0CD6 /* Stories */,
 				0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */,
 				0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */,
@@ -117,6 +120,14 @@
 				C4A0468926D681C600697E6F /* PeriodicTableScene.swift */,
 			);
 			path = PeriodicTableScene;
+			sourceTree = "<group>";
+		};
+		C4B12D2B26DC5AB10061F46B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C4B12D2926DC58730061F46B /* HapticsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
