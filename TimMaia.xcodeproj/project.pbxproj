@@ -15,9 +15,11 @@
 		0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2126D52C20007A4CEA /* Main.storyboard */; };
 		0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2426D52C22007A4CEA /* Assets.xcassets */; };
 		0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2626D52C22007A4CEA /* LaunchScreen.storyboard */; };
+		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
 		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
 		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
+		C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +33,12 @@
 		0C3CCE2426D52C22007A4CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C3CCE2726D52C22007A4CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3CCE2926D52C22007A4CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
 		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
 		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		C4B12D2D26DC613C0061F46B /* Rumble.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rumble.ahap; sourceTree = "<group>"; };
+		C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,7 @@
 		0C3CCE1A26D52C20007A4CEA /* TimMaia */ = {
 			isa = PBXGroup;
 			children = (
+				C4B12D2C26DC610D0061F46B /* AHAP */,
 				C4B12D2B26DC5AB10061F46B /* Managers */,
 				0C106B6B26D67F62004B0CD6 /* Stories */,
 				0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */,
@@ -118,6 +124,7 @@
 			children = (
 				C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */,
 				C4A0468926D681C600697E6F /* PeriodicTableScene.swift */,
+				C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */,
 			);
 			path = PeriodicTableScene;
 			sourceTree = "<group>";
@@ -126,8 +133,17 @@
 			isa = PBXGroup;
 			children = (
 				C4B12D2926DC58730061F46B /* HapticsManager.swift */,
+				C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		C4B12D2C26DC610D0061F46B /* AHAP */ = {
+			isa = PBXGroup;
+			children = (
+				C4B12D2D26DC613C0061F46B /* Rumble.ahap */,
+			);
+			path = AHAP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +223,8 @@
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
+				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
+				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

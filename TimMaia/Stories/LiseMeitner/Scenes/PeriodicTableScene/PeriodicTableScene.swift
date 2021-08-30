@@ -23,6 +23,14 @@ class PeriodicTableScene: SKScene {
   private var initialElemSize: CGSize?
   private var nodeTouched: SKSpriteNode?
   private var firstTouchPos: CGPoint?
+  private var hapticsManager: PeriodicTableSceneHapticsManager?
+  
+  static func create() -> SKScene {
+    let scene = PeriodicTableScene(fileNamed: "PeriodicTableScene")
+    scene?.hapticsManager = DefaultPeriodicTableSceneHapticsManager()
+
+    return scene!
+  }
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
@@ -58,7 +66,7 @@ class PeriodicTableScene: SKScene {
       if elementOnTable.contains(convertedCoord) {
         elementOnTable.alpha = 1
         periodicElement.alpha = 0
-        HapticsManager.shared.vibrateByType(for: .success)
+        hapticsManager?.triggerSuccess()
       }
       else { // Moves to initial position on wrong placement
         guard let position = initialElemPos else {
@@ -69,7 +77,7 @@ class PeriodicTableScene: SKScene {
           return
         }
         
-        HapticsManager.shared.vibrateByType(for: .error)
+        hapticsManager?.triggerError()
         let movement = SKAction.move(to: position, duration: 0.6)
         let rescale = SKAction.scale(to: size, duration: 0.6)
         let group = SKAction.group([movement, rescale])

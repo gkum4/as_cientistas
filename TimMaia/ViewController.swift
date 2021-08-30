@@ -15,13 +15,12 @@ class ViewController: UIViewController {
   }
   
   override func loadView() {
-    if let scene = SKScene(fileNamed: "PeriodicTableScene") {
-      let sceneView = SKView()
-      scene.scaleMode = .aspectFit
-      sceneView.presentScene(scene)
+    let scene = PeriodicTableScene.create()
+    let sceneView = SKView()
+    scene.scaleMode = .aspectFit
+    sceneView.presentScene(scene)
 
-      self.view = sceneView
-    }
+    self.view = sceneView
   }
 }
 
