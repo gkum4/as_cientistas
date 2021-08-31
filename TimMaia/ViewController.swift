@@ -6,14 +6,32 @@
 //
 
 import UIKit
+import SpriteKit
 
 class ViewController: UIViewController {
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
-
-
+  
+  override func loadView() {
+    let sceneView = SKView()
+    let scene = SKScene(fileNamed: "DegreeScene")
+    
+    scene?.scaleMode = .aspectFit
+    sceneView.presentScene(scene)
+    
+    self.view = sceneView
+  }
+  
+  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    if UIDevice.current.userInterfaceIdiom == .phone {
+      return .allButUpsideDown
+    } else {
+      return .all
+    }
+  }
+  
+  
 }
 
