@@ -24,7 +24,7 @@ class DefaultPeriodicTableSceneCoreHapticsManager: CoreHapticsManager, PeriodicT
   }
   
   func playFilePattern() {
-    playHapticsFile(named: "Rumble")
+    playHapticsFile(named: "Drums")
   }
 }
 

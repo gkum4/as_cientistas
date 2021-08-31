@@ -118,7 +118,7 @@
             {
                 "Time":0,
                 "EventType":"AudioCustom",
-                "EventWaveformPath":"AHAP/Drums.wav",
+                "EventWaveformPath":"Drums.wav",
                 "EventParameters":
                 [
                     {"ParameterID":"AudioVolume","ParameterValue":0.75}
