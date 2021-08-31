@@ -24,10 +24,12 @@ class PeriodicTableScene: SKScene {
   private var nodeTouched: SKSpriteNode?
   private var firstTouchPos: CGPoint?
   private var hapticsManager: PeriodicTableSceneHapticsManager?
+  private var coreHapticsManager: PeriodicTableSceneCoreHapticsManager?
   
   static func create() -> SKScene {
     let scene = PeriodicTableScene(fileNamed: "PeriodicTableScene")
     scene?.hapticsManager = DefaultPeriodicTableSceneHapticsManager()
+    scene?.coreHapticsManager = DefaultPeriodicTableSceneCoreHapticsManager()
 
     return scene!
   }
@@ -77,7 +79,7 @@ class PeriodicTableScene: SKScene {
           return
         }
         
-        hapticsManager?.triggerError()
+        coreHapticsManager?.playFilePattern()
         let movement = SKAction.move(to: position, duration: 0.6)
         let rescale = SKAction.scale(to: size, duration: 0.6)
         let group = SKAction.group([movement, rescale])

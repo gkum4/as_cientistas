@@ -6,59 +6,101 @@
 //
 
 import CoreHaptics
+import AVFoundation
 
-final class CoreHapticsManager {
-  let hapticEngine: CHHapticEngine
+class CoreHapticsManager {
+  var hapticsEngine: CHHapticEngine?
+  var supportsHaptics: Bool = false
 
-  init?() {
-    let hapticCapability = CHHapticEngine.capabilitiesForHardware()
-    guard hapticCapability.supportsHaptics else {
-      return nil
-    }
-
-    do {
-      hapticEngine = try CHHapticEngine()
-    } catch let error {
-      print("Haptic engine Creation Error: \(error)")
-      return nil
-    }
+  init() {
+    createEngine()
   }
   
-  func playSlice() {
-    do {
-      let pattern = try slicePattern()
-      try hapticEngine.start()
-      let player = try hapticEngine.makePlayer(with: pattern)
-      try player.start(atTime: CHHapticTimeImmediate)
-      hapticEngine.notifyWhenPlayersFinished { _ in
-        return .stopEngine
+  func createEngine() {
+      let hapticCapability = CHHapticEngine.capabilitiesForHardware()
+      supportsHaptics = hapticCapability.supportsHaptics
+    
+      // Create and configure a haptic engine.
+      do {
+          // Associate the haptic engine with the default audio session
+          // to ensure the correct behavior when playing audio-based haptics.
+          let audioSession = AVAudioSession.sharedInstance()
+          hapticsEngine = try CHHapticEngine(audioSession: audioSession)
+      } catch let error {
+          print("Engine Creation Error: \(error)")
       }
-    } catch {
-      print("Failed to play slice: \(error)")
+      
+      guard let engine = hapticsEngine else {
+          print("Failed to create engine!")
+          return
+      }
+      
+      // The stopped handler alerts you of engine stoppage due to external causes.
+    hapticsEngine?.stoppedHandler = { reason in
+          print("The engine stopped for reason: \(reason.rawValue)")
+          switch reason {
+          case .audioSessionInterrupt:
+              print("Audio session interrupt")
+          case .applicationSuspended:
+              print("Application suspended")
+          case .idleTimeout:
+              print("Idle timeout")
+          case .systemError:
+              print("System error")
+          case .notifyWhenFinished:
+              print("Playback finished")
+          case .gameControllerDisconnect:
+              print("Controller disconnected.")
+          case .engineDestroyed:
+              print("Engine destroyed.")
+          @unknown default:
+              print("Unknown error")
+          }
+      }
+
+      // The reset handler provides an opportunity for your app to restart the engine in case of failure.
+    hapticsEngine?.resetHandler = {
+          // Try restarting the engine.
+          print("The engine reset --> Restarting now!")
+          do {
+              try self.hapticsEngine?.start()
+          } catch {
+              print("Failed to restart the engine: \(error)")
+          }
+      }
+  }
+  
+  public func playHapticFromPattern(_ pattern: CHHapticPattern) throws {
+    // If the device doesn't support Core Haptics, abort.
+    if !supportsHaptics {
+        return
     }
+    
+    try hapticsEngine?.start()
+    let player = try hapticsEngine?.makePlayer(with: pattern)
+    try player?.start(atTime: CHHapticTimeImmediate)
   }
+  
+  public func playHapticsFile(named filename: String) {
+    // If the device doesn't support Core Haptics, abort.
+    if !supportsHaptics {
+        return
+    }
+
+    // Express the path to the AHAP file before attempting to load it.
+    guard let path = Bundle.main.path(forResource: filename, ofType: "ahap") else {
+        return
+    }
+
+    do {
+        // Start the engine in case it's idle.
+        try hapticsEngine?.start()
+        
+        // Tell the engine to play a pattern.
+        try hapticsEngine?.playPattern(from: URL(fileURLWithPath: path))
+        
+    } catch { // Engine startup errors
+        print("An error occured playing \(filename): \(error).")
+    }
 }
-
-extension CoreHapticsManager {
-  private func slicePattern() throws -> CHHapticPattern {
-    let slice = CHHapticEvent(
-      eventType: .hapticContinuous,
-      parameters: [
-        CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.35),
-        CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.25)
-      ],
-      relativeTime: 0,
-      duration: 0.25)
-
-    let snip = CHHapticEvent(
-      eventType: .hapticTransient,
-      parameters: [
-        CHHapticEventParameter(parameterID: .hapticIntensity, value: 1.0),
-        CHHapticEventParameter(parameterID: .hapticSharpness, value: 1.0)
-      ],
-      relativeTime: 0.08)
-
-    return try CHHapticPattern(events: [slice, snip], parameters: [])
-  }
 }
-

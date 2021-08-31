@@ -16,6 +16,16 @@
 		0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2426D52C22007A4CEA /* Assets.xcassets */; };
 		0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2626D52C22007A4CEA /* LaunchScreen.storyboard */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
+		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
+		C42204F426DDAAE300293DDE /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204EB26DDAAE300293DDE /* Inflate.ahap */; };
+		C42204F526DDAAE300293DDE /* Drums.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204EC26DDAAE300293DDE /* Drums.ahap */; };
+		C42204F626DDAAE300293DDE /* Drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = C42204ED26DDAAE300293DDE /* Drums.wav */; };
+		C42204F726DDAAE300293DDE /* Boing.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204EE26DDAAE300293DDE /* Boing.ahap */; };
+		C42204F826DDAAE300293DDE /* Rumble.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204EF26DDAAE300293DDE /* Rumble.ahap */; };
+		C42204F926DDAAE300293DDE /* Oscillate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204F026DDAAE300293DDE /* Oscillate.ahap */; };
+		C42204FA26DDAAE300293DDE /* Sparkle.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204F126DDAAE300293DDE /* Sparkle.ahap */; };
+		C42204FB26DDAAE300293DDE /* Gravel.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204F226DDAAE300293DDE /* Gravel.ahap */; };
+		C42204FC26DDAAE300293DDE /* Heartbeats.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C42204F326DDAAE300293DDE /* Heartbeats.ahap */; };
 		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
 		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
 		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
@@ -34,10 +44,28 @@
 		0C3CCE2726D52C22007A4CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3CCE2926D52C22007A4CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
+		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		C42204EB26DDAAE300293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
+		C42204EC26DDAAE300293DDE /* Drums.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Drums.ahap; sourceTree = "<group>"; };
+		C42204ED26DDAAE300293DDE /* Drums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drums.wav; sourceTree = "<group>"; };
+		C42204EE26DDAAE300293DDE /* Boing.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Boing.ahap; sourceTree = "<group>"; };
+		C42204EF26DDAAE300293DDE /* Rumble.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rumble.ahap; sourceTree = "<group>"; };
+		C42204F026DDAAE300293DDE /* Oscillate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Oscillate.ahap; sourceTree = "<group>"; };
+		C42204F126DDAAE300293DDE /* Sparkle.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sparkle.ahap; sourceTree = "<group>"; };
+		C42204F226DDAAE300293DDE /* Gravel.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gravel.ahap; sourceTree = "<group>"; };
+		C42204F326DDAAE300293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
+		C422050026DDB32B00293DDE /* Inflate.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
+		C422050126DDB32B00293DDE /* Drums.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Drums.ahap; sourceTree = "<group>"; };
+		C422050226DDB32B00293DDE /* Drums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drums.wav; sourceTree = "<group>"; };
+		C422050326DDB32B00293DDE /* Boing.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Boing.ahap; sourceTree = "<group>"; };
+		C422050426DDB32B00293DDE /* Rumble.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rumble.ahap; sourceTree = "<group>"; };
+		C422050526DDB32B00293DDE /* Oscillate.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Oscillate.ahap; sourceTree = "<group>"; };
+		C422050626DDB32B00293DDE /* Sparkle.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sparkle.ahap; sourceTree = "<group>"; };
+		C422050726DDB32B00293DDE /* Gravel.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gravel.ahap; sourceTree = "<group>"; };
+		C422050826DDB32B00293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
 		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
 		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
 		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
-		C4B12D2D26DC613C0061F46B /* Rumble.ahap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rumble.ahap; sourceTree = "<group>"; };
 		C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +117,7 @@
 		0C3CCE0F26D52C20007A4CEA = {
 			isa = PBXGroup;
 			children = (
+				C42204FF26DDB32B00293DDE /* AHAP */,
 				0C3CCE1A26D52C20007A4CEA /* TimMaia */,
 				0C3CCE1926D52C20007A4CEA /* Products */,
 			);
@@ -105,7 +134,7 @@
 		0C3CCE1A26D52C20007A4CEA /* TimMaia */ = {
 			isa = PBXGroup;
 			children = (
-				C4B12D2C26DC610D0061F46B /* AHAP */,
+				C42204EA26DDAAE300293DDE /* AHAP */,
 				C4B12D2B26DC5AB10061F46B /* Managers */,
 				0C106B6B26D67F62004B0CD6 /* Stories */,
 				0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */,
@@ -119,12 +148,46 @@
 			path = TimMaia;
 			sourceTree = "<group>";
 		};
+		C42204EA26DDAAE300293DDE /* AHAP */ = {
+			isa = PBXGroup;
+			children = (
+				C42204EB26DDAAE300293DDE /* Inflate.ahap */,
+				C42204EC26DDAAE300293DDE /* Drums.ahap */,
+				C42204ED26DDAAE300293DDE /* Drums.wav */,
+				C42204EE26DDAAE300293DDE /* Boing.ahap */,
+				C42204EF26DDAAE300293DDE /* Rumble.ahap */,
+				C42204F026DDAAE300293DDE /* Oscillate.ahap */,
+				C42204F126DDAAE300293DDE /* Sparkle.ahap */,
+				C42204F226DDAAE300293DDE /* Gravel.ahap */,
+				C42204F326DDAAE300293DDE /* Heartbeats.ahap */,
+			);
+			path = AHAP;
+			sourceTree = "<group>";
+		};
+		C42204FF26DDB32B00293DDE /* AHAP */ = {
+			isa = PBXGroup;
+			children = (
+				C422050026DDB32B00293DDE /* Inflate.ahap */,
+				C422050126DDB32B00293DDE /* Drums.ahap */,
+				C422050226DDB32B00293DDE /* Drums.wav */,
+				C422050326DDB32B00293DDE /* Boing.ahap */,
+				C422050426DDB32B00293DDE /* Rumble.ahap */,
+				C422050526DDB32B00293DDE /* Oscillate.ahap */,
+				C422050626DDB32B00293DDE /* Sparkle.ahap */,
+				C422050726DDB32B00293DDE /* Gravel.ahap */,
+				C422050826DDB32B00293DDE /* Heartbeats.ahap */,
+			);
+			name = AHAP;
+			path = TimMaia/AHAP;
+			sourceTree = "<group>";
+		};
 		C4A0468626D6817500697E6F /* PeriodicTableScene */ = {
 			isa = PBXGroup;
 			children = (
 				C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */,
 				C4A0468926D681C600697E6F /* PeriodicTableScene.swift */,
 				C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */,
+				C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */,
 			);
 			path = PeriodicTableScene;
 			sourceTree = "<group>";
@@ -136,14 +199,6 @@
 				C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		C4B12D2C26DC610D0061F46B /* AHAP */ = {
-			isa = PBXGroup;
-			children = (
-				C4B12D2D26DC613C0061F46B /* Rumble.ahap */,
-			);
-			path = AHAP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +258,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42204F626DDAAE300293DDE /* Drums.wav in Resources */,
+				C42204F726DDAAE300293DDE /* Boing.ahap in Resources */,
+				C42204FB26DDAAE300293DDE /* Gravel.ahap in Resources */,
+				C42204FA26DDAAE300293DDE /* Sparkle.ahap in Resources */,
+				C42204FC26DDAAE300293DDE /* Heartbeats.ahap in Resources */,
+				C42204F526DDAAE300293DDE /* Drums.ahap in Resources */,
 				0C106B7026D68005004B0CD6 /* DegreeScene.sks in Resources */,
 				0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */,
 				0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */,
+				C42204F426DDAAE300293DDE /* Inflate.ahap in Resources */,
 				0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */,
+				C42204F826DDAAE300293DDE /* Rumble.ahap in Resources */,
 				C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */,
+				C42204F926DDAAE300293DDE /* Oscillate.ahap in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
+				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,

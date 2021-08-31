@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SpriteKit
 
 protocol PeriodicTableSceneHapticsManager {
   func triggerSuccess()
