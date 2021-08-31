@@ -15,12 +15,11 @@ class ViewController: UIViewController {
   }
   
   override func loadView() {
+    let scene = PeriodicTableScene.create()
     let sceneView = SKView()
-    let scene = SKScene(fileNamed: "DegreeScene")
-    
-    scene?.scaleMode = .aspectFit
+    scene.scaleMode = .aspectFit
     sceneView.presentScene(scene)
-    
+
     self.view = sceneView
   }
   
