@@ -13,15 +13,24 @@ class BasementScene: SKScene {
   
   private var dust1: SKSpriteNode!
   private var dust2: SKSpriteNode!
+  private var lamp: SKSpriteNode!
   var dustRemoveStep = 0
+  var blowGameEnded = false
+  var isLampOn = false
+  
+  private var coreHapticsManager: BasementSceneCoreHapticsManager?
   
   static func create() -> SKScene {
-    return PeriodicTableScene(fileNamed: "BasementScene")!
+    let scene = BasementScene(fileNamed: "BasementScene")
+    scene?.coreHapticsManager = DefaultBasementSceneCoreHapticsManager()
+    
+    return scene!
   }
   
   override func didMove(to view: SKView) {
     self.dust1 = self.childNode(withName: "//dust1") as? SKSpriteNode
     self.dust2 = self.childNode(withName: "//dust2") as? SKSpriteNode
+    self.lamp = self.childNode(withName: "//lamp") as? SKSpriteNode
     
     blowDetector.startDetecting()
     
@@ -47,16 +56,48 @@ class BasementScene: SKScene {
       return
     }
     
+    blowDetector.stop()
+    self.coreHapticsManager?.playSpreadPattern()
+    blowDetector.startDetecting()
+    
     dust1.run(.move(by: CGVector(dx: -50, dy: 50), duration: 0.5))
     dust2.run(.move(by: CGVector(dx: 50, dy: 50), duration: 0.5))
     dustRemoveStep += 1
   }
   
   func onGameEnd() {
+    blowGameEnded = true
     print("dust remove game finished")
+  }
+
+  func onClickLamp() {
+    if blowGameEnded == true {
+      self.coreHapticsManager?.playClickPattern()
+    } else {
+      blowDetector.stop()
+      self.coreHapticsManager?.playClickPattern()
+      blowDetector.startDetecting()
+    }
+    
+    if isLampOn {
+      lamp.color = .gray
+      isLampOn = false
+      return
+    }
+    
+    lamp.color = .white
+    isLampOn = true
+    return
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if lamp.contains(pos) {
+      onClickLamp()
+    }
+  }
+  
+  func stopDetector() {
+    
   }
   
   func touchMoved(toPoint pos : CGPoint) {
