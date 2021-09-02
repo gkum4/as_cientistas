@@ -19,6 +19,8 @@
 		0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2426D52C22007A4CEA /* Assets.xcassets */; };
 		0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2626D52C22007A4CEA /* LaunchScreen.storyboard */; };
 		0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B29B26DE6EAA002B87F0 /* BlowDetector.swift */; };
+		0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B29D26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift */; };
+		0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B29F26E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
 		C422051326DDBB0800293DDE /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422050A26DDBB0800293DDE /* Inflate.ahap */; };
@@ -51,6 +53,8 @@
 		0C3CCE2726D52C22007A4CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3CCE2926D52C22007A4CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CF1B29B26DE6EAA002B87F0 /* BlowDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlowDetector.swift; sourceTree = "<group>"; };
+		0CF1B29D26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		0CF1B29F26E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C422050A26DDBB0800293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				0C106B6F26D68005004B0CD6 /* DegreeScene.sks */,
 				0C106B7326D680AC004B0CD6 /* DegreeScene.swift */,
 				0C106B7526D7D968004B0CD6 /* SquareProps.swift */,
+				0CF1B29F26E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift */,
 			);
 			path = DegreeScene;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				0C106B7826DE515A004B0CD6 /* BasementScene.swift */,
 				0C106B7A26DE5169004B0CD6 /* BasementScene.sks */,
 				0CF1B29B26DE6EAA002B87F0 /* BlowDetector.swift */,
+				0CF1B29D26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift */,
 			);
 			path = BasementScene;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 			files = (
 				0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
+				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
 				0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */,
@@ -285,6 +292,7 @@
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
+				0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
 				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,

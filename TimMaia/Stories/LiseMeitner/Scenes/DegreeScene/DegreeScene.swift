@@ -15,6 +15,15 @@ class DegreeScene: SKScene {
   
   private var numberOfSquares = 74
   
+  private var coreHapticsManager: DegreeSceneCoreHapticsManager?
+  
+  static func create() -> SKScene {
+    let scene = DegreeScene(fileNamed: "DegreeScene")
+    scene?.coreHapticsManager = DefaultDegreeSceneCoreHapticsManager()
+    
+    return scene!
+  }
+  
   override func didMove(to view: SKView) {
     for i in 0..<numberOfSquares {
       self.squares.append(
@@ -105,6 +114,7 @@ class DegreeScene: SKScene {
     
     for i in 0..<numberOfSquares {
       if self.squares[i].node?.contains(pos) == true {
+        coreHapticsManager?.playMovePattern()
         self.squares[i].checked = true
         
         if i < numberOfSquares-1 {
