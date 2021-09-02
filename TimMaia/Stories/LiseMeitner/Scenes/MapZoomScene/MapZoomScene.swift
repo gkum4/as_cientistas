@@ -96,6 +96,9 @@ class MapZoomScene: SKScene {
     sceneNumber = sceneNumber + 1
     
     if sceneNumber < 3 {
+      // Disables pinch untill texture change
+      view?.gestureRecognizers?.first?.isEnabled = false
+      
       // Changes Scene
       let fadeOut = SKAction.fadeOut(withDuration: 1)
       let changeTexture = SKAction.setTexture(SKTexture(imageNamed: "Map-\(sceneNumber)"))
@@ -111,6 +114,8 @@ class MapZoomScene: SKScene {
       self.camera?.xScale = 1.0
       self.camera?.yScale = 1.0
       self.camera?.position = CGPoint(x: 0, y: 0)
+      
+      view?.gestureRecognizers?.first?.isEnabled = true
     }
     else {
       print("Próxima cena")
