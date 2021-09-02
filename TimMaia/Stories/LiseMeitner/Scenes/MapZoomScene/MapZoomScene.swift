@@ -67,7 +67,15 @@ class MapZoomScene: SKScene {
   @objc private func didPinch(_ gesture: UIPinchGestureRecognizer) {
     if gesture.state == .changed {
       if(gesture.scale > 1 && !didReachPoint!) {
-        let x = mapView.position.x + pinchCount!
+        var x: CGFloat = 0
+        // Moves based on x value
+        if targetLocation.position.x > mapView.position.x {
+          x = mapView.position.x + pinchCount!
+        }
+        else {
+          x = mapView.position.x - pinchCount!
+        }
+        
         let y = (equationM! * x) + equationB!
         pinchCount = pinchCount! + 1.0
         
