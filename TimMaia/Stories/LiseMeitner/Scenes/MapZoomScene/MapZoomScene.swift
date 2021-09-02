@@ -23,9 +23,11 @@ class MapZoomScene: SKScene {
   private var equationB: CGFloat?
   private var pinchCount: CGFloat?
   private var didReachPoint: Bool?
+  private var hapticsManager: MapZoomSceneHapticsManager?
 
   static func create() -> SKScene {
     let scene = MapZoomScene(fileNamed: "MapZoomScene")
+    scene?.hapticsManager = DefaultMapZoomSceneHapticsManager()
 
     return scene!
   }
@@ -87,9 +89,9 @@ class MapZoomScene: SKScene {
         let group = SKAction.group([movement, zoomIn])
         self.camera?.run(group)
       }
-      else if (didReachPoint!){
-        changeMapView()
-      }
+//      else if (didReachPoint!){
+//        changeMapView()
+//      }
     }
   }
   
@@ -136,6 +138,10 @@ class MapZoomScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if targetLocation.contains(pos) && didReachPoint! {
+      hapticsManager?.triggerSuccess()
+      changeMapView()
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {

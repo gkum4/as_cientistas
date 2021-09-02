@@ -29,6 +29,7 @@
 		C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051226DDBB0800293DDE /* Heartbeats.ahap */; };
 		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
 		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
+		C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */; };
 		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
 		C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */; };
 		C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */; };
@@ -60,6 +61,7 @@
 		C422051226DDBB0800293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
 		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
 		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
+		C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 		C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapZoomScene.sks; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */,
 				C4B4F68526DE530600BB8E36 /* MapZoomScene.swift */,
+				C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */,
 			);
 			path = MapZoomScene;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
 				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
+				C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
