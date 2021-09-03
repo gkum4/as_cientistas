@@ -31,13 +31,13 @@ class BlackboardScene: SKScene {
   }
   
   var textEraseAnimation: SKAction = .group([
+    .scale(by: 1.1, duration: 0.9),
     .sequence([
-      .scale(by: 1.1, duration: 0.7),
       .rotate(byAngle: 0.0872665, duration: 0.1),
       .rotate(byAngle: CGFloat(-0.0872665*2), duration: 0.1),
       .rotate(byAngle: CGFloat(0.0872665), duration: 0.1)
     ]),
-    .fadeOut(withDuration: 1.4)
+    .fadeOut(withDuration: 1.2)
   ])
   
   @objc override func shake() {
