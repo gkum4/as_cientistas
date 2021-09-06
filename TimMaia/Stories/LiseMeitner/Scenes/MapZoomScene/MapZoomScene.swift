@@ -18,11 +18,18 @@ class MapZoomScene: SKScene {
   private lazy var targetLocation: SKSpriteNode = { [unowned self] in
     return childNode(withName : "Locale-\(sceneNumber)") as! SKSpriteNode
   }()
-  private var initialMapSize: CGSize?
+  
   private var equationM: CGFloat?
   private var equationB: CGFloat?
-  private var pinchCount: CGFloat?
-  private var didReachPoint: Bool?
+  
+  private var didReachCenter: Bool = true
+  private var didReachTarget: Bool = false
+  private var pinchCount: CGFloat = 1.0
+  private var pinchFactor: CGFloat = 1.5
+  private var zoomInScale: CGFloat = 0.988
+  private var zoomOutScale: CGFloat = 0.006
+  private var previousGestureScale: CGFloat = 1.0
+  
   private var hapticsManager: MapZoomSceneHapticsManager?
 
   static func create() -> SKScene {
@@ -38,8 +45,14 @@ class MapZoomScene: SKScene {
     let camera = SKCameraNode()
     self.addChild(camera)
     self.camera = camera
-    addGesture()
+
+    addPinchGesture()
     getLineEquation()
+  }
+  
+  private func addPinchGesture() {
+    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
+    view?.addGestureRecognizer(pinchGesture)
   }
   
   private func getLineEquation() {
@@ -53,46 +66,72 @@ class MapZoomScene: SKScene {
     
     // Sets variables to original values
     pinchCount = 1.0
-    didReachPoint = false
+    didReachCenter = true
+    didReachTarget = false
   }
   
-  private func addGesture() {
-    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
-    view?.addGestureRecognizer(pinchGesture)
-  }
-  
-  private func checkForEnd(pos: CGPoint) {
+  private func checkForTarget(pos: CGPoint) {
     if abs(pos.x - targetLocation.position.x) <= 1 {
-      didReachPoint = true
+      didReachTarget = true
+    }
+  }
+  
+  private func checkForCenter(pos: CGPoint) {
+    if abs(pos.x - mapView.position.x) <= 1 {
+      didReachCenter = true
     }
   }
   
   @objc private func didPinch(_ gesture: UIPinchGestureRecognizer) {
     if gesture.state == .changed {
-      if(gesture.scale > 1 && !didReachPoint!) {
-        var x: CGFloat = 0
-        // Moves based on x value
-        if targetLocation.position.x > mapView.position.x {
-          x = mapView.position.x + pinchCount!
-        }
-        else {
-          x = mapView.position.x - pinchCount!
-        }
-        
-        let y = (equationM! * x) + equationB!
-        pinchCount = pinchCount! + 1.0
-        
-        checkForEnd(pos: CGPoint(x: x, y: y))
-
-        let movement = SKAction.move(to: CGPoint(x: x, y: y), duration: 0)
-        let zoomIn = SKAction.scale(by: 0.991, duration: 0)
-        let group = SKAction.group([movement, zoomIn])
-        self.camera?.run(group)
+      if(gesture.scale > previousGestureScale && !didReachTarget) {
+        zoomInMapView()
       }
-//      else if (didReachPoint!){
-//        changeMapView()
-//      }
+      else if (gesture.scale < previousGestureScale && !didReachTarget && !didReachCenter) {
+        zoomOutMapView()
+      }
+      else if (didReachTarget){
+        changeMapView()
+      }
+      
+      previousGestureScale = gesture.scale
     }
+  }
+  
+  private func zoomInMapView() {
+    var x: CGFloat = 0
+    // Moves based on x value
+    if targetLocation.position.x > mapView.position.x {
+      x = mapView.position.x + pinchCount
+    }
+    else {
+      x = mapView.position.x - pinchCount
+    }
+    
+    let y = (equationM! * x) + equationB!
+    pinchCount = pinchCount + pinchFactor
+    
+    checkForTarget(pos: CGPoint(x: x, y: y))
+    didReachCenter = false
+
+    let movement = SKAction.move(to: CGPoint(x: x, y: y), duration: 0)
+    let zoomIn = SKAction.scale(by: zoomInScale, duration: 0)
+    let group = SKAction.group([movement, zoomIn])
+    self.camera?.run(group)
+  }
+  
+  private func zoomOutMapView() {
+    let x = pinchCount - pinchFactor
+    let y = (equationM! * x) + equationB!
+    pinchCount = pinchCount - pinchFactor
+    
+    checkForCenter(pos: CGPoint(x: x, y: y))
+    
+    let movement = SKAction.move(to: CGPoint(x: x, y: y), duration: 0)
+    let rescaleX = SKAction.scaleX(to: self.camera!.xScale + zoomOutScale, duration: 0)
+    let rescaleY = SKAction.scaleY(to: self.camera!.yScale + zoomOutScale, duration: 0)
+    let group = SKAction.group([rescaleX, rescaleY, movement])
+    self.camera?.run(group)
   }
   
   private func changeMapView() {
@@ -110,7 +149,7 @@ class MapZoomScene: SKScene {
       mapView.zPosition = 1
       self.addChild(nextMapView!)
       
-      // Transition between map vires
+      // Transition between maps
       let oldActionsSeq = SKAction.sequence([SKAction.wait(forDuration: 1), SKAction.fadeOut(withDuration: 1)])
       let newActionsSeq = SKAction.sequence([SKAction.wait(forDuration: 1), SKAction.fadeIn(withDuration: 1)])
       mapView.run(oldActionsSeq)
@@ -138,10 +177,10 @@ class MapZoomScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
-    if targetLocation.contains(pos) && didReachPoint! {
-      hapticsManager?.triggerSuccess()
-      changeMapView()
-    }
+//    if targetLocation.contains(pos) && didReachPoint! {
+//      hapticsManager?.triggerSuccess()
+//      changeMapView()
+//    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
