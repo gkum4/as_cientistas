@@ -26,6 +26,9 @@
 		0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */; };
 		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
 		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
+		0CF1B2CE26E7A953002B87F0 /* CarScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CF1B2CD26E7A952002B87F0 /* CarScene.sks */; };
+		0CF1B2D026E7A95F002B87F0 /* CarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */; };
+		0CF1B2D226E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
 		C422051326DDBB0800293DDE /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422050A26DDBB0800293DDE /* Inflate.ahap */; };
@@ -65,6 +68,9 @@
 		0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
 		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
+		0CF1B2CD26E7A952002B87F0 /* CarScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CarScene.sks; sourceTree = "<group>"; };
+		0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarScene.swift; sourceTree = "<group>"; };
+		0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C422050A26DDBB0800293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0CF1B2CC26E7A93D002B87F0 /* CarScene */,
 				0CF1B2A126E10620002B87F0 /* BlackboardScene */,
 				0C106B7726DE5147004B0CD6 /* BasementScene */,
 				C4A0468626D6817500697E6F /* PeriodicTableScene */,
@@ -193,6 +200,16 @@
 				0CF1B2AD26E110DF002B87F0 /* SKView+.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0CF1B2CC26E7A93D002B87F0 /* CarScene */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1B2CD26E7A952002B87F0 /* CarScene.sks */,
+				0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */,
+				0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */,
+			);
+			path = CarScene;
 			sourceTree = "<group>";
 		};
 		C422050926DDBB0800293DDE /* AHAP */ = {
@@ -304,6 +321,7 @@
 				0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */,
 				C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */,
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
+				0CF1B2CE26E7A953002B87F0 /* CarScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,12 +335,14 @@
 				0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
 				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
+				0CF1B2D026E7A95F002B87F0 /* CarScene.swift in Sources */,
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
 				0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */,
 				0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */,
 				0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
+				0CF1B2D226E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift in Sources */,
 				0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
