@@ -37,11 +37,13 @@
 		C422051926DDBB0800293DDE /* Sparkle.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051026DDBB0800293DDE /* Sparkle.ahap */; };
 		C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051126DDBB0800293DDE /* Gravel.ahap */; };
 		C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051226DDBB0800293DDE /* Heartbeats.ahap */; };
+		C4626E6C26E7D10D00BFBD12 /* LetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */; };
+		C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4626E6D26E7D12900BFBD12 /* LetterScene.sks */; };
 		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
 		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
+		C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */; };
 		C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */; };
 		C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A8AC9026E16D7800CED26E /* TrophyScene.sks */; };
-		C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */; };
 		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
 		C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */; };
 		C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */; };
@@ -81,11 +83,13 @@
 		C422051026DDBB0800293DDE /* Sparkle.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sparkle.ahap; sourceTree = "<group>"; };
 		C422051126DDBB0800293DDE /* Gravel.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gravel.ahap; sourceTree = "<group>"; };
 		C422051226DDBB0800293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
+		C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterScene.swift; sourceTree = "<group>"; };
+		C4626E6D26E7D12900BFBD12 /* LetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LetterScene.sks; sourceTree = "<group>"; };
 		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
 		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
+		C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyScene.swift; sourceTree = "<group>"; };
 		C4A8AC9026E16D7800CED26E /* TrophyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrophyScene.sks; sourceTree = "<group>"; };
-		C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 		C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapZoomScene.sks; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4626E6A26E7D0FB00BFBD12 /* LetterScene */,
 				C4A8AC8D26E16D4500CED26E /* TrophyScene */,
 				C4B4F68226DE52D500BB8E36 /* MapZoomScene */,
 				0CF1B2A126E10620002B87F0 /* BlackboardScene */,
@@ -221,6 +226,15 @@
 				C422051226DDBB0800293DDE /* Heartbeats.ahap */,
 			);
 			path = AHAP;
+			sourceTree = "<group>";
+		};
+		C4626E6A26E7D0FB00BFBD12 /* LetterScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */,
+				C4626E6D26E7D12900BFBD12 /* LetterScene.sks */,
+			);
+			path = LetterScene;
 			sourceTree = "<group>";
 		};
 		C4A0468626D6817500697E6F /* PeriodicTableScene */ = {
@@ -322,6 +336,7 @@
 				C422051526DDBB0800293DDE /* Drums.wav in Resources */,
 				C422051626DDBB0800293DDE /* Boing.ahap in Resources */,
 				C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */,
+				C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */,
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
 				C422051926DDBB0800293DDE /* Sparkle.ahap in Resources */,
 				C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */,
@@ -349,6 +364,7 @@
 			files = (
 				0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */,
 				C4B4F68626DE530600BB8E36 /* MapZoomScene.swift in Sources */,
+				C4626E6C26E7D10D00BFBD12 /* LetterScene.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
 				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
