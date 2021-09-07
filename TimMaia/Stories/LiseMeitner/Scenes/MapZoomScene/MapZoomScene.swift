@@ -29,8 +29,8 @@ class MapZoomScene: SKScene {
   private var isTransitioning: Bool = false
   private var totalScenes: Int = 4
   private var pinchCount: CGFloat = 1.0
-  private var pinchFactor: CGFloat = 1.5
-  private var zoomInScale: CGFloat = 0.988
+  private var pinchFactor: CGFloat = 1.7
+  private var zoomInScale: CGFloat = 0.985
   private var zoomOutScale: CGFloat = 0.008
   private var previousGestureScale: CGFloat = 1.0
   
