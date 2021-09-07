@@ -10,12 +10,22 @@
 		0C106B7026D68005004B0CD6 /* DegreeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C106B6F26D68005004B0CD6 /* DegreeScene.sks */; };
 		0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C106B7326D680AC004B0CD6 /* DegreeScene.swift */; };
 		0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C106B7526D7D968004B0CD6 /* SquareProps.swift */; };
+		0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C106B7826DE515A004B0CD6 /* BasementScene.swift */; };
+		0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C106B7A26DE5169004B0CD6 /* BasementScene.sks */; };
 		0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */; };
 		0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */; };
 		0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1F26D52C20007A4CEA /* ViewController.swift */; };
 		0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2126D52C20007A4CEA /* Main.storyboard */; };
 		0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2426D52C22007A4CEA /* Assets.xcassets */; };
 		0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CCE2626D52C22007A4CEA /* LaunchScreen.storyboard */; };
+		0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B29B26DE6EAA002B87F0 /* BlowDetector.swift */; };
+		0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B29D26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift */; };
+		0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B29F26E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift */; };
+		0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A426E10663002B87F0 /* BlackboardScene.swift */; };
+		0CF1B2A726E10671002B87F0 /* BlackboardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A626E10671002B87F0 /* BlackboardScene.sks */; };
+		0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */; };
+		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
+		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
 		C422051326DDBB0800293DDE /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422050A26DDBB0800293DDE /* Inflate.ahap */; };
@@ -40,6 +50,8 @@
 		0C106B6F26D68005004B0CD6 /* DegreeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DegreeScene.sks; sourceTree = "<group>"; };
 		0C106B7326D680AC004B0CD6 /* DegreeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeScene.swift; sourceTree = "<group>"; };
 		0C106B7526D7D968004B0CD6 /* SquareProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareProps.swift; sourceTree = "<group>"; };
+		0C106B7826DE515A004B0CD6 /* BasementScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementScene.swift; sourceTree = "<group>"; };
+		0C106B7A26DE5169004B0CD6 /* BasementScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BasementScene.sks; sourceTree = "<group>"; };
 		0C3CCE1826D52C20007A4CEA /* TimMaia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimMaia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +60,14 @@
 		0C3CCE2426D52C22007A4CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C3CCE2726D52C22007A4CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3CCE2926D52C22007A4CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CF1B29B26DE6EAA002B87F0 /* BlowDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlowDetector.swift; sourceTree = "<group>"; };
+		0CF1B29D26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		0CF1B29F26E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		0CF1B2A426E10663002B87F0 /* BlackboardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardScene.swift; sourceTree = "<group>"; };
+		0CF1B2A626E10671002B87F0 /* BlackboardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlackboardScene.sks; sourceTree = "<group>"; };
+		0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
+		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C422050A26DDBB0800293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
@@ -101,6 +121,7 @@
 				0C106B6F26D68005004B0CD6 /* DegreeScene.sks */,
 				0C106B7326D680AC004B0CD6 /* DegreeScene.swift */,
 				0C106B7526D7D968004B0CD6 /* SquareProps.swift */,
+				0CF1B29F26E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift */,
 			);
 			path = DegreeScene;
 			sourceTree = "<group>";
@@ -109,10 +130,23 @@
 			isa = PBXGroup;
 			children = (
 				C4B4F68226DE52D500BB8E36 /* MapZoomScene */,
+				0CF1B2A126E10620002B87F0 /* BlackboardScene */,
+				0C106B7726DE5147004B0CD6 /* BasementScene */,
 				C4A0468626D6817500697E6F /* PeriodicTableScene */,
 				0C106B6D26D67FAE004B0CD6 /* DegreeScene */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0C106B7726DE5147004B0CD6 /* BasementScene */ = {
+			isa = PBXGroup;
+			children = (
+				0C106B7826DE515A004B0CD6 /* BasementScene.swift */,
+				0C106B7A26DE5169004B0CD6 /* BasementScene.sks */,
+				0CF1B29B26DE6EAA002B87F0 /* BlowDetector.swift */,
+				0CF1B29D26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift */,
+			);
+			path = BasementScene;
 			sourceTree = "<group>";
 		};
 		0C3CCE0F26D52C20007A4CEA = {
@@ -146,6 +180,26 @@
 				0C3CCE2926D52C22007A4CEA /* Info.plist */,
 			);
 			path = TimMaia;
+			sourceTree = "<group>";
+		};
+		0CF1B2A126E10620002B87F0 /* BlackboardScene */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1B2AA26E110C1002B87F0 /* Utils */,
+				0CF1B2A426E10663002B87F0 /* BlackboardScene.swift */,
+				0CF1B2A626E10671002B87F0 /* BlackboardScene.sks */,
+				0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */,
+			);
+			path = BlackboardScene;
+			sourceTree = "<group>";
+		};
+		0CF1B2AA26E110C1002B87F0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */,
+				0CF1B2AD26E110DF002B87F0 /* SKView+.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C422050926DDBB0800293DDE /* AHAP */ = {
@@ -256,6 +310,7 @@
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
 				C422051926DDBB0800293DDE /* Sparkle.ahap in Resources */,
 				C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */,
+				0CF1B2A726E10671002B87F0 /* BlackboardScene.sks in Resources */,
 				C422051426DDBB0800293DDE /* Drums.ahap in Resources */,
 				0C106B7026D68005004B0CD6 /* DegreeScene.sks in Resources */,
 				0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */,
@@ -263,6 +318,7 @@
 				C422051326DDBB0800293DDE /* Inflate.ahap in Resources */,
 				0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */,
 				C422051726DDBB0800293DDE /* Rumble.ahap in Resources */,
+				0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */,
 				C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */,
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
 				C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */,
@@ -279,14 +335,22 @@
 				0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */,
 				C4B4F68626DE530600BB8E36 /* MapZoomScene.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
+				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
+				0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */,
+				0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */,
+				0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
+				0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
+				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
+				0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
 				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
 				C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */,
+				0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQJF9G685U;
+				DEVELOPMENT_TEAM = L5C36X97NN;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,7 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQJF9G685U;
+				DEVELOPMENT_TEAM = L5C36X97NN;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
