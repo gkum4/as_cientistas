@@ -39,8 +39,11 @@
 		C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051226DDBB0800293DDE /* Heartbeats.ahap */; };
 		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
 		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
+		C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */; };
 		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
 		C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */; };
+		C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */; };
+		C4B4F68626DE530600BB8E36 /* MapZoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4F68526DE530600BB8E36 /* MapZoomScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,8 +81,11 @@
 		C422051226DDBB0800293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
 		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
 		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
+		C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
+		C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapZoomScene.sks; sourceTree = "<group>"; };
+		C4B4F68526DE530600BB8E36 /* MapZoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4B4F68226DE52D500BB8E36 /* MapZoomScene */,
 				0CF1B2A126E10620002B87F0 /* BlackboardScene */,
 				0C106B7726DE5147004B0CD6 /* BasementScene */,
 				C4A0468626D6817500697E6F /* PeriodicTableScene */,
@@ -231,6 +238,16 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		C4B4F68226DE52D500BB8E36 /* MapZoomScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */,
+				C4B4F68526DE530600BB8E36 /* MapZoomScene.swift */,
+				C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */,
+			);
+			path = MapZoomScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +321,7 @@
 				0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */,
 				C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */,
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
+				C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */,
+				C4B4F68626DE530600BB8E36 /* MapZoomScene.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
 				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
@@ -330,6 +349,7 @@
 				0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
 				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
+				C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */,
 				0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
 			);
