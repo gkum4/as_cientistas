@@ -15,7 +15,7 @@ class ViewController: UIViewController {
   }
   
   override func loadView() {
-    let scene = MapZoomScene.create()
+    let scene = TrophyScene.create()
     let sceneView = SKView()
     scene.scaleMode = .aspectFit
     sceneView.presentScene(scene)
