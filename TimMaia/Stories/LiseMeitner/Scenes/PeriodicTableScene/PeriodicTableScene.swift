@@ -69,6 +69,7 @@ class PeriodicTableScene: SKScene {
         elementOnTable.alpha = 1
         periodicElement.alpha = 0
         hapticsManager?.triggerSuccess()
+        print("Próxima cena")
       }
       else { // Moves to initial position on wrong placement
         guard let position = initialElemPos else {

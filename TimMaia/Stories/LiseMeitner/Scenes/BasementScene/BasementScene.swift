@@ -96,10 +96,6 @@ class BasementScene: SKScene {
     }
   }
   
-  func stopDetector() {
-    
-  }
-  
   func touchMoved(toPoint pos : CGPoint) {
   }
   

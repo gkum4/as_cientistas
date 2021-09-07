@@ -8,7 +8,6 @@
 import UIKit
 import CoreHaptics
 
-
 protocol BasementSceneCoreHapticsManager {
   func playSpreadPattern()
   func playClickPattern()
