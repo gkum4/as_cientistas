@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-public struct SquareProps {
+public struct PointProps {
   var checked: Bool
-  var node: SKSpriteNode?
+  var node: SKSpriteNode
 }
