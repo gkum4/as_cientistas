@@ -19,6 +19,7 @@ class LetterScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
+    
     buildLetterAnimation()
     animateLetter()
   }
@@ -36,6 +37,7 @@ class LetterScene: SKScene {
     
     let firstFrameTexture = letterFrames.first
     letter = SKSpriteNode(texture: firstFrameTexture)
+    letter.size = CGSize(width: scene!.frame.width, height: scene!.frame.height)
     letter.position = CGPoint(x: frame.midX, y: frame.midY)
     addChild(letter)
   }
@@ -45,7 +47,7 @@ class LetterScene: SKScene {
                                  timePerFrame: 0.2,
                                  resize: false,
                                  restore: false),
-                withKey: "openingLetter")
+                withKey: "letterAnimation")
   }
   
   func touchDown(atPoint pos : CGPoint) {
@@ -78,4 +80,3 @@ class LetterScene: SKScene {
       // Called before each frame is rendered
   }
 }
-
