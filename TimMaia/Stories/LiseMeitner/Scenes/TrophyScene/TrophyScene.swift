@@ -8,6 +8,10 @@
 import SpriteKit
 
 class TrophyScene: SKScene {
+  private lazy var trophy: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "Trophy-1") as! SKSpriteNode
+  }()
+  
   private lazy var trophyNominee: SKSpriteNode = { [unowned self] in
     return childNode(withName : "TrophyNominee") as! SKSpriteNode
   }()
