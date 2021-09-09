@@ -8,8 +8,8 @@
 import SpriteKit
 
 class LetterScene: SKScene {
-  private var squares: [SquareProps] = []
-  private var numberOfSquares = 24
+  private var letter = SKSpriteNode()
+  private var letterFrames: [SKTexture] = []
   
   static func create() -> SKScene {
     let scene = LetterScene(fileNamed: "LetterScene")
@@ -19,26 +19,39 @@ class LetterScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
+    buildLetterAnimation()
+    animateLetter()
+  }
+  
+  private func buildLetterAnimation() {
+    let letterAtlas = SKTextureAtlas(named: "LetterScene")
+    var frames: [SKTexture] = []
     
-    for i in 0..<numberOfSquares {
-      self.squares.append(
-        SquareProps(
-          checked: false,
-          node: (self.childNode(withName: "//sq\(i)") as? SKSpriteNode)
-        )
-      )
+    let numImages = letterAtlas.textureNames.count
+    for i in 0..<numImages {
+      let letterTextureName = "Letter-\(i)"
+      frames.append(letterAtlas.textureNamed(letterTextureName))
     }
+    letterFrames = frames
+    
+    let firstFrameTexture = letterFrames.first
+    letter = SKSpriteNode(texture: firstFrameTexture)
+    letter.position = CGPoint(x: frame.midX, y: frame.midY)
+    addChild(letter)
+  }
+  
+  private func animateLetter() {
+    letter.run(SKAction.animate(with: letterFrames,
+                                 timePerFrame: 0.2,
+                                 resize: false,
+                                 restore: false),
+                withKey: "openingLetter")
   }
   
   func touchDown(atPoint pos : CGPoint) {
   }
   
   func touchMoved(toPoint pos : CGPoint) {
-    for i in 0..<numberOfSquares {
-      if self.squares[i].node?.contains(pos) == true {
-        self.squares[i].node?.run(SKAction.fadeOut(withDuration: 1))
-      }
-    }
   }
   
   func touchUp(atPoint pos : CGPoint) {
