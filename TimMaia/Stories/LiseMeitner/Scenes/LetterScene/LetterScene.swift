@@ -10,6 +10,13 @@ import SpriteKit
 class LetterScene: SKScene {
   private var letter = SKSpriteNode()
   private var letterFrames: [SKTexture] = []
+  private var text = DynamicTextManager(text: "Texto de teste utilizado para fazer testes",
+                                    startPos: CGPoint(x: -200, y: 300),
+                                    textWidth: 400)
+
+  
+  private var textSize: Int?
+  private var letterNodes = [SKLabelNode]()
   
   static func create() -> SKScene {
     let scene = LetterScene(fileNamed: "LetterScene")
@@ -19,6 +26,12 @@ class LetterScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
+
+    textSize = text.textSize
+    letterNodes = text.lettersNodes
+    for node in letterNodes {
+      addChild(node)
+    }
     
     buildLetterAnimation()
     animateLetter()
@@ -54,6 +67,11 @@ class LetterScene: SKScene {
   }
   
   func touchMoved(toPoint pos : CGPoint) {
+    for i in 0..<textSize! {
+      if letterNodes[i].contains(pos) {
+        letterNodes[i].run(SKAction.fadeIn(withDuration: 1))
+      }
+    }
   }
   
   func touchUp(atPoint pos : CGPoint) {
