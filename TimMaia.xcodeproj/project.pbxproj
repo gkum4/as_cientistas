@@ -26,6 +26,7 @@
 		0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */; };
 		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
 		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
+		0CF1B2DE26ED3CCD002B87F0 /* SceneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2DD26ED3CCD002B87F0 /* SceneTransition.swift */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
 		C422051326DDBB0800293DDE /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422050A26DDBB0800293DDE /* Inflate.ahap */; };
@@ -65,6 +66,7 @@
 		0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
 		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
+		0CF1B2DD26ED3CCD002B87F0 /* SceneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransition.swift; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C422050A26DDBB0800293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		0C3CCE1A26D52C20007A4CEA /* TimMaia */ = {
 			isa = PBXGroup;
 			children = (
+				0CF1B2DC26ED3CC0002B87F0 /* Utils */,
 				C422050926DDBB0800293DDE /* AHAP */,
 				C4B12D2B26DC5AB10061F46B /* Managers */,
 				0C106B6B26D67F62004B0CD6 /* Stories */,
@@ -191,6 +194,22 @@
 			children = (
 				0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */,
 				0CF1B2AD26E110DF002B87F0 /* SKView+.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0CF1B2DB26ED3CB6002B87F0 /* SceneTransition */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1B2DD26ED3CCD002B87F0 /* SceneTransition.swift */,
+			);
+			path = SceneTransition;
+			sourceTree = "<group>";
+		};
+		0CF1B2DC26ED3CC0002B87F0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1B2DB26ED3CB6002B87F0 /* SceneTransition */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -324,6 +343,7 @@
 				0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
 				0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */,
+				0CF1B2DE26ED3CCD002B87F0 /* SceneTransition.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
