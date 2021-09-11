@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-private var symbols = [ "œ", "∑", "€", "®", "ŧ", "ø", "þ", "§", "•", "¶", "¬", "¢", "£", "æ", "ß", "ð", "đ", "∆", "ħ", "ʝ", "ĸ", "ł", "·", "~", "Ω", "…", "≈", "₢", "ʋ", "∫", "ŋ", "µ", "≤", "≥", ">", "<", "-", "+", "=", "/", "%", "*", "Ø", "€", "∏", "±"]
+private var symbols = [ "œ", "∑", "ŧ", "ø", "þ", "§", "•", "¶", "¬", "¢", "£", "æ", "ß", "ð", "đ", "∆", "ħ", "ʝ", "ĸ", "ł", "~", "Ω", "≈", "₢", "ʋ", "∫", "ŋ", "µ", "≤", "≥", ">", "<", "-", "+", "=", "/", "%", "*", "Ø", "€", "∏", "±"]
 
 class DegreeScene: SKScene {
   private var degreeImage: SKSpriteNode!
@@ -32,6 +32,8 @@ class DegreeScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    self.backgroundColor = UIColor(named: "Areia")!
+    
     for i in 0..<numberOfPoints {
       let newPoint = PointProps(
         checked: false,
@@ -60,7 +62,7 @@ class DegreeScene: SKScene {
   }
   
   @objc func runTip() {
-    tooltip.position = points[0].node.position
+    tooltip.position = points[numberOfPoints/4].node.position
     tooltip.fillColor = .black
     tooltip.strokeColor = .clear
     tooltip.alpha = 0.5
@@ -69,7 +71,7 @@ class DegreeScene: SKScene {
     
     var tooltipAnimationSequence: [SKAction] = []
     
-    for i in 1..<numberOfPoints/3 {
+    for i in (0...numberOfPoints/4).reversed() {
       tooltipAnimationSequence.append(.move(to: points[i].node.position, duration: 0.2))
     }
     
@@ -97,10 +99,10 @@ class DegreeScene: SKScene {
     let symbolAnimation: SKAction = .sequence([
       .group([
         .move(
-          by: CGVector(dx: Int.random(in: -40...40), dy: Int.random(in: -40...40)),
+          by: CGVector(dx: Int.random(in: -70...70), dy: Int.random(in: -70...70)),
           duration: 0.3
         ),
-        .fadeOut(withDuration: 0.4)
+        .fadeOut(withDuration: 0.7)
       ]),
       .run {
         symbol.removeFromParent()
@@ -126,19 +128,22 @@ class DegreeScene: SKScene {
     tooltip.alpha = 0
     
     points[pointArrNumber].checked = true
-    
-    checkIfCompletedGame()
   }
   
-  func checkIfCompletedGame() {
+  func checkIfCompletedGame() -> Bool {
+    var counter = 0
+    
     for i in 0..<numberOfPoints {
-      if !points[i].checked {
-        startTooltipTimer()
-        return
+      if points[i].checked {
+        counter += 1
       }
     }
     
-    onGameEnd()
+    if counter > numberOfPoints/4 {
+      return true
+    }
+    
+    return false
   }
   
   func onGameEnd() {
@@ -192,6 +197,12 @@ class DegreeScene: SKScene {
       return
     }
     
+    if checkIfCompletedGame() {
+      onGameEnd()
+      return
+    }
+    
+    startTooltipTimer()
     clearPoints()
   }
   
