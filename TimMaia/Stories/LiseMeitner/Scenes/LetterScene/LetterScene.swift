@@ -67,9 +67,11 @@ class LetterScene: SKScene {
   }
   
   func touchMoved(toPoint pos : CGPoint) {
-    for i in 0..<textSize! {
+    for i in 1..<textSize!-1 {
       if letterNodes[i].contains(pos) {
+        letterNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
         letterNodes[i].run(SKAction.fadeIn(withDuration: 1))
+        letterNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
       }
     }
   }
