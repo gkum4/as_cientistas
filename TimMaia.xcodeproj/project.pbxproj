@@ -50,6 +50,9 @@
 		C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */; };
 		C4B4F68626DE530600BB8E36 /* MapZoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4F68526DE530600BB8E36 /* MapZoomScene.swift */; };
 		C4B5674626EB8921005F865A /* DynamicTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5674526EB8921005F865A /* DynamicTextManager.swift */; };
+		C4F6F09026EE353700FF382C /* LisePlayingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F6F08F26EE353700FF382C /* LisePlayingScene.swift */; };
+		C4F6F09226EE355000FF382C /* LisePlayingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4F6F09126EE355000FF382C /* LisePlayingScene.sks */; };
+		C4F6F09426EE359800FF382C /* LisePlayingScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C4F6F09326EE359800FF382C /* LisePlayingScene.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +101,9 @@
 		C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapZoomScene.sks; sourceTree = "<group>"; };
 		C4B4F68526DE530600BB8E36 /* MapZoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomScene.swift; sourceTree = "<group>"; };
 		C4B5674526EB8921005F865A /* DynamicTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextManager.swift; sourceTree = "<group>"; };
+		C4F6F08F26EE353700FF382C /* LisePlayingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisePlayingScene.swift; sourceTree = "<group>"; };
+		C4F6F09126EE355000FF382C /* LisePlayingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LisePlayingScene.sks; sourceTree = "<group>"; };
+		C4F6F09326EE359800FF382C /* LisePlayingScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LisePlayingScene.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4F6F08E26EE352500FF382C /* LisePlayingScene */,
 				C4626E6A26E7D0FB00BFBD12 /* LetterScene */,
 				C4A8AC8D26E16D4500CED26E /* TrophyScene */,
 				C4B4F68226DE52D500BB8E36 /* MapZoomScene */,
@@ -282,6 +289,16 @@
 			path = MapZoomScene;
 			sourceTree = "<group>";
 		};
+		C4F6F08E26EE352500FF382C /* LisePlayingScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4F6F09326EE359800FF382C /* LisePlayingScene.atlas */,
+				C4F6F08F26EE353700FF382C /* LisePlayingScene.swift */,
+				C4F6F09126EE355000FF382C /* LisePlayingScene.sks */,
+			);
+			path = LisePlayingScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,6 +356,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F6F09426EE359800FF382C /* LisePlayingScene.atlas in Resources */,
+				C4F6F09226EE355000FF382C /* LisePlayingScene.sks in Resources */,
 				C422051526DDBB0800293DDE /* Drums.wav in Resources */,
 				C422051626DDBB0800293DDE /* Boing.ahap in Resources */,
 				C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */,
@@ -377,6 +396,7 @@
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
 				0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */,
+				C4F6F09026EE353700FF382C /* LisePlayingScene.swift in Sources */,
 				0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */,
 				0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
@@ -475,6 +495,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				"Texture Atlas Maximum Size" = 4096x4096;
 			};
 			name = Debug;
 		};
@@ -529,6 +550,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				"Texture Atlas Maximum Size" = 4096x4096;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
