@@ -12,7 +12,7 @@ class DynamicTextManager {
     "a": 22, "b": 22, "c": 22, "d": 24, "e": 19, "f": 17, "g": 24, "h": 17,
     "i": 14, "j": 20, "k": 16, "l": 12, "m": 26, "n": 21, "o": 22, "p": 21,
     "q": 21, "r": 18, "s": 18, "t": 16, "u": 20, "v": 20, "w": 24, "x": 20,
-    "y": 22, "z": 20, " ": 20, "'": 0, ",": 0
+    "y": 22, "z": 20, " ": 20, ",": 0
   ]
   
   let text: String?
@@ -50,7 +50,14 @@ class DynamicTextManager {
       node.fontColor = .black
       node.position = CGPoint(x: startPos!.x + xDisp + spacing!, y: startPos!.y + yDisp)
       
-      xDisp += defaultLetterSpacing[String(letter).lowercased()]! + spacing!
+      
+      let defaultSpace = defaultLetterSpacing[String(letter).lowercased()]
+      if defaultSpace != nil {
+        xDisp += defaultSpace! + spacing!
+      }
+      else {
+        xDisp += spacing!
+      }
       
       if textWidth! < xDisp {
         xDisp = 0
