@@ -18,18 +18,18 @@ class LisePlayingScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    buildLetterAnimation()
-    animateLetter()
+    buildSceneAnimation()
+    animateScene()
   }
   
-  private func buildLetterAnimation() {
+  private func buildSceneAnimation() {
     let sceneAtlas = SKTextureAtlas(named: "LisePlayingScene")
     var frames: [SKTexture] = []
     
     let numImages = sceneAtlas.textureNames.count
     for i in 0..<numImages {
-      let letterTextureName = "PlayingScene-\(i)"
-      frames.append(sceneAtlas.textureNamed(letterTextureName))
+      let textureName = "PlayingScene-\(i)"
+      frames.append(sceneAtlas.textureNamed(textureName))
     }
     sceneFrames = frames
     
@@ -40,7 +40,7 @@ class LisePlayingScene: SKScene {
     addChild(sceneAnimation)
   }
   
-  private func animateLetter() {
+  private func animateScene() {
     sceneAnimation.run(SKAction.animate(with: sceneFrames,
                                  timePerFrame: 0.2,
                                  resize: false,
