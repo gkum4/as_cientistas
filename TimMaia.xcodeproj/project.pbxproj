@@ -26,6 +26,10 @@
 		0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */; };
 		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
 		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
+		420C209D26EF856B00D32A7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C209C26EF856B00D32A7D /* HomeViewController.swift */; };
+		420C209F26EF88DC00D32A7D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420C209E26EF88DC00D32A7D /* Home.storyboard */; };
+		420C20A126EF8C4A00D32A7D /* InícioHistória.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420C20A026EF8C4A00D32A7D /* InícioHistória.storyboard */; };
+		420C20A326EF8C6000D32A7D /* HistóriaComingSoon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420C20A226EF8C6000D32A7D /* HistóriaComingSoon.storyboard */; };
 		C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
@@ -86,6 +90,10 @@
 		0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
 		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
+		420C209C26EF856B00D32A7D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		420C209E26EF88DC00D32A7D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		420C20A026EF8C4A00D32A7D /* InícioHistória.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "InícioHistória.storyboard"; sourceTree = "<group>"; };
+		420C20A226EF8C6000D32A7D /* HistóriaComingSoon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "HistóriaComingSoon.storyboard"; sourceTree = "<group>"; };
 		C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LetterScene.atlas; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		0C106B6C26D67F75004B0CD6 /* LiseMeitner */ = {
 			isa = PBXGroup;
 			children = (
+				420C209B26EF850400D32A7D /* Home */,
 				0C106B6E26D67FBD004B0CD6 /* Scenes */,
 			);
 			path = LiseMeitner;
@@ -242,6 +251,17 @@
 				0CF1B2AD26E110DF002B87F0 /* SKView+.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		420C209B26EF850400D32A7D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				420C209C26EF856B00D32A7D /* HomeViewController.swift */,
+				420C209E26EF88DC00D32A7D /* Home.storyboard */,
+				420C20A026EF8C4A00D32A7D /* InícioHistória.storyboard */,
+				420C20A226EF8C6000D32A7D /* HistóriaComingSoon.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		C422050926DDBB0800293DDE /* AHAP */ = {
@@ -408,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F6F09426EE359800FF382C /* LisePlayingScene.atlas in Resources */,
+				420C209F26EF88DC00D32A7D /* Home.storyboard in Resources */,
 				C4F6F09226EE355000FF382C /* LisePlayingScene.sks in Resources */,
 				C422051526DDBB0800293DDE /* Drums.wav in Resources */,
 				C422051626DDBB0800293DDE /* Boing.ahap in Resources */,
@@ -416,6 +437,8 @@
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
 				C4C40BE326EE710200CAEDE0 /* LaboratoryScene.sks in Resources */,
 				C422051926DDBB0800293DDE /* Sparkle.ahap in Resources */,
+				420C20A326EF8C6000D32A7D /* HistóriaComingSoon.storyboard in Resources */,
+				420C20A126EF8C4A00D32A7D /* InícioHistória.storyboard in Resources */,
 				C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */,
 				0CF1B2A726E10671002B87F0 /* BlackboardScene.sks in Resources */,
 				C492D61D26EE8B7100478CB5 /* BasementDoorScene.atlas in Resources */,
@@ -471,6 +494,7 @@
 				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
 				C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */,
 				0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */,
+				420C209D26EF856B00D32A7D /* HomeViewController.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,13 +645,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQJF9G685U;
+				DEVELOPMENT_TEAM = THSG8VL67S;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.kuma.TimMaia;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fred;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -640,13 +664,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQJF9G685U;
+				DEVELOPMENT_TEAM = THSG8VL67S;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.kuma.TimMaia;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fred;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
