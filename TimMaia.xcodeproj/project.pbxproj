@@ -12,6 +12,7 @@
 		0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C106B7526D7D968004B0CD6 /* SquareProps.swift */; };
 		0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C106B7826DE515A004B0CD6 /* BasementScene.swift */; };
 		0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C106B7A26DE5169004B0CD6 /* BasementScene.sks */; };
+		0C3C7BA126EF7C1D00A6A904 /* TooltipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA026EF7C1D00A6A904 /* TooltipManager.swift */; };
 		0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */; };
 		0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */; };
 		0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1F26D52C20007A4CEA /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 		0C106B7526D7D968004B0CD6 /* SquareProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareProps.swift; sourceTree = "<group>"; };
 		0C106B7826DE515A004B0CD6 /* BasementScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementScene.swift; sourceTree = "<group>"; };
 		0C106B7A26DE5169004B0CD6 /* BasementScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BasementScene.sks; sourceTree = "<group>"; };
+		0C3C7BA026EF7C1D00A6A904 /* TooltipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipManager.swift; sourceTree = "<group>"; };
 		0C3CCE1826D52C20007A4CEA /* TimMaia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimMaia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				C4B5674526EB8921005F865A /* DynamicTextManager.swift */,
 				C4B12D2926DC58730061F46B /* HapticsManager.swift */,
 				C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */,
+				0C3C7BA026EF7C1D00A6A904 /* TooltipManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				C4F6F09026EE353700FF382C /* LisePlayingScene.swift in Sources */,
 				C4C40BE126EE70F900CAEDE0 /* LaboratoryScene.swift in Sources */,
 				0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */,
+				0C3C7BA126EF7C1D00A6A904 /* TooltipManager.swift in Sources */,
 				C4C40BE526EE796D00CAEDE0 /* LaboratorySceneHapticsManager.swift in Sources */,
 				0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
