@@ -39,6 +39,9 @@
 		C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051126DDBB0800293DDE /* Gravel.ahap */; };
 		C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051226DDBB0800293DDE /* Heartbeats.ahap */; };
 		C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */; };
+		C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */; };
+		C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */; };
+		C44C607D26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */; };
 		C4626E6C26E7D10D00BFBD12 /* LetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */; };
 		C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4626E6D26E7D12900BFBD12 /* LetterScene.sks */; };
 		C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */; };
@@ -103,6 +106,9 @@
 		C422051126DDBB0800293DDE /* Gravel.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gravel.ahap; sourceTree = "<group>"; };
 		C422051226DDBB0800293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
 		C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LaboratorySceneKnob.atlas; sourceTree = "<group>"; };
+		C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingScene.swift; sourceTree = "<group>"; };
+		C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseTeachingScene.sks; sourceTree = "<group>"; };
+		C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterScene.swift; sourceTree = "<group>"; };
 		C4626E6D26E7D12900BFBD12 /* LetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LetterScene.sks; sourceTree = "<group>"; };
 		C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementDoorScene.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C44C607926EFEE020049F370 /* LiseTeachingScene */,
 				C4D80BCC26EF7C0000B870AB /* ChemistryInstituteScene */,
 				C492D61726EE8A6000478CB5 /* BasementDoorScene */,
 				C4C40BDF26EE70EA00CAEDE0 /* LaboratoryScene */,
@@ -267,6 +274,16 @@
 				C422051226DDBB0800293DDE /* Heartbeats.ahap */,
 			);
 			path = AHAP;
+			sourceTree = "<group>";
+		};
+		C44C607926EFEE020049F370 /* LiseTeachingScene */ = {
+			isa = PBXGroup;
+			children = (
+				C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */,
+				C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */,
+				C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */,
+			);
+			path = LiseTeachingScene;
 			sourceTree = "<group>";
 		};
 		C4626E6A26E7D0FB00BFBD12 /* LetterScene */ = {
@@ -433,6 +450,7 @@
 				C422051626DDBB0800293DDE /* Boing.ahap in Resources */,
 				C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */,
 				C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */,
+				C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */,
 				C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */,
 				C4D80BD026EF7C1E00B870AB /* ChemistryInstituteScene.sks in Resources */,
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
@@ -471,6 +489,7 @@
 				C4626E6C26E7D10D00BFBD12 /* LetterScene.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
 				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
+				C44C607D26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift in Sources */,
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
 				0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */,
@@ -489,6 +508,7 @@
 				C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
 				0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */,
+				C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */,
 				C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */,
 				C492D61F26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
