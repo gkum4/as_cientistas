@@ -8,8 +8,8 @@
 import SpriteKit
 
 class LaboratoryScene: SKScene {
-  private lazy var notice: SKLabelNode = { [unowned self] in
-    return childNode(withName : "LaboratoryNotice") as! SKLabelNode
+  private lazy var notice: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "LaboratoryNotice") as! SKSpriteNode
   }()
   private lazy var knobArea: SKSpriteNode = { [unowned self] in
     return childNode(withName : "KnobArea") as! SKSpriteNode
@@ -31,7 +31,8 @@ class LaboratoryScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    notice.text = "Men \n only"
+    let noticeText = notice.children.first as! SKLabelNode
+    noticeText.text = "Men \n only"
   }
   
   func touchDown(atPoint pos : CGPoint) {
@@ -55,7 +56,7 @@ class LaboratoryScene: SKScene {
     doorKnob.run(seq)
     hapticsManager?.triggerWarning()
     if totalClicks > 3 {
-      notice.run(.fadeAlpha(to: 1, duration: 1))
+      notice.run(.fadeAlpha(to: 1, duration: 2))
     }
   }
   
