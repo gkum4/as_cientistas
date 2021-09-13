@@ -8,8 +8,8 @@
 import SpriteKit
 
 class LaboratoryScene: SKScene {
-  private lazy var notice: SKLabelNode = { [unowned self] in
-    return childNode(withName : "LaboratoryNotice") as! SKLabelNode
+  private lazy var notice: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "LaboratoryNotice") as! SKSpriteNode
   }()
   private lazy var knobArea: SKSpriteNode = { [unowned self] in
     return childNode(withName : "KnobArea") as! SKSpriteNode
@@ -17,6 +17,9 @@ class LaboratoryScene: SKScene {
   private lazy var doorKnob: SKSpriteNode = { [unowned self] in
     return childNode(withName : "DoorKnob") as! SKSpriteNode
   }()
+  
+  private var knobAnimation = SKSpriteNode()
+  private var knobFrames: [SKTexture] = []
   
   
   private var hapticsManager: LaboratorySceneHapticsManager?
@@ -31,7 +34,44 @@ class LaboratoryScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    notice.text = "Men \n only"
+    let noticeText = notice.children.first as! SKLabelNode
+    noticeText.text = "Men \n only"
+
+    buildKnobAnimation()
+  }
+  
+  private func buildKnobAnimation() {
+    let sceneAtlas = SKTextureAtlas(named: "LaboratorySceneKnob")
+    var frames: [SKTexture] = []
+    
+    let numImages = sceneAtlas.textureNames.count
+    for i in 0..<numImages {
+      let textureName = "doorKnob-\(i)"
+      frames.append(sceneAtlas.textureNamed(textureName))
+    }
+    knobFrames = frames
+    
+    let firstFrameTexture = knobFrames.first
+    knobAnimation = SKSpriteNode(texture: firstFrameTexture)
+    knobAnimation.size = CGSize(width: doorKnob.frame.width, height: doorKnob.frame.height)
+    knobAnimation.position = CGPoint(x: doorKnob.position.x, y: doorKnob.position.y)
+    addChild(knobAnimation)
+  }
+  
+  private func animateKnob() {
+    totalClicks += 1
+    
+    knobAnimation.run(SKAction.animate(with: knobFrames,
+                                 timePerFrame: 0.1,
+                                 resize: false,
+                                 restore: true),
+                withKey: "knobAnimation")
+    hapticsManager?.triggerWarning()
+    notice.run(.fadeAlpha(to: notice.alpha + 0.1, duration: 1))
+    
+    if notice.alpha >= 0.6 {
+      print("Próxima cena")
+    }
   }
   
   func touchDown(atPoint pos : CGPoint) {
@@ -43,19 +83,6 @@ class LaboratoryScene: SKScene {
   func touchUp(atPoint pos : CGPoint) {
     if knobArea.contains(pos) {
       animateKnob()
-    }
-  }
-  
-  private func animateKnob() {
-    totalClicks += 1
-    
-    let knobDown = SKAction.rotate(toAngle: 0.1, duration: 0.2)
-    let knobUp = SKAction.rotate(toAngle: 0, duration: 0.2)
-    let seq = SKAction.sequence([knobDown, knobUp])
-    doorKnob.run(seq)
-    hapticsManager?.triggerWarning()
-    if totalClicks > 3 {
-      notice.run(.fadeAlpha(to: 1, duration: 1))
     }
   }
   

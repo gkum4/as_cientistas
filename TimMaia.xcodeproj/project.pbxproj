@@ -38,6 +38,7 @@
 		C422051926DDBB0800293DDE /* Sparkle.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051026DDBB0800293DDE /* Sparkle.ahap */; };
 		C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051126DDBB0800293DDE /* Gravel.ahap */; };
 		C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051226DDBB0800293DDE /* Heartbeats.ahap */; };
+		C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */; };
 		C4626E6C26E7D10D00BFBD12 /* LetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */; };
 		C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4626E6D26E7D12900BFBD12 /* LetterScene.sks */; };
 		C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */; };
@@ -101,6 +102,7 @@
 		C422051026DDBB0800293DDE /* Sparkle.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sparkle.ahap; sourceTree = "<group>"; };
 		C422051126DDBB0800293DDE /* Gravel.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gravel.ahap; sourceTree = "<group>"; };
 		C422051226DDBB0800293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
+		C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LaboratorySceneKnob.atlas; sourceTree = "<group>"; };
 		C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterScene.swift; sourceTree = "<group>"; };
 		C4626E6D26E7D12900BFBD12 /* LetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LetterScene.sks; sourceTree = "<group>"; };
 		C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementDoorScene.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		C4C40BDF26EE70EA00CAEDE0 /* LaboratoryScene */ = {
 			isa = PBXGroup;
 			children = (
+				C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */,
 				C4C40BE026EE70F900CAEDE0 /* LaboratoryScene.swift */,
 				C4C40BE226EE710200CAEDE0 /* LaboratoryScene.sks */,
 				C4C40BE426EE796D00CAEDE0 /* LaboratorySceneHapticsManager.swift */,
@@ -429,6 +432,7 @@
 				C422051526DDBB0800293DDE /* Drums.wav in Resources */,
 				C422051626DDBB0800293DDE /* Boing.ahap in Resources */,
 				C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */,
+				C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */,
 				C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */,
 				C4D80BD026EF7C1E00B870AB /* ChemistryInstituteScene.sks in Resources */,
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
