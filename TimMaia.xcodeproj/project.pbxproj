@@ -59,7 +59,7 @@
 		C4C40BE526EE796D00CAEDE0 /* LaboratorySceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C40BE426EE796D00CAEDE0 /* LaboratorySceneHapticsManager.swift */; };
 		C4D80BCE26EF7C1200B870AB /* ChemistryInstituteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D80BCD26EF7C1200B870AB /* ChemistryInstituteScene.swift */; };
 		C4D80BD026EF7C1E00B870AB /* ChemistryInstituteScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4D80BCF26EF7C1E00B870AB /* ChemistryInstituteScene.sks */; };
-		C4D80BD226EF84F000B870AB /* ChemistryInstituteScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C4D80BD126EF84F000B870AB /* ChemistryInstituteScene.atlas */; };
+		C4D80BD426EF927400B870AB /* ChemistryInstituteScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C4D80BD326EF927400B870AB /* ChemistryInstituteScene.atlas */; };
 		C4F6F09026EE353700FF382C /* LisePlayingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F6F08F26EE353700FF382C /* LisePlayingScene.swift */; };
 		C4F6F09226EE355000FF382C /* LisePlayingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4F6F09126EE355000FF382C /* LisePlayingScene.sks */; };
 		C4F6F09426EE359800FF382C /* LisePlayingScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C4F6F09326EE359800FF382C /* LisePlayingScene.atlas */; };
@@ -122,7 +122,7 @@
 		C4C40BE426EE796D00CAEDE0 /* LaboratorySceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboratorySceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4D80BCD26EF7C1200B870AB /* ChemistryInstituteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryInstituteScene.swift; sourceTree = "<group>"; };
 		C4D80BCF26EF7C1E00B870AB /* ChemistryInstituteScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ChemistryInstituteScene.sks; sourceTree = "<group>"; };
-		C4D80BD126EF84F000B870AB /* ChemistryInstituteScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ChemistryInstituteScene.atlas; sourceTree = "<group>"; };
+		C4D80BD326EF927400B870AB /* ChemistryInstituteScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ChemistryInstituteScene.atlas; sourceTree = "<group>"; };
 		C4F6F08F26EE353700FF382C /* LisePlayingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisePlayingScene.swift; sourceTree = "<group>"; };
 		C4F6F09126EE355000FF382C /* LisePlayingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LisePlayingScene.sks; sourceTree = "<group>"; };
 		C4F6F09326EE359800FF382C /* LisePlayingScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LisePlayingScene.atlas; sourceTree = "<group>"; };
@@ -341,7 +341,7 @@
 		C4D80BCC26EF7C0000B870AB /* ChemistryInstituteScene */ = {
 			isa = PBXGroup;
 			children = (
-				C4D80BD126EF84F000B870AB /* ChemistryInstituteScene.atlas */,
+				C4D80BD326EF927400B870AB /* ChemistryInstituteScene.atlas */,
 				C4D80BCD26EF7C1200B870AB /* ChemistryInstituteScene.swift */,
 				C4D80BCF26EF7C1E00B870AB /* ChemistryInstituteScene.sks */,
 			);
@@ -443,7 +443,7 @@
 				0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */,
 				C4F6F09A26EE37BD00FF382C /* DadScene.sks in Resources */,
 				C422051326DDBB0800293DDE /* Inflate.ahap in Resources */,
-				C4D80BD226EF84F000B870AB /* ChemistryInstituteScene.atlas in Resources */,
+				C4D80BD426EF927400B870AB /* ChemistryInstituteScene.atlas in Resources */,
 				0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */,
 				C422051726DDBB0800293DDE /* Rumble.ahap in Resources */,
 				0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */,

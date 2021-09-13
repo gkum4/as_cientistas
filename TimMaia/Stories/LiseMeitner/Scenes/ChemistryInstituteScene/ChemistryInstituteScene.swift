@@ -11,6 +11,10 @@ class ChemistryInstituteScene: SKScene {
   private var sceneAnimation = SKSpriteNode()
   private var sceneFrames: [SKTexture] = []
   
+  private lazy var instituteName: SKLabelNode = { [unowned self] in
+    return childNode(withName : "InstituteName") as! SKLabelNode
+  }()
+  
   static func create() -> SKScene {
     let scene = ChemistryInstituteScene(fileNamed: "ChemistryInstituteScene")
 
@@ -18,6 +22,8 @@ class ChemistryInstituteScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    instituteName.text = "Kaiser Wilhelm \n Institute"
+    
     buildSceneAnimation()
     animateScene()
   }
@@ -42,9 +48,9 @@ class ChemistryInstituteScene: SKScene {
   
   private func animateScene() {
     sceneAnimation.run(SKAction.animate(with: sceneFrames,
-                                 timePerFrame: 0.2,
+                                 timePerFrame: 0.4,
                                  resize: false,
-                                 restore: false),
+                                 restore: true),
                 withKey: "instituteAnimation")
   }
   
