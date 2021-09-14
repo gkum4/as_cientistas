@@ -27,9 +27,19 @@
 		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
 		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
 		420C209D26EF856B00D32A7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C209C26EF856B00D32A7D /* HomeViewController.swift */; };
-		420C209F26EF88DC00D32A7D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420C209E26EF88DC00D32A7D /* Home.storyboard */; };
-		420C20A126EF8C4A00D32A7D /* HistóriaPublicada.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420C20A026EF8C4A00D32A7D /* HistóriaPublicada.storyboard */; };
-		420C20A326EF8C6000D32A7D /* HistóriaFutura.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420C20A226EF8C6000D32A7D /* HistóriaFutura.storyboard */; };
+		420C20A626F0D21C00D32A7D /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C20A526F0D21C00D32A7D /* CardTableViewCell.swift */; };
+		420C20B426F0EDAF00D32A7D /* NewYorkSmall-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20A826F0EDAD00D32A7D /* NewYorkSmall-Black.otf */; };
+		420C20B526F0EDAF00D32A7D /* NewYorkSmall-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20A926F0EDAD00D32A7D /* NewYorkSmall-HeavyItalic.otf */; };
+		420C20B626F0EDAF00D32A7D /* NewYorkSmall-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20AA26F0EDAD00D32A7D /* NewYorkSmall-MediumItalic.otf */; };
+		420C20B726F0EDAF00D32A7D /* NewYorkSmall-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20AB26F0EDAD00D32A7D /* NewYorkSmall-BoldItalic.otf */; };
+		420C20B826F0EDAF00D32A7D /* NewYorkSmall-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20AC26F0EDAE00D32A7D /* NewYorkSmall-BlackItalic.otf */; };
+		420C20B926F0EDAF00D32A7D /* NewYorkSmall-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20AD26F0EDAE00D32A7D /* NewYorkSmall-SemiboldItalic.otf */; };
+		420C20BA26F0EDAF00D32A7D /* NewYorkSmall-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20AE26F0EDAE00D32A7D /* NewYorkSmall-RegularItalic.otf */; };
+		420C20BB26F0EDAF00D32A7D /* NewYorkSmall-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20AF26F0EDAE00D32A7D /* NewYorkSmall-Semibold.otf */; };
+		420C20BC26F0EDAF00D32A7D /* NewYorkSmall-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20B026F0EDAE00D32A7D /* NewYorkSmall-Heavy.otf */; };
+		420C20BD26F0EDAF00D32A7D /* NewYorkSmall-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20B126F0EDAF00D32A7D /* NewYorkSmall-Bold.otf */; };
+		420C20BE26F0EDAF00D32A7D /* NewYorkSmall-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20B226F0EDAF00D32A7D /* NewYorkSmall-Medium.otf */; };
+		420C20BF26F0EDAF00D32A7D /* NewYorkSmall-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20B326F0EDAF00D32A7D /* NewYorkSmall-Regular.otf */; };
 		C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
@@ -91,9 +101,19 @@
 		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
 		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
 		420C209C26EF856B00D32A7D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		420C209E26EF88DC00D32A7D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		420C20A026EF8C4A00D32A7D /* HistóriaPublicada.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "HistóriaPublicada.storyboard"; sourceTree = "<group>"; };
-		420C20A226EF8C6000D32A7D /* HistóriaFutura.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "HistóriaFutura.storyboard"; sourceTree = "<group>"; };
+		420C20A526F0D21C00D32A7D /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		420C20A826F0EDAD00D32A7D /* NewYorkSmall-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Black.otf"; sourceTree = "<group>"; };
+		420C20A926F0EDAD00D32A7D /* NewYorkSmall-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-HeavyItalic.otf"; sourceTree = "<group>"; };
+		420C20AA26F0EDAD00D32A7D /* NewYorkSmall-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-MediumItalic.otf"; sourceTree = "<group>"; };
+		420C20AB26F0EDAD00D32A7D /* NewYorkSmall-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-BoldItalic.otf"; sourceTree = "<group>"; };
+		420C20AC26F0EDAE00D32A7D /* NewYorkSmall-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-BlackItalic.otf"; sourceTree = "<group>"; };
+		420C20AD26F0EDAE00D32A7D /* NewYorkSmall-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		420C20AE26F0EDAE00D32A7D /* NewYorkSmall-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-RegularItalic.otf"; sourceTree = "<group>"; };
+		420C20AF26F0EDAE00D32A7D /* NewYorkSmall-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Semibold.otf"; sourceTree = "<group>"; };
+		420C20B026F0EDAE00D32A7D /* NewYorkSmall-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Heavy.otf"; sourceTree = "<group>"; };
+		420C20B126F0EDAF00D32A7D /* NewYorkSmall-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Bold.otf"; sourceTree = "<group>"; };
+		420C20B226F0EDAF00D32A7D /* NewYorkSmall-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Medium.otf"; sourceTree = "<group>"; };
+		420C20B326F0EDAF00D32A7D /* NewYorkSmall-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Regular.otf"; sourceTree = "<group>"; };
 		C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LetterScene.atlas; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
@@ -219,6 +239,8 @@
 		0C3CCE1A26D52C20007A4CEA /* TimMaia */ = {
 			isa = PBXGroup;
 			children = (
+				420C20C026F0F10400D32A7D /* Exemplo */,
+				420C20A726F0ED5A00D32A7D /* Fonts */,
 				C422050926DDBB0800293DDE /* AHAP */,
 				C4B12D2B26DC5AB10061F46B /* Managers */,
 				0C106B6B26D67F62004B0CD6 /* Stories */,
@@ -257,11 +279,35 @@
 			isa = PBXGroup;
 			children = (
 				420C209C26EF856B00D32A7D /* HomeViewController.swift */,
-				420C209E26EF88DC00D32A7D /* Home.storyboard */,
-				420C20A026EF8C4A00D32A7D /* HistóriaPublicada.storyboard */,
-				420C20A226EF8C6000D32A7D /* HistóriaFutura.storyboard */,
+				420C20A526F0D21C00D32A7D /* CardTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		420C20A726F0ED5A00D32A7D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				420C20A826F0EDAD00D32A7D /* NewYorkSmall-Black.otf */,
+				420C20AC26F0EDAE00D32A7D /* NewYorkSmall-BlackItalic.otf */,
+				420C20B126F0EDAF00D32A7D /* NewYorkSmall-Bold.otf */,
+				420C20AB26F0EDAD00D32A7D /* NewYorkSmall-BoldItalic.otf */,
+				420C20B026F0EDAE00D32A7D /* NewYorkSmall-Heavy.otf */,
+				420C20A926F0EDAD00D32A7D /* NewYorkSmall-HeavyItalic.otf */,
+				420C20B226F0EDAF00D32A7D /* NewYorkSmall-Medium.otf */,
+				420C20AA26F0EDAD00D32A7D /* NewYorkSmall-MediumItalic.otf */,
+				420C20B326F0EDAF00D32A7D /* NewYorkSmall-Regular.otf */,
+				420C20AE26F0EDAE00D32A7D /* NewYorkSmall-RegularItalic.otf */,
+				420C20AF26F0EDAE00D32A7D /* NewYorkSmall-Semibold.otf */,
+				420C20AD26F0EDAE00D32A7D /* NewYorkSmall-SemiboldItalic.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		420C20C026F0F10400D32A7D /* Exemplo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Exemplo;
 			sourceTree = "<group>";
 		};
 		C422050926DDBB0800293DDE /* AHAP */ = {
@@ -428,7 +474,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F6F09426EE359800FF382C /* LisePlayingScene.atlas in Resources */,
-				420C209F26EF88DC00D32A7D /* Home.storyboard in Resources */,
 				C4F6F09226EE355000FF382C /* LisePlayingScene.sks in Resources */,
 				C422051526DDBB0800293DDE /* Drums.wav in Resources */,
 				C422051626DDBB0800293DDE /* Boing.ahap in Resources */,
@@ -437,23 +482,33 @@
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
 				C4C40BE326EE710200CAEDE0 /* LaboratoryScene.sks in Resources */,
 				C422051926DDBB0800293DDE /* Sparkle.ahap in Resources */,
-				420C20A326EF8C6000D32A7D /* HistóriaFutura.storyboard in Resources */,
-				420C20A126EF8C4A00D32A7D /* HistóriaPublicada.storyboard in Resources */,
 				C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */,
+				420C20B626F0EDAF00D32A7D /* NewYorkSmall-MediumItalic.otf in Resources */,
 				0CF1B2A726E10671002B87F0 /* BlackboardScene.sks in Resources */,
+				420C20B726F0EDAF00D32A7D /* NewYorkSmall-BoldItalic.otf in Resources */,
+				420C20B526F0EDAF00D32A7D /* NewYorkSmall-HeavyItalic.otf in Resources */,
+				420C20B426F0EDAF00D32A7D /* NewYorkSmall-Black.otf in Resources */,
 				C492D61D26EE8B7100478CB5 /* BasementDoorScene.atlas in Resources */,
+				420C20B926F0EDAF00D32A7D /* NewYorkSmall-SemiboldItalic.otf in Resources */,
+				420C20BA26F0EDAF00D32A7D /* NewYorkSmall-RegularItalic.otf in Resources */,
 				C422051426DDBB0800293DDE /* Drums.ahap in Resources */,
 				0C106B7026D68005004B0CD6 /* DegreeScene.sks in Resources */,
 				0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */,
 				0C3CCE2526D52C22007A4CEA /* Assets.xcassets in Resources */,
 				C4F6F09A26EE37BD00FF382C /* DadScene.sks in Resources */,
 				C422051326DDBB0800293DDE /* Inflate.ahap in Resources */,
+				420C20BB26F0EDAF00D32A7D /* NewYorkSmall-Semibold.otf in Resources */,
 				0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */,
+				420C20BD26F0EDAF00D32A7D /* NewYorkSmall-Bold.otf in Resources */,
+				420C20B826F0EDAF00D32A7D /* NewYorkSmall-BlackItalic.otf in Resources */,
 				C422051726DDBB0800293DDE /* Rumble.ahap in Resources */,
 				0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */,
 				C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */,
 				C492D61B26EE8A7A00478CB5 /* BasementDoorScene.sks in Resources */,
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
+				420C20BC26F0EDAF00D32A7D /* NewYorkSmall-Heavy.otf in Resources */,
+				420C20BF26F0EDAF00D32A7D /* NewYorkSmall-Regular.otf in Resources */,
+				420C20BE26F0EDAF00D32A7D /* NewYorkSmall-Medium.otf in Resources */,
 				C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */,
 				C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */,
 			);
@@ -493,6 +548,7 @@
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
 				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
 				C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */,
+				420C20A626F0D21C00D32A7D /* CardTableViewCell.swift in Sources */,
 				0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */,
 				420C209D26EF856B00D32A7D /* HomeViewController.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
