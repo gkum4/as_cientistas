@@ -40,6 +40,7 @@
 		C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422051226DDBB0800293DDE /* Heartbeats.ahap */; };
 		C43CBC6D26F0D22D003B6FAB /* PrizesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CBC6C26F0D22D003B6FAB /* PrizesScene.swift */; };
 		C43CBC6F26F0D23B003B6FAB /* PrizesScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C43CBC6E26F0D23B003B6FAB /* PrizesScene.sks */; };
+		C43CBC7126F0E99E003B6FAB /* PrizesSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */; };
 		C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */; };
 		C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */; };
 		C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */; };
@@ -109,6 +110,7 @@
 		C422051226DDBB0800293DDE /* Heartbeats.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeats.ahap; sourceTree = "<group>"; };
 		C43CBC6C26F0D22D003B6FAB /* PrizesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizesScene.swift; sourceTree = "<group>"; };
 		C43CBC6E26F0D23B003B6FAB /* PrizesScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PrizesScene.sks; sourceTree = "<group>"; };
+		C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizesSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LaboratorySceneKnob.atlas; sourceTree = "<group>"; };
 		C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingScene.swift; sourceTree = "<group>"; };
 		C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseTeachingScene.sks; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			children = (
 				C43CBC6C26F0D22D003B6FAB /* PrizesScene.swift */,
 				C43CBC6E26F0D23B003B6FAB /* PrizesScene.sks */,
+				C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */,
 			);
 			path = PrizesScene;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				C43CBC6D26F0D22D003B6FAB /* PrizesScene.swift in Sources */,
 				C4F6F09826EE37B000FF382C /* DadScene.swift in Sources */,
 				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
+				C43CBC7126F0E99E003B6FAB /* PrizesSceneHapticsManager.swift in Sources */,
 				C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
 				0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */,

@@ -11,8 +11,11 @@ class PrizesScene: SKScene {
   private var numberOfPrizes = 4
   private var prizesNodes =  [SKSpriteNode]()
   
+  private var hapticsManager: PrizesSceneHapticsManager?
+  
   static func create() -> SKScene {
     let scene = PrizesScene(fileNamed: "PrizesScene")
+    scene?.hapticsManager = DefaultPrizesSceneHapticsManager()
 
     return scene!
   }
@@ -28,11 +31,16 @@ class PrizesScene: SKScene {
     }
   }
   
+  private func fadeNodeOut(node: SKSpriteNode) {
+    node.run(.fadeOut(withDuration: 2))
+    hapticsManager?.triggerSuccess()
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
     for index in 0..<numberOfPrizes {
       let prizeBack = prizesNodes[index]
       if prizeBack.contains(pos) {
-        prizeBack.run(.fadeOut(withDuration: 2))
+        fadeNodeOut(node: prizeBack)
       }
     }
   }
