@@ -52,6 +52,11 @@ class BasementDoorScene: SKScene {
                                  resize: false,
                                  restore: false),
                 withKey: "doorOpeningAnimation")
+    
+    let wait = SKAction.wait(forDuration: 2)
+    let zoomIn = SKAction.scale(to: 1.3, duration: 1)
+    let sequence = SKAction.sequence([wait, zoomIn])
+    sceneAnimation.run(sequence)
   }
   
   func touchDown(atPoint pos : CGPoint) {
