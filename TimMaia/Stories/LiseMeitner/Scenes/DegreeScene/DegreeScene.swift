@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-private var symbols = [ "œ", "∑", "ŧ", "ø", "þ", "§", "•", "¶", "¬", "¢", "£", "æ", "ß", "ð", "đ", "∆", "ħ", "ʝ", "ĸ", "ł", "~", "Ω", "≈", "₢", "ʋ", "∫", "ŋ", "µ", "≤", "≥", ">", "<", "-", "+", "=", "/", "%", "*", "Ø", "€", "∏", "±"]
+private var symbols = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "∑", "π", "∆", "Ω", "√", "ƒ", "∫", "µ", "ß", "∂", "ø", "∞", "ﬁ", "ϕ", "∏"]
 
 class DegreeScene: SKScene {
   private var degreeImage: SKSpriteNode!
@@ -16,11 +16,9 @@ class DegreeScene: SKScene {
   private var points: [PointProps] = []
   var numberOfPoints = 19
   
-  let tooltip = SKShapeNode(circleOfRadius: 30)
-  private var tooltipTimer: Timer!
+  var tooltipManager: TooltipManager!
   
   var gameEnded = false
-  
   
   private var coreHapticsManager: DegreeSceneCoreHapticsManager?
   
@@ -48,39 +46,26 @@ class DegreeScene: SKScene {
     degreeImage = self.childNode(withName: "//degree") as? SKSpriteNode
     degreeKnotImage = self.childNode(withName: "//degreeKnot") as? SKSpriteNode
     
-    startTooltipTimer()
-  }
-  
-  func startTooltipTimer() {
-    tooltipTimer = Timer.scheduledTimer(
-      timeInterval: 5,
-      target: self,
-      selector: #selector(self.runTip),
-      userInfo: nil,
-      repeats: true
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: points[numberOfPoints/4].node.position,
+      timeBetweenAnimations: 5,
+      animationType: .custom
     )
+    
+    buildTooltipAnimation()
+    
+    tooltipManager.startAnimation()
   }
   
-  @objc func runTip() {
-    tooltip.position = points[numberOfPoints/4].node.position
-    tooltip.fillColor = .black
-    tooltip.strokeColor = .clear
-    tooltip.alpha = 0.5
-    
-    self.addChild(tooltip)
-    
-    var tooltipAnimationSequence: [SKAction] = []
+  private func buildTooltipAnimation() {
+    var positions: [CGPoint] = []
     
     for i in (0...numberOfPoints/4).reversed() {
-      tooltipAnimationSequence.append(.move(to: points[i].node.position, duration: 0.2))
+      positions.append(points[i].node.position)
     }
     
-    tooltipAnimationSequence.append(.fadeOut(withDuration: 0.2))
-    tooltipAnimationSequence.append(.run {
-      self.tooltip.removeFromParent()
-    })
-    
-    tooltip.run(.sequence(tooltipAnimationSequence))
+    tooltipManager.buildCustomAction(positions: positions, timeBetweenPositions: 0.2)
   }
   
   func clearPoints() {
@@ -124,8 +109,7 @@ class DegreeScene: SKScene {
   }
   
   func onPointCheck(_ pointArrNumber: Int) {
-    tooltipTimer.invalidate()
-    tooltip.alpha = 0
+    tooltipManager.stopAnimation()
     
     points[pointArrNumber].checked = true
   }
@@ -147,6 +131,7 @@ class DegreeScene: SKScene {
   }
   
   func onGameEnd() {
+    tooltipManager.stopAnimation()
     gameEnded = true
     
     let degreeKnotAnimation: SKAction = .group([
@@ -186,6 +171,7 @@ class DegreeScene: SKScene {
   
   func touchMoved(toPoint pos : CGPoint) {
     if gameEnded {
+      generateSymbol(at: pos)
       return
     }
     
@@ -202,7 +188,7 @@ class DegreeScene: SKScene {
       return
     }
     
-    startTooltipTimer()
+    tooltipManager.startAnimation()
     clearPoints()
   }
   
