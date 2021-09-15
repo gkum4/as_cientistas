@@ -1,5 +1,5 @@
 //
-//  LetterScene.swift
+//  OttoLetterScene.swift
 //  TimMaia
 //
 //  Created by João Pedro Picolo on 07/09/21.
@@ -7,11 +7,11 @@
 
 import SpriteKit
 
-class LetterScene: SKScene {
+class OttoLetterScene: SKScene {
   private var letter = SKSpriteNode()
   private var letterFrames: [SKTexture] = []
   private var text = DynamicTextManager(text: "Texto de teste utilizado para fazer testes",
-                                    startPos: CGPoint(x: -200, y: 300),
+                                    startPos: CGPoint(x: -200, y: 450),
                                     textWidth: 400)
 
   
@@ -19,7 +19,7 @@ class LetterScene: SKScene {
   private var letterNodes = [SKLabelNode]()
   
   static func create() -> SKScene {
-    let scene = LetterScene(fileNamed: "LetterScene")
+    let scene = OttoLetterScene(fileNamed: "OttoLetterScene")
 
     return scene!
   }
@@ -38,7 +38,7 @@ class LetterScene: SKScene {
   }
   
   private func buildLetterAnimation() {
-    let letterAtlas = SKTextureAtlas(named: "LetterScene")
+    let letterAtlas = SKTextureAtlas(named: "OttoLetterScene")
     var frames: [SKTexture] = []
     
     let numImages = letterAtlas.textureNames.count
