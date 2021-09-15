@@ -10,7 +10,7 @@ import SpriteKit
 class CarScene: SKScene {
   private var car: SKSpriteNode!
   private var fishes: [SKSpriteNode] = []
-  private var clickablePoints: [SKSpriteNode] = []
+  private var clickablePoints: [ClickablePoint] = []
   private var pointPositions: [CGPoint] = []
   
   var clickablePointIds = [1, 5, 10, 13]
@@ -22,9 +22,12 @@ class CarScene: SKScene {
   
   var animationRunning = false
   
-  var discoverablePoints = 1
+  var discoverablePoints = 0
+  
+  var allPointsTouched = false
   
   private var coreHapticsManager: CarSceneCoreHapticsManager?
+  private var tooltipManager: TooltipManager!
   
   static func create() -> SKScene {
     let scene = CarScene(fileNamed: "CarScene")
@@ -48,9 +51,9 @@ class CarScene: SKScene {
       
       if i < clickablePointIds.count {
         clickablePoints.append(
-          (self.childNode(withName: "point\(i)") as! SKSpriteNode)
+          .init(node: (self.childNode(withName: "point\(i)") as! SKSpriteNode))
         )
-        clickablePoints[i].alpha = 0.5
+        clickablePoints[i].node.alpha = 0.5
       }
     }
     
@@ -61,6 +64,15 @@ class CarScene: SKScene {
         .rotate(byAngle: CGFloat(-0.0872665*2), duration: 0.2),
       ])))
     }
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: clickablePoints[0].node.position,
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+    
+    tooltipManager.startAnimation()
   }
   
 //  private func getMoveCarAnimation(
@@ -88,12 +100,11 @@ class CarScene: SKScene {
 //
 //  }
   
-  private func moveCar(pointIdSelected: Int) {
+  private func moveCar(pointIdSelected: Int, onAnimationEnd: @escaping () -> Void) {
     if pointIdSelected == actualPointId {
+      animationRunning = false
       return
     }
-    
-    self.animationRunning = true
     
     var carAnimationSequence: [SKAction] = [
       .wait(forDuration: 0.8),
@@ -112,9 +123,7 @@ class CarScene: SKScene {
       }
     }
     
-    carAnimationSequence.append(.run {
-      self.animationRunning = false
-    })
+    carAnimationSequence.append(.run(onAnimationEnd))
     
     car.run(.sequence(carAnimationSequence))
     
@@ -135,18 +144,62 @@ class CarScene: SKScene {
     point.run(animation)
   }
   
+  private func setupTooltip() {
+    if discoverablePoints == clickablePoints.count {
+      tooltipManager.stopAnimation()
+      return
+    }
+    
+    self.tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: clickablePoints[discoverablePoints].node.position,
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+  }
+  
+  private func updateDiscoverablePoints() {
+    var result = 0
+    
+    for point in clickablePoints {
+      if point.clicked {
+        result += 1
+      }
+    }
+    
+    if result == clickablePoints.count {
+      allPointsTouched = true
+    }
+    
+    discoverablePoints = result
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
     if animationRunning {
       return
     }
     
-    for i in 0..<discoverablePoints {
-      if clickablePoints[i].contains(pos) && i < clickablePoints.count {
-        moveCar(pointIdSelected: clickablePointIds[i])
+    for i in 0...discoverablePoints {
+      if clickablePoints[i].node.contains(pos) && i < clickablePoints.count {
+        clickablePoints[i].clicked = true
         
-        runPointTouchAnimation(point: clickablePoints[i])
+        updateDiscoverablePoints()
         
-        discoverablePoints += 1
+        self.animationRunning = true
+        allPointsTouched ? nil : tooltipManager.stopAnimation()
+        
+        setupTooltip()
+        
+        moveCar(
+          pointIdSelected: clickablePointIds[i],
+          onAnimationEnd: {
+            self.allPointsTouched ? nil : self.tooltipManager.startAnimation()
+            self.animationRunning = false
+          }
+        )
+        
+        runPointTouchAnimation(point: clickablePoints[i].node)
+        
         break
       }
     }
