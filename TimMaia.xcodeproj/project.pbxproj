@@ -60,6 +60,8 @@
 		C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */; };
 		C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */; };
 		C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A8AC9026E16D7800CED26E /* TrophyScene.sks */; };
+		C4AFC71426F2670400E6E2AF /* LiseFinalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AFC71326F2670400E6E2AF /* LiseFinalScene.swift */; };
+		C4AFC71626F2671000E6E2AF /* LiseFinalScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4AFC71526F2671000E6E2AF /* LiseFinalScene.sks */; };
 		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
 		C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */; };
 		C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */; };
@@ -134,6 +136,8 @@
 		C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyScene.swift; sourceTree = "<group>"; };
 		C4A8AC9026E16D7800CED26E /* TrophyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrophyScene.sks; sourceTree = "<group>"; };
+		C4AFC71326F2670400E6E2AF /* LiseFinalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseFinalScene.swift; sourceTree = "<group>"; };
+		C4AFC71526F2671000E6E2AF /* LiseFinalScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseFinalScene.sks; sourceTree = "<group>"; };
 		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 		C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapZoomScene.sks; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A325AA26F227A600934998 /* InterviewScene */,
+				C4AFC71226F266FB00E6E2AF /* LiseFinalScene */,
 				C4A325A426F218E800934998 /* NobelLetterScene */,
 				C43CBC6B26F0D220003B6FAB /* PrizesScene */,
 				C44C607926EFEE020049F370 /* LiseTeachingScene */,
@@ -372,6 +377,15 @@
 			path = TrophyScene;
 			sourceTree = "<group>";
 		};
+		C4AFC71226F266FB00E6E2AF /* LiseFinalScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4AFC71326F2670400E6E2AF /* LiseFinalScene.swift */,
+				C4AFC71526F2671000E6E2AF /* LiseFinalScene.sks */,
+			);
+			path = LiseFinalScene;
+			sourceTree = "<group>";
+		};
 		C4B12D2B26DC5AB10061F46B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +521,7 @@
 				0CF1B2A726E10671002B87F0 /* BlackboardScene.sks in Resources */,
 				C43CBC6F26F0D23B003B6FAB /* PrizesScene.sks in Resources */,
 				C492D61D26EE8B7100478CB5 /* BasementDoorScene.atlas in Resources */,
+				C4AFC71626F2671000E6E2AF /* LiseFinalScene.sks in Resources */,
 				C422051426DDBB0800293DDE /* Drums.ahap in Resources */,
 				0C106B7026D68005004B0CD6 /* DegreeScene.sks in Resources */,
 				0C3CCE2826D52C22007A4CEA /* LaunchScreen.storyboard in Resources */,
@@ -552,6 +567,7 @@
 				C4B5674626EB8921005F865A /* DynamicTextManager.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				C43CBC6D26F0D22D003B6FAB /* PrizesScene.swift in Sources */,
+				C4AFC71426F2670400E6E2AF /* LiseFinalScene.swift in Sources */,
 				C4F6F09826EE37B000FF382C /* DadScene.swift in Sources */,
 				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
 				C43CBC7126F0E99E003B6FAB /* PrizesSceneHapticsManager.swift in Sources */,
