@@ -1,40 +1,40 @@
 //
-//  BasementDoorScene.swift
+//  ChemistryInstituteScene.swift
 //  TimMaia
 //
-//  Created by João Pedro Picolo on 12/09/21.
+//  Created by João Pedro Picolo on 13/09/21.
 //
 
 import SpriteKit
 
-class BasementDoorScene: SKScene {
-  private lazy var knobArea: SKSpriteNode = { [unowned self] in
-    return childNode(withName : "KnobArea") as! SKSpriteNode
-  }()
-  
+class ChemistryInstituteScene: SKScene {
   private var sceneAnimation = SKSpriteNode()
   private var sceneFrames: [SKTexture] = []
   
-  private var hapticsManager: BasementDoorSceneHapticsManager?
+  private lazy var instituteName: SKLabelNode = { [unowned self] in
+    return childNode(withName : "InstituteName") as! SKLabelNode
+  }()
   
   static func create() -> SKScene {
-    let scene = BasementDoorScene(fileNamed: "BasementDoorScene")
-    scene?.hapticsManager = DefaultBasementDoorSceneHapticsManager()
+    let scene = ChemistryInstituteScene(fileNamed: "ChemistryInstituteScene")
 
     return scene!
   }
   
   override func didMove(to view: SKView) {
+    instituteName.text = "Kaiser Wilhelm \n Institute"
+    
     buildSceneAnimation()
+    animateScene()
   }
   
   private func buildSceneAnimation() {
-    let sceneAtlas = SKTextureAtlas(named: "BasementDoorScene")
+    let sceneAtlas = SKTextureAtlas(named: "ChemistryInstituteScene")
     var frames: [SKTexture] = []
     
     let numImages = sceneAtlas.textureNames.count
     for i in 0..<numImages {
-      let textureName = "BasementDoor-\(i)"
+      let textureName = "InstituteScene-\(i)"
       frames.append(sceneAtlas.textureNamed(textureName))
     }
     sceneFrames = frames
@@ -48,15 +48,10 @@ class BasementDoorScene: SKScene {
   
   private func animateScene() {
     sceneAnimation.run(SKAction.animate(with: sceneFrames,
-                                 timePerFrame: 0.1,
+                                 timePerFrame: 0.4,
                                  resize: false,
-                                 restore: false),
-                withKey: "doorOpeningAnimation")
-    
-    let wait = SKAction.wait(forDuration: 2)
-    let zoomIn = SKAction.scale(to: 1.3, duration: 1)
-    let sequence = SKAction.sequence([wait, zoomIn])
-    sceneAnimation.run(sequence)
+                                 restore: true),
+                withKey: "instituteAnimation")
   }
   
   func touchDown(atPoint pos : CGPoint) {
@@ -66,10 +61,6 @@ class BasementDoorScene: SKScene {
   }
   
   func touchUp(atPoint pos : CGPoint) {
-    if knobArea.contains(pos) {
-      animateScene()
-      hapticsManager?.triggerSuccess()
-    }
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -93,4 +84,3 @@ class BasementDoorScene: SKScene {
       // Called before each frame is rendered
   }
 }
-
