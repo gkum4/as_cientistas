@@ -26,7 +26,7 @@
 		0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */; };
 		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
 		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
-		C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */; };
+		C41653BE26EABC5B00D5F3D6 /* OttoLetterScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C41653BD26EABC5B00D5F3D6 /* OttoLetterScene.atlas */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
 		C422051326DDBB0800293DDE /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422050A26DDBB0800293DDE /* Inflate.ahap */; };
@@ -45,14 +45,16 @@
 		C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */; };
 		C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */; };
 		C44C607D26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */; };
-		C4626E6C26E7D10D00BFBD12 /* LetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */; };
-		C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4626E6D26E7D12900BFBD12 /* LetterScene.sks */; };
+		C4626E6C26E7D10D00BFBD12 /* OttoLetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4626E6B26E7D10D00BFBD12 /* OttoLetterScene.swift */; };
+		C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */; };
 		C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */; };
 		C492D61B26EE8A7A00478CB5 /* BasementDoorScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C492D61A26EE8A7A00478CB5 /* BasementDoorScene.sks */; };
 		C492D61D26EE8B7100478CB5 /* BasementDoorScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C492D61C26EE8B7100478CB5 /* BasementDoorScene.atlas */; };
 		C492D61F26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C492D61E26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift */; };
 		C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */; };
 		C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0468926D681C600697E6F /* PeriodicTableScene.swift */; };
+		C4A325A626F2190900934998 /* NobelLetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A325A526F2190900934998 /* NobelLetterScene.swift */; };
+		C4A325A926F2191D00934998 /* NobelLetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A325A826F2191D00934998 /* NobelLetterScene.sks */; };
 		C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */; };
 		C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */; };
 		C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A8AC9026E16D7800CED26E /* TrophyScene.sks */; };
@@ -96,7 +98,7 @@
 		0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
 		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
-		C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LetterScene.atlas; sourceTree = "<group>"; };
+		C41653BD26EABC5B00D5F3D6 /* OttoLetterScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = OttoLetterScene.atlas; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C422050A26DDBB0800293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
@@ -115,14 +117,16 @@
 		C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingScene.swift; sourceTree = "<group>"; };
 		C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseTeachingScene.sks; sourceTree = "<group>"; };
 		C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingSceneHapticsManager.swift; sourceTree = "<group>"; };
-		C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterScene.swift; sourceTree = "<group>"; };
-		C4626E6D26E7D12900BFBD12 /* LetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LetterScene.sks; sourceTree = "<group>"; };
+		C4626E6B26E7D10D00BFBD12 /* OttoLetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OttoLetterScene.swift; sourceTree = "<group>"; };
+		C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OttoLetterScene.sks; sourceTree = "<group>"; };
 		C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementDoorScene.swift; sourceTree = "<group>"; };
 		C492D61A26EE8A7A00478CB5 /* BasementDoorScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BasementDoorScene.sks; sourceTree = "<group>"; };
 		C492D61C26EE8B7100478CB5 /* BasementDoorScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BasementDoorScene.atlas; sourceTree = "<group>"; };
 		C492D61E26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementDoorSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4A0468726D681AC00697E6F /* PeriodicTableScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PeriodicTableScene.sks; sourceTree = "<group>"; };
 		C4A0468926D681C600697E6F /* PeriodicTableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableScene.swift; sourceTree = "<group>"; };
+		C4A325A526F2190900934998 /* NobelLetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NobelLetterScene.swift; sourceTree = "<group>"; };
+		C4A325A826F2191D00934998 /* NobelLetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NobelLetterScene.sks; sourceTree = "<group>"; };
 		C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyScene.swift; sourceTree = "<group>"; };
 		C4A8AC9026E16D7800CED26E /* TrophyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrophyScene.sks; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4A325A426F218E800934998 /* NobelLetterScene */,
 				C43CBC6B26F0D220003B6FAB /* PrizesScene */,
 				C44C607926EFEE020049F370 /* LiseTeachingScene */,
 				C4D80BCC26EF7C0000B870AB /* ChemistryInstituteScene */,
@@ -192,7 +197,7 @@
 				C4C40BDF26EE70EA00CAEDE0 /* LaboratoryScene */,
 				C4F6F09626EE379D00FF382C /* DadScene */,
 				C4F6F08E26EE352500FF382C /* LisePlayingScene */,
-				C4626E6A26E7D0FB00BFBD12 /* LetterScene */,
+				C4626E6A26E7D0FB00BFBD12 /* OttoLetterScene */,
 				C4A8AC8D26E16D4500CED26E /* TrophyScene */,
 				C4B4F68226DE52D500BB8E36 /* MapZoomScene */,
 				0CF1B2A126E10620002B87F0 /* BlackboardScene */,
@@ -303,14 +308,14 @@
 			path = LiseTeachingScene;
 			sourceTree = "<group>";
 		};
-		C4626E6A26E7D0FB00BFBD12 /* LetterScene */ = {
+		C4626E6A26E7D0FB00BFBD12 /* OttoLetterScene */ = {
 			isa = PBXGroup;
 			children = (
-				C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */,
-				C4626E6B26E7D10D00BFBD12 /* LetterScene.swift */,
-				C4626E6D26E7D12900BFBD12 /* LetterScene.sks */,
+				C41653BD26EABC5B00D5F3D6 /* OttoLetterScene.atlas */,
+				C4626E6B26E7D10D00BFBD12 /* OttoLetterScene.swift */,
+				C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */,
 			);
-			path = LetterScene;
+			path = OttoLetterScene;
 			sourceTree = "<group>";
 		};
 		C492D61726EE8A6000478CB5 /* BasementDoorScene */ = {
@@ -333,6 +338,15 @@
 				C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */,
 			);
 			path = PeriodicTableScene;
+			sourceTree = "<group>";
+		};
+		C4A325A426F218E800934998 /* NobelLetterScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4A325A526F2190900934998 /* NobelLetterScene.swift */,
+				C4A325A826F2191D00934998 /* NobelLetterScene.sks */,
+			);
+			path = NobelLetterScene;
 			sourceTree = "<group>";
 		};
 		C4A8AC8D26E16D4500CED26E /* TrophyScene */ = {
@@ -468,7 +482,8 @@
 				C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */,
 				C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */,
 				C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */,
-				C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */,
+				C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */,
+				C4A325A926F2191D00934998 /* NobelLetterScene.sks in Resources */,
 				C4D80BD026EF7C1E00B870AB /* ChemistryInstituteScene.sks in Resources */,
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
 				C4C40BE326EE710200CAEDE0 /* LaboratoryScene.sks in Resources */,
@@ -490,7 +505,7 @@
 				C4A0468826D681AC00697E6F /* PeriodicTableScene.sks in Resources */,
 				C492D61B26EE8A7A00478CB5 /* BasementDoorScene.sks in Resources */,
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
-				C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */,
+				C41653BE26EABC5B00D5F3D6 /* OttoLetterScene.atlas in Resources */,
 				C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +519,7 @@
 			files = (
 				0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */,
 				C4B4F68626DE530600BB8E36 /* MapZoomScene.swift in Sources */,
-				C4626E6C26E7D10D00BFBD12 /* LetterScene.swift in Sources */,
+				C4626E6C26E7D10D00BFBD12 /* OttoLetterScene.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
 				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
 				C44C607D26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift in Sources */,
@@ -529,6 +544,7 @@
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
 				0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */,
 				C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */,
+				C4A325A626F2190900934998 /* NobelLetterScene.swift in Sources */,
 				C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */,
 				C492D61F26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
