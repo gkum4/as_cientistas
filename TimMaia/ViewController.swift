@@ -30,7 +30,5 @@ class ViewController: UIViewController {
       return .all
     }
   }
-  
-  
 }
 

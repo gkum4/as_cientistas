@@ -16,7 +16,7 @@ class OttoLetterScene: SKScene {
 
   
   private var textSize: Int?
-  private var letterNodes = [SKLabelNode]()
+  private var textNodes = [SKLabelNode]()
   
   static func create() -> SKScene {
     let scene = OttoLetterScene(fileNamed: "OttoLetterScene")
@@ -28,8 +28,8 @@ class OttoLetterScene: SKScene {
     self.backgroundColor = .systemBackground
 
     textSize = text.textSize
-    letterNodes = text.lettersNodes
-    for node in letterNodes {
+    textNodes = text.lettersNodes
+    for node in textNodes {
       addChild(node)
     }
     
@@ -68,10 +68,10 @@ class OttoLetterScene: SKScene {
   
   func touchMoved(toPoint pos : CGPoint) {
     for i in 1..<textSize!-1 {
-      if letterNodes[i].contains(pos) {
-        letterNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
-        letterNodes[i].run(SKAction.fadeIn(withDuration: 1))
-        letterNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
+      if textNodes[i].contains(pos) {
+        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
+        textNodes[i].run(SKAction.fadeIn(withDuration: 1))
+        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
       }
     }
   }
