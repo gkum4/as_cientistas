@@ -15,7 +15,7 @@ class ViewController: UIViewController {
   }
   
   override func loadView() {
-    let scene = BasementDoorScene.create()
+    let scene = NobelLetterScene.create()
     let sceneView = SKView()
     scene.scaleMode = .aspectFill
     sceneView.presentScene(scene)
