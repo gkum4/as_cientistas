@@ -26,12 +26,12 @@ class InterviewScene: SKScene {
   
   private var conversationNodes = [SKLabelNode]()
   private var conversation: [String] = [
-    "Entrevistador: olá amiga, como \n você está?",
-    "Lise: suave, agradeço por perguntar",
-    "Entrevistador: como foi ser uma pessoa incrível?",
-    "Lise: foi legal, super recomedno tentar",
-    "Entrevistador: okay, vou voltar a estudar",
-    "Lise: precisando de ajuda é só me chamar hehe",
+    "Entrevistador: olá amiga, \n como você está?",
+    "Lise: suave, agradeço \n por perguntar",
+    "Entrevistador: como foi ser \n uma pessoa incrível?",
+    "Lise: foi legal, super \n recomendo tentar",
+    "Entrevistador: okay, vou \n voltar a estudar",
+    "Lise: precisando de ajuda \n é só me chamar hehe",
   ]
   
   static func create() -> SKScene {
@@ -46,22 +46,27 @@ class InterviewScene: SKScene {
   
   private func setupConversation() {
     for line in conversation {
+      
       let label = SKLabelNode(text: line)
       label.position = televisionText.position
       label.alpha = 0
+      label.numberOfLines = 0
+      label.fontColor = .white
       
       conversationNodes.append(label)
+      addChild(label)
     }
   }
   
   private func animateConversation() {
     for (index, node) in conversationNodes.enumerated() {
-      let aditionalTime = 3 * Double(index)
+      let aditionalTime = 5 * Double(index)
       
-      let fadeIn = SKAction.fadeIn(withDuration: 1 + aditionalTime)
-      let wait = SKAction.wait(forDuration: 1 + aditionalTime)
-      let fadeOut = SKAction.fadeOut(withDuration: 1 + aditionalTime)
-      let sequence = SKAction.sequence([fadeIn, wait, fadeOut])
+      let beginAfter = SKAction.wait(forDuration: aditionalTime)
+      let fadeIn = SKAction.fadeIn(withDuration: 1)
+      let wait = SKAction.wait(forDuration: 3)
+      let fadeOut = SKAction.fadeOut(withDuration: 1)
+      let sequence = SKAction.sequence([beginAfter, fadeIn, wait, fadeOut])
       node.run(sequence)
     }
   }
@@ -69,25 +74,13 @@ class InterviewScene: SKScene {
   private func turnTvOn() {
     televisionOff.alpha = 0
     isTvOn = true
-    
-    animateConversation()
-  }
-  
-  private func turnTvOff() {
-    televisionOff.alpha = 1
-    televisionText.alpha = 0
 
-    isTvOn = false
+    animateConversation()
   }
   
   func touchDown(atPoint pos : CGPoint) {
     if clickableArea.contains(pos) {
-      if isTvOn {
-        turnTvOff()
-      }
-      else {
-        turnTvOn()
-      }
+      turnTvOn()
     }
   }
   
