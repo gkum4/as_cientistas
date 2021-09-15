@@ -9,14 +9,20 @@ import SpriteKit
 
 class CarScene: SKScene {
   private var car: SKSpriteNode!
-  private var stopPositions: [CGPoint] = []
-  private var nextButton: SKSpriteNode!
+  private var fishes: [SKSpriteNode] = []
+  private var clickablePoints: [SKSpriteNode] = []
+  private var pointPositions: [CGPoint] = []
   
-  var numberOfStops = 4
+  var clickablePointIds = [1, 5, 10, 13]
   
-  var stopStep = 0
+  var actualPointId = 0
   
-  var timer: Timer!
+  var numberOfPoints = 18
+  var numberOfFishes = 3
+  
+  var animationRunning = false
+  
+  var discoverablePoints = 1
   
   private var coreHapticsManager: CarSceneCoreHapticsManager?
   
@@ -28,37 +34,121 @@ class CarScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    car = self.childNode(withName: "//car") as? SKSpriteNode
-    nextButton = self.childNode(withName: "//nextButton") as? SKSpriteNode
+    self.backgroundColor = UIColor(red: 0.241, green: 0.185, blue: 0.154, alpha: 1)
     
-    for i in 1...numberOfStops {
-      stopPositions.append(
-        (self.childNode(withName: "//stop\(i)") as? SKSpriteNode)!.position
+    car = (self.childNode(withName: "car") as! SKSpriteNode)
+    
+    for i in 0..<numberOfPoints {
+      let positionNode = (self.childNode(withName: "point\(i)Position") as! SKSpriteNode)
+      positionNode.alpha = 0
+      
+      pointPositions.append(
+        positionNode.position
       )
+      
+      if i < clickablePointIds.count {
+        clickablePoints.append(
+          (self.childNode(withName: "point\(i)") as! SKSpriteNode)
+        )
+        clickablePoints[i].alpha = 0.5
+      }
+    }
+    
+    for i in 0..<numberOfFishes {
+      fishes.append((self.childNode(withName: "fish\(i)") as! SKSpriteNode))
+      fishes[i].run(.repeatForever(.sequence([
+        .rotate(byAngle: CGFloat(0.0872665*2), duration: 0.2),
+        .rotate(byAngle: CGFloat(-0.0872665*2), duration: 0.2),
+      ])))
     }
   }
   
-  @objc func moveCar() {
-    if stopStep == 4 {
+//  private func getMoveCarAnimation(
+//    from startPoint: CGPoint,
+//    to endPoint: CGPoint,
+//    rotationType: CarSceneCarRotationType
+//  ) -> SKAction {
+//    let adjacentLeg = abs(startPoint.x - endPoint.x)
+//    let oppositeLeg = abs(startPoint.y - endPoint.y)
+//    var angleToRotate = atan(oppositeLeg / adjacentLeg)
+//    
+//    if rotationType == .anticlockwise {
+//      angleToRotate *= -1
+//    }
+//    
+//    let animation: SKAction = .group([
+//      .rotate(byAngle: angleToRotate, duration: 0.3),
+//      .move(to: endPoint, duration: 1)
+//    ])
+//    
+//    return animation
+//  }
+  
+//  private func buildCarAnimation(originPoint: Int) {
+//
+//  }
+  
+  private func moveCar(pointIdSelected: Int) {
+    if pointIdSelected == actualPointId {
       return
     }
     
-    car.run(.move(to: stopPositions[stopStep], duration: 1))
+    self.animationRunning = true
     
-    stopStep += 1
+    var carAnimationSequence: [SKAction] = [
+      .wait(forDuration: 0.8),
+      .run {
+        self.coreHapticsManager?.playRumblePattern()
+      }
+    ]
+    
+    if pointIdSelected > actualPointId {
+      for i in actualPointId+1...pointIdSelected {
+        carAnimationSequence.append(.move(to: pointPositions[i], duration: 0.5))
+      }
+    } else {
+      for i in (pointIdSelected...actualPointId).reversed() {
+        carAnimationSequence.append(.move(to: pointPositions[i], duration: 0.5))
+      }
+    }
+    
+    carAnimationSequence.append(.run {
+      self.animationRunning = false
+    })
+    
+    car.run(.sequence(carAnimationSequence))
+    
+    actualPointId = pointIdSelected
+  }
+  
+  private func runPointTouchAnimation(point: SKSpriteNode) {
+    coreHapticsManager?.playTouchPattern()
+    
+    let animation: SKAction = .group([
+      .fadeIn(withDuration: 0.6),
+      .sequence([
+        .scale(by: 1.2, duration: 0.3),
+        .scale(by: 0.8, duration: 0.3),
+      ])
+    ])
+    
+    point.run(animation)
   }
   
   func touchDown(atPoint pos : CGPoint) {
-//    timer = Timer.scheduledTimer(
-//      timeInterval: 0.4,
-//      target: self,
-//      selector: #selector(self.moveCar),
-//      userInfo: nil,
-//      repeats: true
-//    )
+    if animationRunning {
+      return
+    }
     
-    if nextButton.contains(pos) {
-      moveCar()
+    for i in 0..<discoverablePoints {
+      if clickablePoints[i].contains(pos) && i < clickablePoints.count {
+        moveCar(pointIdSelected: clickablePointIds[i])
+        
+        runPointTouchAnimation(point: clickablePoints[i])
+        
+        discoverablePoints += 1
+        break
+      }
     }
   }
   
@@ -66,8 +156,6 @@ class CarScene: SKScene {
   }
   
   func touchUp(atPoint pos : CGPoint) {
-//    print("timer stop")
-//    timer.invalidate()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -89,5 +177,10 @@ class CarScene: SKScene {
   override func update(_ currentTime: TimeInterval) {
     // Called before each frame is rendered
   }
+}
+
+enum CarSceneCarRotationType {
+  case clockwise
+  case anticlockwise
 }
 

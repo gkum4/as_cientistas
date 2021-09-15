@@ -8,14 +8,14 @@
 import CoreHaptics
 
 protocol CarSceneCoreHapticsManager {
-  func playSpreadPattern()
+  func playTouchPattern()
   func playRumblePattern()
 }
 
 class DefaultCarSceneCoreHapticsManager: CoreHapticsManager, CarSceneCoreHapticsManager {
-  func playSpreadPattern() {
+  func playTouchPattern() {
     do {
-      let pattern = try spreadPattern()
+      let pattern = try touchPattern()
       try playHapticFromPattern(pattern)
     } catch {
       print("Failed to play slice: \(error)")
@@ -28,16 +28,16 @@ class DefaultCarSceneCoreHapticsManager: CoreHapticsManager, CarSceneCoreHaptics
 }
 
 extension DefaultCarSceneCoreHapticsManager {
-  private func spreadPattern() throws -> CHHapticPattern {
-    let spread = CHHapticEvent(
+  private func touchPattern() throws -> CHHapticPattern {
+    let touch = CHHapticEvent(
       eventType: .hapticContinuous,
       parameters: [
-        CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.4),
-        CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.1)
+        CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.7),
+        CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.2),
       ],
       relativeTime: 0,
-      duration: 0.15)
+      duration: 0.1)
 
-    return try CHHapticPattern(events: [spread], parameters: [])
+    return try CHHapticPattern(events: [touch], parameters: [])
   }
 }
