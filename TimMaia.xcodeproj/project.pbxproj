@@ -58,6 +58,8 @@
 		C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */; };
 		C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */; };
 		C4A8AC9126E16D7800CED26E /* TrophyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4A8AC9026E16D7800CED26E /* TrophyScene.sks */; };
+		C4AFC71926F28A7200E6E2AF /* NewsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AFC71826F28A7200E6E2AF /* NewsScene.swift */; };
+		C4AFC71B26F28A7C00E6E2AF /* NewsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4AFC71A26F28A7C00E6E2AF /* NewsScene.sks */; };
 		C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2926DC58730061F46B /* HapticsManager.swift */; };
 		C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */; };
 		C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */; };
@@ -130,6 +132,8 @@
 		C4A8AC8B26E1186500CED26E /* MapZoomSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4A8AC8E26E16D5900CED26E /* TrophyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyScene.swift; sourceTree = "<group>"; };
 		C4A8AC9026E16D7800CED26E /* TrophyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrophyScene.sks; sourceTree = "<group>"; };
+		C4AFC71826F28A7200E6E2AF /* NewsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScene.swift; sourceTree = "<group>"; };
+		C4AFC71A26F28A7C00E6E2AF /* NewsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NewsScene.sks; sourceTree = "<group>"; };
 		C4B12D2926DC58730061F46B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		C4B12D2E26DC61D60061F46B /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 		C4B4F68326DE52F800BB8E36 /* MapZoomScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapZoomScene.sks; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4AFC71726F28A6700E6E2AF /* NewsScene */,
 				C4A325A426F218E800934998 /* NobelLetterScene */,
 				C43CBC6B26F0D220003B6FAB /* PrizesScene */,
 				C44C607926EFEE020049F370 /* LiseTeachingScene */,
@@ -358,6 +363,15 @@
 			path = TrophyScene;
 			sourceTree = "<group>";
 		};
+		C4AFC71726F28A6700E6E2AF /* NewsScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4AFC71826F28A7200E6E2AF /* NewsScene.swift */,
+				C4AFC71A26F28A7C00E6E2AF /* NewsScene.sks */,
+			);
+			path = NewsScene;
+			sourceTree = "<group>";
+		};
 		C4B12D2B26DC5AB10061F46B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +521,7 @@
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
 				C41653BE26EABC5B00D5F3D6 /* OttoLetterScene.atlas in Resources */,
 				C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */,
+				C4AFC71B26F28A7C00E6E2AF /* NewsScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +545,7 @@
 				C4C40BE126EE70F900CAEDE0 /* LaboratoryScene.swift in Sources */,
 				0CF1B29C26DE6EAA002B87F0 /* BlowDetector.swift in Sources */,
 				C4C40BE526EE796D00CAEDE0 /* LaboratorySceneHapticsManager.swift in Sources */,
+				C4AFC71926F28A7200E6E2AF /* NewsScene.swift in Sources */,
 				0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */,
 				C4D80BCE26EF7C1200B870AB /* ChemistryInstituteScene.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
