@@ -12,14 +12,13 @@ private var symbols = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "∑",
 class DegreeScene: SKScene {
   private var degreeImage: SKSpriteNode!
   private var degreeKnotImage: SKSpriteNode!
-  
   private var points: [PointProps] = []
   var numberOfPoints = 19
   
-  var tooltipManager: TooltipManager!
-  
   var gameEnded = false
   
+  private var symbolsManager: SymbolsManager!
+  private var tooltipManager: TooltipManager!
   private var coreHapticsManager: DegreeSceneCoreHapticsManager?
   
   static func create() -> SKScene {
@@ -53,6 +52,8 @@ class DegreeScene: SKScene {
       animationType: .custom
     )
     
+    symbolsManager = SymbolsManager(scene: self)
+    
     buildTooltipAnimation()
     
     tooltipManager.startAnimation()
@@ -74,34 +75,11 @@ class DegreeScene: SKScene {
     }
   }
   
-  func generateSymbol(at pos: CGPoint) {
-    let symbol = SKLabelNode()
-    symbol.text = symbols[Int.random(in: 0..<symbols.count)]
-    symbol.position = pos
-    
-    self.addChild(symbol)
-    
-    let symbolAnimation: SKAction = .sequence([
-      .group([
-        .move(
-          by: CGVector(dx: Int.random(in: -70...70), dy: Int.random(in: -70...70)),
-          duration: 0.3
-        ),
-        .fadeOut(withDuration: 0.7)
-      ]),
-      .run {
-        symbol.removeFromParent()
-      }
-    ])
-    
-    symbol.run(symbolAnimation)
-  }
-  
   func checkPoint(at pos: CGPoint) {
     for i in 0..<numberOfPoints {
       if points[i].node.contains(pos) {
         coreHapticsManager?.playMovePattern()
-        generateSymbol(at: pos)
+        symbolsManager.generateAnimatedSymbol(at: pos)
         onPointCheck(i)
         return
       }
@@ -130,6 +108,44 @@ class DegreeScene: SKScene {
     return false
   }
   
+  func showDegreeText() {
+    let titleTextManager = DynamicTextManager(
+      text: "Berlin University Degree",
+      startPos: CGPoint(x: -225, y: 230),
+      textWidth: 450,
+      lineHeight: 60
+    )
+    
+    let textManager = DynamicTextManager(
+      text: "We awarded Lise Meitner the Ph.D. title with honors for her studies in radioactivity and nuclear physics.",
+      startPos: CGPoint(x: -225, y: 110),
+      textWidth: 450,
+      lineHeight: 60
+    )
+    
+    var textAnimationSequence: [SKAction] = []
+    
+    for charNode in titleTextManager.lettersNodes {
+      textAnimationSequence.append(.run {
+        charNode.alpha = 1
+        self.addChild(charNode)
+        self.symbolsManager.generateAnimatedSymbol(at: charNode.position)
+      })
+      textAnimationSequence.append(.wait(forDuration: 0.1))
+    }
+    
+    for charNode in textManager.lettersNodes {
+      textAnimationSequence.append(.run {
+        charNode.alpha = 1
+        self.addChild(charNode)
+        self.symbolsManager.generateAnimatedSymbol(at: charNode.position)
+      })
+      textAnimationSequence.append(.wait(forDuration: 0.1))
+    }
+    
+    self.run(.sequence(textAnimationSequence))
+  }
+  
   func onGameEnd() {
     tooltipManager.stopAnimation()
     gameEnded = true
@@ -156,6 +172,10 @@ class DegreeScene: SKScene {
       degreeAnimationSequence.append(.wait(forDuration: 0.17))
     }
     
+    degreeAnimationSequence.append(.run {
+      self.showDegreeText()
+    })
+    
     degreeKnotImage.run(degreeKnotAnimation)
     
     degreeImage.run(.sequence(degreeAnimationSequence))
@@ -171,7 +191,7 @@ class DegreeScene: SKScene {
   
   func touchMoved(toPoint pos : CGPoint) {
     if gameEnded {
-      generateSymbol(at: pos)
+      symbolsManager.generateAnimatedSymbol(at: pos)
       return
     }
     
@@ -180,6 +200,7 @@ class DegreeScene: SKScene {
   
   func touchUp(atPoint pos : CGPoint) {
     if gameEnded {
+      print(pos)
       return
     }
     
