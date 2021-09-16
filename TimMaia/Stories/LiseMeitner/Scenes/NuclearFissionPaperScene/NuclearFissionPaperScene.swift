@@ -16,8 +16,8 @@ class NuclearFissionPaperScene: SKScene {
   private var gameEnded = false
   
   private var tooltipManager: TooltipManager!
-  
   private var coreHapticsManager: NuclearFissionPaperSceneCoreHapticsManager?
+  private var symbolsManager: SymbolsManager!
   
   static func create() -> SKScene {
     let scene = NuclearFissionPaperScene(fileNamed: "NuclearFissionPaperScene")
@@ -45,6 +45,8 @@ class NuclearFissionPaperScene: SKScene {
     )
     
     tooltipManager.startAnimation()
+    
+    symbolsManager = SymbolsManager(scene: self)
   }
   
   func movementDetection(pos: CGPoint) {
@@ -65,10 +67,16 @@ class NuclearFissionPaperScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if gameEnded {
+      return
+    }
+    
     tooltipManager.stopAnimation()
   }
   
   func touchMoved(toPoint pos : CGPoint) {
+    symbolsManager.generateAnimatedSymbol(at: pos)
+    
     if gameEnded {
       return
     }
