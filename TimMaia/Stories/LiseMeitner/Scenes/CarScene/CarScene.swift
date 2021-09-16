@@ -197,7 +197,7 @@ class CarScene: SKScene {
     }
     
     for i in 0...discoverablePoints {
-      if clickablePoints[i].node.contains(pos) && i < clickablePoints.count {
+      if  i < clickablePoints.count && clickablePoints[i].node.contains(pos) {
         clickablePoints[i].clicked = true
         
         updateDiscoverablePoints()
