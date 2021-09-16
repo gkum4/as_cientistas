@@ -9,11 +9,13 @@ import SpriteKit
 
 class SymbolsManager {
   private var scene: SKScene
+  private var color: UIColor
   
   private var symbols = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "∑", "π", "∆", "Ω", "√", "ƒ", "∫", "µ", "ß", "∂", "ø", "∞", "ﬁ", "ϕ", "∏"]
   
-  init(scene: SKScene) {
+  init(scene: SKScene, color: UIColor = .white) {
     self.scene = scene
+    self.color = color
   }
   
   func getRandomSymbol() -> String {
@@ -23,6 +25,7 @@ class SymbolsManager {
   func generateAnimatedSymbol(at pos: CGPoint) {
     let symbol = SKLabelNode()
     symbol.text = getRandomSymbol()
+    symbol.fontColor = self.color
     symbol.position = pos
     
     self.scene.addChild(symbol)
