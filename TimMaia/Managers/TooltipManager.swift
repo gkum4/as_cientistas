@@ -284,7 +284,7 @@ class TooltipManager {
   
   func stopAnimation() {
     hideTooltip()
-    timer.invalidate()
+    timer != nil ? timer.invalidate() : nil
   }
 }
 
