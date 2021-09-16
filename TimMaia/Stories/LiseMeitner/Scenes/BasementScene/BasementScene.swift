@@ -11,12 +11,13 @@ class BasementScene: SKScene {
   var blowDetector = BlowDetector(detectionThreshold: -9)
   var timer: Timer!
   
-  private var dust1: SKSpriteNode!
-  private var dust2: SKSpriteNode!
-  private var lamp: SKSpriteNode!
-  var dustRemoveStep = 0
-  var blowGameEnded = false
-  var isLampOn = false
+  private var dusts: [SKSpriteNode] = []
+  
+  private var numberOfDusts = 3
+  
+  private var dustToRemove = 0
+  
+  private var animationRunning = false
   
   private var coreHapticsManager: BasementSceneCoreHapticsManager?
   
@@ -28,9 +29,9 @@ class BasementScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    self.dust1 = self.childNode(withName: "//dust1") as? SKSpriteNode
-    self.dust2 = self.childNode(withName: "//dust2") as? SKSpriteNode
-    self.lamp = self.childNode(withName: "//lamp") as? SKSpriteNode
+    for i in 1...numberOfDusts {
+      dusts.append((self.childNode(withName: "dust\(i)") as! SKSpriteNode))
+    }
     
     blowDetector.startDetecting()
     
@@ -44,56 +45,43 @@ class BasementScene: SKScene {
   }
   
   @objc func moveDust() {
-    if dustRemoveStep >= 7 {
-      timer.invalidate()
-      blowDetector.stop()
-      
-      onGameEnd()
+    if !blowDetector.detectedBlow() || animationRunning {
       return
     }
     
-    if !blowDetector.detectedBlow() {
-      return
-    }
+    animationRunning = true
     
     blowDetector.stop()
     self.coreHapticsManager?.playSpreadPattern()
     blowDetector.startDetecting()
     
-    dust1.run(.move(by: CGVector(dx: -50, dy: 50), duration: 0.5))
-    dust2.run(.move(by: CGVector(dx: 50, dy: 50), duration: 0.5))
-    dustRemoveStep += 1
+    let dustRemoveAnimation: SKAction = .sequence([
+      .group([
+        .scale(by: 1.1, duration: 1),
+        .fadeOut(withDuration: 1)
+      ]),
+      .run {
+        self.animationRunning = false
+      }
+    ])
+    
+    dusts[dustToRemove].run(dustRemoveAnimation)
+    
+    dustToRemove += 1
+    
+    if dustToRemove == numberOfDusts {
+      onGameEnd()
+    }
   }
   
   func onGameEnd() {
-    blowGameEnded = true
-    print("dust remove game finished")
-  }
-
-  func onClickLamp() {
-    if blowGameEnded == true {
-      self.coreHapticsManager?.playClickPattern()
-    } else {
-      blowDetector.stop()
-      self.coreHapticsManager?.playClickPattern()
-      blowDetector.startDetecting()
-    }
+    timer.invalidate()
+    blowDetector.stop()
     
-    if isLampOn {
-      lamp.color = .gray
-      isLampOn = false
-      return
-    }
-    
-    lamp.color = .white
-    isLampOn = true
-    return
+    print("game ended")
   }
   
   func touchDown(atPoint pos : CGPoint) {
-    if lamp.contains(pos) {
-      onClickLamp()
-    }
   }
   
   func stopDetector() {
@@ -121,7 +109,6 @@ class BasementScene: SKScene {
   override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
     for t in touches { self.touchUp(atPoint: t.location(in: self)) }
   }
-  
   
   override func update(_ currentTime: TimeInterval) {
     // Called before each frame is rendered
