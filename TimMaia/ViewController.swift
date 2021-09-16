@@ -15,7 +15,7 @@ class ViewController: UIViewController {
   }
   
   override func loadView() {
-    let scene = OttoLetterScene.create()
+    let scene = NewsScene.create()
     let sceneView = SKView()
     scene.scaleMode = .aspectFill
     sceneView.presentScene(scene)
@@ -30,7 +30,5 @@ class ViewController: UIViewController {
       return .all
     }
   }
-  
-  
 }
 
