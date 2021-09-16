@@ -9,10 +9,15 @@ import UIKit
 
 protocol BasementDoorSceneHapticsManager {
   func triggerSuccess()
+  func triggerWarning()
 }
 
 class DefaultBasementDoorSceneHapticsManager: HapticsManager, BasementDoorSceneHapticsManager {
   func triggerSuccess() {
     vibrateByType(for: .success)
+  }
+  
+  func triggerWarning() {
+    vibrateByType(for: .warning)
   }
 }

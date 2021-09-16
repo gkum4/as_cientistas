@@ -13,11 +13,11 @@
 		0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C106B7826DE515A004B0CD6 /* BasementScene.swift */; };
 		0C106B7B26DE5169004B0CD6 /* BasementScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C106B7A26DE5169004B0CD6 /* BasementScene.sks */; };
 		0C3C7BA126EF7C1D00A6A904 /* TooltipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA026EF7C1D00A6A904 /* TooltipManager.swift */; };
-		0C3C7BB026F2363700A6A904 /* SymbolsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BAF26F2363700A6A904 /* SymbolsManager.swift */; };
 		0C3C7BA426EFDF3000A6A904 /* LiseWithBoysScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA326EFDF3000A6A904 /* LiseWithBoysScene.sks */; };
 		0C3C7BA626EFDF4000A6A904 /* LiseWithBoysScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA526EFDF4000A6A904 /* LiseWithBoysScene.swift */; };
 		0C3C7BA826EFE4F600A6A904 /* LiseWithBoysSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA726EFE4F600A6A904 /* LiseWithBoysSceneCoreHapticsManager.swift */; };
 		0C3C7BAA26EFFA2700A6A904 /* LiseWithBoysBoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA926EFFA2700A6A904 /* LiseWithBoysBoy.swift */; };
+		0C3C7BB026F2363700A6A904 /* SymbolsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BAF26F2363700A6A904 /* SymbolsManager.swift */; };
 		0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */; };
 		0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */; };
 		0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1F26D52C20007A4CEA /* ViewController.swift */; };
@@ -95,11 +95,11 @@
 		0C106B7826DE515A004B0CD6 /* BasementScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementScene.swift; sourceTree = "<group>"; };
 		0C106B7A26DE5169004B0CD6 /* BasementScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BasementScene.sks; sourceTree = "<group>"; };
 		0C3C7BA026EF7C1D00A6A904 /* TooltipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipManager.swift; sourceTree = "<group>"; };
-		0C3C7BAF26F2363700A6A904 /* SymbolsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsManager.swift; sourceTree = "<group>"; };
 		0C3C7BA326EFDF3000A6A904 /* LiseWithBoysScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseWithBoysScene.sks; sourceTree = "<group>"; };
 		0C3C7BA526EFDF4000A6A904 /* LiseWithBoysScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseWithBoysScene.swift; sourceTree = "<group>"; };
 		0C3C7BA726EFE4F600A6A904 /* LiseWithBoysSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseWithBoysSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0C3C7BA926EFFA2700A6A904 /* LiseWithBoysBoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseWithBoysBoy.swift; sourceTree = "<group>"; };
+		0C3C7BAF26F2363700A6A904 /* SymbolsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsManager.swift; sourceTree = "<group>"; };
 		0C3CCE1826D52C20007A4CEA /* TimMaia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimMaia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -555,7 +555,7 @@
 				C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */,
 				C4A325A926F2191D00934998 /* NobelLetterScene.sks in Resources */,
 				C4D80BD026EF7C1E00B870AB /* ChemistryInstituteScene.sks in Resources */,
-				C4626E6E26E7D12900BFBD12 /* LetterScene.sks in Resources */,
+				C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */,
 				0C3C7BA426EFDF3000A6A904 /* LiseWithBoysScene.sks in Resources */,
 				C422051A26DDBB0800293DDE /* Gravel.ahap in Resources */,
 				C4C40BE326EE710200CAEDE0 /* LaboratoryScene.sks in Resources */,
@@ -782,7 +782,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L5C36X97NN;
+				DEVELOPMENT_TEAM = HQJF9G685U;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -801,7 +801,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L5C36X97NN;
+				DEVELOPMENT_TEAM = HQJF9G685U;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

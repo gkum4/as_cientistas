@@ -14,6 +14,7 @@ class BasementDoorScene: SKScene {
   
   private var sceneAnimation = SKSpriteNode()
   private var sceneFrames: [SKTexture] = []
+  private var attempts = 0
   
   private var hapticsManager: BasementDoorSceneHapticsManager?
   
@@ -59,6 +60,20 @@ class BasementDoorScene: SKScene {
     sceneAnimation.run(sequence)
   }
   
+  private func checkForDoorOpen(atPoint pos: CGPoint) {
+    if knobArea.contains(pos) {
+      attempts += 1
+      
+      if attempts >= 3 {
+        animateScene()
+        hapticsManager?.triggerSuccess()
+      }
+      else {
+        hapticsManager?.triggerWarning()
+      }
+    }
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
   }
   
@@ -66,10 +81,7 @@ class BasementDoorScene: SKScene {
   }
   
   func touchUp(atPoint pos : CGPoint) {
-    if knobArea.contains(pos) {
-      animateScene()
-      hapticsManager?.triggerSuccess()
-    }
+    checkForDoorOpen(atPoint: pos)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
