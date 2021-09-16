@@ -12,6 +12,10 @@ class CarScene: SKScene {
   private var fishes: [SKSpriteNode] = []
   private var clickablePoints: [ClickablePoint] = []
   private var pointPositions: [CGPoint] = []
+  private var whiteOverlay: SKSpriteNode!
+  private var locationTextLabel: SKLabelNode!
+  
+  private var locationTexts = ["Denmark", "Switzerland", "Netherlands", "Stockholm, Sweden"]
   
   var clickablePointIds = [1, 5, 10, 13]
   
@@ -37,7 +41,7 @@ class CarScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    self.backgroundColor = UIColor(red: 0.241, green: 0.185, blue: 0.154, alpha: 1)
+    self.backgroundColor = UIColor(red: 0.95, green: 0.73, blue: 0.6, alpha: 1)
     
     car = (self.childNode(withName: "car") as! SKSpriteNode)
     
@@ -64,6 +68,9 @@ class CarScene: SKScene {
         .rotate(byAngle: CGFloat(-0.0872665*2), duration: 0.2),
       ])))
     }
+    
+    whiteOverlay = (self.childNode(withName: "//whiteOverlay") as! SKSpriteNode)
+    locationTextLabel = (self.childNode(withName: "//locationText") as! SKLabelNode)
     
     tooltipManager = TooltipManager(
       scene: self,
@@ -101,11 +108,6 @@ class CarScene: SKScene {
 //  }
   
   private func moveCar(pointIdSelected: Int, onAnimationEnd: @escaping () -> Void) {
-    if pointIdSelected == actualPointId {
-      animationRunning = false
-      return
-    }
-    
     var carAnimationSequence: [SKAction] = [
       .wait(forDuration: 0.8),
       .run {
@@ -174,6 +176,21 @@ class CarScene: SKScene {
     discoverablePoints = result
   }
   
+  private func showLocationTextAnimation(id: Int, onAnimationEnd: @escaping () -> Void ) {
+    locationTextLabel.text = locationTexts[id]
+    
+    let whiteOverlayAnimationSequence: SKAction = .sequence([
+      .fadeAlpha(by: 0.8, duration: 0.5),
+      .wait(forDuration: 1.2),
+      .fadeOut(withDuration: 0.5),
+      .run {
+        onAnimationEnd()
+      }
+    ])
+    
+    whiteOverlay.run(whiteOverlayAnimationSequence)
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
     if animationRunning {
       return
@@ -190,13 +207,22 @@ class CarScene: SKScene {
         
         setupTooltip()
         
-        moveCar(
-          pointIdSelected: clickablePointIds[i],
-          onAnimationEnd: {
+        if clickablePointIds[i] != actualPointId {
+          moveCar(
+            pointIdSelected: clickablePointIds[i],
+            onAnimationEnd: {
+              self.showLocationTextAnimation(id: i, onAnimationEnd: {
+                self.allPointsTouched ? nil : self.tooltipManager.startAnimation()
+                self.animationRunning = false
+              })
+            }
+          )
+        } else {
+          showLocationTextAnimation(id: i, onAnimationEnd: {
             self.allPointsTouched ? nil : self.tooltipManager.startAnimation()
             self.animationRunning = false
-          }
-        )
+          })
+        }
         
         runPointTouchAnimation(point: clickablePoints[i].node)
         
