@@ -84,14 +84,16 @@ class NuclearFissionPaperScene: SKScene {
     if movementSize >= 5 {
       paper.removeAllActions()
       
-      let paperMoveAnimation: SKAction = .sequence([
-        .move(to: CGPoint(x: -7, y: -30), duration: 1.2),
+      let paperMoveAnimation: SKAction = .move(to: CGPoint(x: -7, y: -30), duration: 1.2)
+      
+      paper.run(paperMoveAnimation)
+      
+      self.run(.sequence([
+        .wait(forDuration: 1.21),
         .run {
           self.coreHapticsManager?.playClickPattern()
         }
-      ])
-      
-      paper.run(paperMoveAnimation)
+      ]))
       
       gameEnded = true
       
