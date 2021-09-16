@@ -26,8 +26,15 @@ class DynamicTextManager {
   var lettersNodes = [SKLabelNode]()
   var textSize = 0
   
-  init(text: String, startPos: CGPoint, textWidth: CGFloat, lineHeight: CGFloat = 40,
-       spacing: CGFloat = 0, textRotation: CGFloat = 0, fontStyle: BasicFontStyle = BasicFontStyle(), lineBreakOnWord: Bool = false) {
+  init(
+    text: String,
+    startPos: CGPoint,
+    textWidth: CGFloat,
+    lineHeight: CGFloat = 40,
+    spacing: CGFloat = 0,
+    textRotation: CGFloat = 0,
+    fontStyle: BasicFontStyle = BasicFontStyle()
+  ) {
     self.text = text
     self.startPos = startPos
     self.textWidth = textWidth
@@ -76,7 +83,7 @@ class DynamicTextManager {
       node.horizontalAlignmentMode = .center
       node.fontColor = .black
       node.position = CGPoint(x: startPos!.x + xDisp + spacing!, y: startPos!.y + yDisp)
-      node.color = fontStyle?.color
+      node.fontColor = fontStyle?.color
       node.fontName = fontStyle?.fontName
       node.fontSize = fontStyle!.fontSize
       
