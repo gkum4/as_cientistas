@@ -68,6 +68,8 @@
 		C43CBC6D26F0D22D003B6FAB /* PrizesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CBC6C26F0D22D003B6FAB /* PrizesScene.swift */; };
 		C43CBC6F26F0D23B003B6FAB /* PrizesScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C43CBC6E26F0D23B003B6FAB /* PrizesScene.sks */; };
 		C43CBC7126F0E99E003B6FAB /* PrizesSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */; };
+		C442C56C26F404C1007FE075 /* LiseHelpsOttoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442C56B26F404C1007FE075 /* LiseHelpsOttoScene.swift */; };
+		C442C57026F404DD007FE075 /* LiseHelpsOttoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C442C56F26F404DD007FE075 /* LiseHelpsOttoScene.sks */; };
 		C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */; };
 		C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */; };
 		C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */; };
@@ -176,6 +178,8 @@
 		C43CBC6C26F0D22D003B6FAB /* PrizesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizesScene.swift; sourceTree = "<group>"; };
 		C43CBC6E26F0D23B003B6FAB /* PrizesScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PrizesScene.sks; sourceTree = "<group>"; };
 		C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizesSceneHapticsManager.swift; sourceTree = "<group>"; };
+		C442C56B26F404C1007FE075 /* LiseHelpsOttoScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseHelpsOttoScene.swift; sourceTree = "<group>"; };
+		C442C56F26F404DD007FE075 /* LiseHelpsOttoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseHelpsOttoScene.sks; sourceTree = "<group>"; };
 		C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LaboratorySceneKnob.atlas; sourceTree = "<group>"; };
 		C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingScene.swift; sourceTree = "<group>"; };
 		C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseTeachingScene.sks; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C442C56A26F404B2007FE075 /* LiseHelpsOttoScene */,
 				C4B9FF2D26F3813B0052BDB8 /* SwedishUniversityScene */,
 				C4880E9526F2D38500A3BB01 /* NewsScene */,
 				C4A325AA26F227A600934998 /* InterviewScene */,
@@ -429,6 +434,15 @@
 				C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */,
 			);
 			path = PrizesScene;
+			sourceTree = "<group>";
+		};
+		C442C56A26F404B2007FE075 /* LiseHelpsOttoScene */ = {
+			isa = PBXGroup;
+			children = (
+				C442C56B26F404C1007FE075 /* LiseHelpsOttoScene.swift */,
+				C442C56F26F404DD007FE075 /* LiseHelpsOttoScene.sks */,
+			);
+			path = LiseHelpsOttoScene;
 			sourceTree = "<group>";
 		};
 		C44C607926EFEE020049F370 /* LiseTeachingScene */ = {
@@ -675,6 +689,7 @@
 				420C20B526F0EDAF00D32A7D /* NewYorkSmall-HeavyItalic.otf in Resources */,
 				420C20B426F0EDAF00D32A7D /* NewYorkSmall-Black.otf in Resources */,
 				C492D61D26EE8B7100478CB5 /* BasementDoorScene.atlas in Resources */,
+				C442C57026F404DD007FE075 /* LiseHelpsOttoScene.sks in Resources */,
 				420C20B926F0EDAF00D32A7D /* NewYorkSmall-SemiboldItalic.otf in Resources */,
 				420C20BA26F0EDAF00D32A7D /* NewYorkSmall-RegularItalic.otf in Resources */,
 				C422051426DDBB0800293DDE /* Drums.ahap in Resources */,
@@ -711,7 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C106B7626D7D969004B0CD6 /* PointProps.swift in Sources */,
-				0C106B7626D7D969004B0CD6 /* SquareProps.swift in Sources */,
+				0C106B7626D7D969004B0CD6 /* PointProps.swift in Sources */,
 				C4B4F68626DE530600BB8E36 /* MapZoomScene.swift in Sources */,
 				C4626E6C26E7D10D00BFBD12 /* OttoLetterScene.swift in Sources */,
 				C4B12D2A26DC58730061F46B /* HapticsManager.swift in Sources */,
@@ -734,6 +749,7 @@
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
 				0CF1B2D226E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift in Sources */,
 				0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */,
+				C442C56C26F404C1007FE075 /* LiseHelpsOttoScene.swift in Sources */,
 				C4B5674626EB8921005F865A /* DynamicTextManager.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
 				0C3C7BB026F2363700A6A904 /* SymbolsManager.swift in Sources */,
