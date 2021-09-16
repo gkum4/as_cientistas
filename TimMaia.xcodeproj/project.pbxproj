@@ -41,6 +41,8 @@
 		420C20BE26F0EDAF00D32A7D /* NewYorkSmall-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20B226F0EDAF00D32A7D /* NewYorkSmall-Medium.otf */; };
 		420C20BF26F0EDAF00D32A7D /* NewYorkSmall-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20B326F0EDAF00D32A7D /* NewYorkSmall-Regular.otf */; };
 		42C4A79126F23C84008EEA3F /* IntroHistoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4A79026F23C84008EEA3F /* IntroHistoriaViewController.swift */; };
+		42E5B00726F37F1D00D614AB /* MenuAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5B00626F37F1D00D614AB /* MenuAboutViewController.swift */; };
+		42E5B00926F3865000D614AB /* MenuAboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5B00826F3865000D614AB /* MenuAboutTableViewCell.swift */; };
 		C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
@@ -116,6 +118,8 @@
 		420C20B226F0EDAF00D32A7D /* NewYorkSmall-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Medium.otf"; sourceTree = "<group>"; };
 		420C20B326F0EDAF00D32A7D /* NewYorkSmall-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Regular.otf"; sourceTree = "<group>"; };
 		42C4A79026F23C84008EEA3F /* IntroHistoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroHistoriaViewController.swift; sourceTree = "<group>"; };
+		42E5B00626F37F1D00D614AB /* MenuAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAboutViewController.swift; sourceTree = "<group>"; };
+		42E5B00826F3865000D614AB /* MenuAboutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAboutTableViewCell.swift; sourceTree = "<group>"; };
 		C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LetterScene.atlas; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 				420C209C26EF856B00D32A7D /* HomeViewController.swift */,
 				420C20A526F0D21C00D32A7D /* CardTableViewCell.swift */,
 				42C4A79026F23C84008EEA3F /* IntroHistoriaViewController.swift */,
+				42E5B00626F37F1D00D614AB /* MenuAboutViewController.swift */,
+				42E5B00826F3865000D614AB /* MenuAboutTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */,
 				C4B5674626EB8921005F865A /* DynamicTextManager.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
+				42E5B00726F37F1D00D614AB /* MenuAboutViewController.swift in Sources */,
 				C4F6F09826EE37B000FF382C /* DadScene.swift in Sources */,
 				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
 				C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */,
@@ -553,6 +560,7 @@
 				C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */,
 				420C20A626F0D21C00D32A7D /* CardTableViewCell.swift in Sources */,
 				0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */,
+				42E5B00926F3865000D614AB /* MenuAboutTableViewCell.swift in Sources */,
 				420C209D26EF856B00D32A7D /* HomeViewController.swift in Sources */,
 				42C4A79126F23C84008EEA3F /* IntroHistoriaViewController.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
