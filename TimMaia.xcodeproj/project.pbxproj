@@ -18,6 +18,7 @@
 		0C3C7BA626EFDF4000A6A904 /* LiseWithBoysScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA526EFDF4000A6A904 /* LiseWithBoysScene.swift */; };
 		0C3C7BA826EFE4F600A6A904 /* LiseWithBoysSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA726EFE4F600A6A904 /* LiseWithBoysSceneCoreHapticsManager.swift */; };
 		0C3C7BAA26EFFA2700A6A904 /* LiseWithBoysBoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BA926EFFA2700A6A904 /* LiseWithBoysBoy.swift */; };
+		0C3C7BAC26F2316800A6A904 /* ClickablePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BAB26F2316800A6A904 /* ClickablePoint.swift */; };
 		0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */; };
 		0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */; };
 		0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1F26D52C20007A4CEA /* ViewController.swift */; };
@@ -33,6 +34,10 @@
 		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
 		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
 		C41653BE26EABC5B00D5F3D6 /* OttoLetterScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C41653BD26EABC5B00D5F3D6 /* OttoLetterScene.atlas */; };
+		0CF1B2CE26E7A953002B87F0 /* CarScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CF1B2CD26E7A952002B87F0 /* CarScene.sks */; };
+		0CF1B2D026E7A95F002B87F0 /* CarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */; };
+		0CF1B2D226E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */; };
+		C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */; };
 		C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */; };
 		C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */; };
 		C422051326DDBB0800293DDE /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = C422050A26DDBB0800293DDE /* Inflate.ahap */; };
@@ -100,6 +105,7 @@
 		0C3C7BA526EFDF4000A6A904 /* LiseWithBoysScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseWithBoysScene.swift; sourceTree = "<group>"; };
 		0C3C7BA726EFE4F600A6A904 /* LiseWithBoysSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseWithBoysSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0C3C7BA926EFFA2700A6A904 /* LiseWithBoysBoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseWithBoysBoy.swift; sourceTree = "<group>"; };
+		0C3C7BAB26F2316800A6A904 /* ClickablePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickablePoint.swift; sourceTree = "<group>"; };
 		0C3CCE1826D52C20007A4CEA /* TimMaia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimMaia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,10 @@
 		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
 		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
 		C41653BD26EABC5B00D5F3D6 /* OttoLetterScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = OttoLetterScene.atlas; sourceTree = "<group>"; };
+		0CF1B2CD26E7A952002B87F0 /* CarScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CarScene.sks; sourceTree = "<group>"; };
+		0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarScene.swift; sourceTree = "<group>"; };
+		0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		C41653BD26EABC5B00D5F3D6 /* LetterScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LetterScene.atlas; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C422050A26DDBB0800293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
@@ -221,6 +231,7 @@
 				C44C607926EFEE020049F370 /* LiseTeachingScene */,
 				C4D80BCC26EF7C0000B870AB /* ChemistryInstituteScene */,
 				0C3C7BA226EFDF1D00A6A904 /* LiseWithBoysScene */,
+				0CF1B2CC26E7A93D002B87F0 /* CarScene */,
 				C492D61726EE8A6000478CB5 /* BasementDoorScene */,
 				C4C40BDF26EE70EA00CAEDE0 /* LaboratoryScene */,
 				C4F6F09626EE379D00FF382C /* DadScene */,
@@ -309,6 +320,17 @@
 				0CF1B2AD26E110DF002B87F0 /* SKView+.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0CF1B2CC26E7A93D002B87F0 /* CarScene */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1B2CD26E7A952002B87F0 /* CarScene.sks */,
+				0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */,
+				0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */,
+				0C3C7BAB26F2316800A6A904 /* ClickablePoint.swift */,
+			);
+			path = CarScene;
 			sourceTree = "<group>";
 		};
 		C422050926DDBB0800293DDE /* AHAP */ = {
@@ -579,6 +601,8 @@
 				C492D61B26EE8A7A00478CB5 /* BasementDoorScene.sks in Resources */,
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
 				C41653BE26EABC5B00D5F3D6 /* OttoLetterScene.atlas in Resources */,
+				0CF1B2CE26E7A953002B87F0 /* CarScene.sks in Resources */,
+				C41653BE26EABC5B00D5F3D6 /* LetterScene.atlas in Resources */,
 				C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +621,7 @@
 				0C3C7BA626EFDF4000A6A904 /* LiseWithBoysScene.swift in Sources */,
 				0CF1B29E26DFA903002B87F0 /* BasementSceneCoreHapticsManager.swift in Sources */,
 				C44C607D26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift in Sources */,
+				0CF1B2D026E7A95F002B87F0 /* CarScene.swift in Sources */,
 				C42204E426DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift in Sources */,
 				0C3C7BAA26EFFA2700A6A904 /* LiseWithBoysBoy.swift in Sources */,
 				0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */,
@@ -609,6 +634,7 @@
 				0CF1B2A526E10663002B87F0 /* BlackboardScene.swift in Sources */,
 				C4D80BCE26EF7C1200B870AB /* ChemistryInstituteScene.swift in Sources */,
 				0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */,
+				0CF1B2D226E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift in Sources */,
 				0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */,
 				C4B5674626EB8921005F865A /* DynamicTextManager.swift in Sources */,
 				0C106B7426D680AC004B0CD6 /* DegreeScene.swift in Sources */,
@@ -624,6 +650,7 @@
 				C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */,
 				C4A325A626F2190900934998 /* NobelLetterScene.swift in Sources */,
 				C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */,
+				0C3C7BAC26F2316800A6A904 /* ClickablePoint.swift in Sources */,
 				C492D61F26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift in Sources */,
 				C4A325AC26F227C200934998 /* InterviewScene.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
