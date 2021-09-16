@@ -47,6 +47,8 @@
 		C44C607D26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */; };
 		C4626E6C26E7D10D00BFBD12 /* OttoLetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4626E6B26E7D10D00BFBD12 /* OttoLetterScene.swift */; };
 		C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */; };
+		C4880E9726F2D38E00A3BB01 /* NewsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4880E9626F2D38E00A3BB01 /* NewsScene.swift */; };
+		C4880E9926F2D39E00A3BB01 /* NewsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4880E9826F2D39E00A3BB01 /* NewsScene.sks */; };
 		C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */; };
 		C492D61B26EE8A7A00478CB5 /* BasementDoorScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C492D61A26EE8A7A00478CB5 /* BasementDoorScene.sks */; };
 		C492D61D26EE8B7100478CB5 /* BasementDoorScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C492D61C26EE8B7100478CB5 /* BasementDoorScene.atlas */; };
@@ -123,6 +125,8 @@
 		C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C4626E6B26E7D10D00BFBD12 /* OttoLetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OttoLetterScene.swift; sourceTree = "<group>"; };
 		C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OttoLetterScene.sks; sourceTree = "<group>"; };
+		C4880E9626F2D38E00A3BB01 /* NewsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScene.swift; sourceTree = "<group>"; };
+		C4880E9826F2D39E00A3BB01 /* NewsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NewsScene.sks; sourceTree = "<group>"; };
 		C492D61826EE8A6E00478CB5 /* BasementDoorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasementDoorScene.swift; sourceTree = "<group>"; };
 		C492D61A26EE8A7A00478CB5 /* BasementDoorScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BasementDoorScene.sks; sourceTree = "<group>"; };
 		C492D61C26EE8B7100478CB5 /* BasementDoorScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BasementDoorScene.atlas; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4880E9526F2D38500A3BB01 /* NewsScene */,
 				C4A325AA26F227A600934998 /* InterviewScene */,
 				C4AFC71226F266FB00E6E2AF /* LiseFinalScene */,
 				C4A325A426F218E800934998 /* NobelLetterScene */,
@@ -326,6 +331,15 @@
 				C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */,
 			);
 			path = OttoLetterScene;
+			sourceTree = "<group>";
+		};
+		C4880E9526F2D38500A3BB01 /* NewsScene */ = {
+			isa = PBXGroup;
+			children = (
+				C4880E9626F2D38E00A3BB01 /* NewsScene.swift */,
+				C4880E9826F2D39E00A3BB01 /* NewsScene.sks */,
+			);
+			path = NewsScene;
 			sourceTree = "<group>";
 		};
 		C492D61726EE8A6000478CB5 /* BasementDoorScene */ = {
@@ -504,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A325AE26F227CD00934998 /* InterviewScene.sks in Resources */,
+				C4880E9926F2D39E00A3BB01 /* NewsScene.sks in Resources */,
 				C4F6F09426EE359800FF382C /* LisePlayingScene.atlas in Resources */,
 				C4F6F09226EE355000FF382C /* LisePlayingScene.sks in Resources */,
 				C422051526DDBB0800293DDE /* Drums.wav in Resources */,
@@ -584,6 +599,7 @@
 				C4A8AC8C26E1186500CED26E /* MapZoomSceneHapticsManager.swift in Sources */,
 				0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */,
 				C4A0468A26D681C600697E6F /* PeriodicTableScene.swift in Sources */,
+				C4880E9726F2D38E00A3BB01 /* NewsScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
