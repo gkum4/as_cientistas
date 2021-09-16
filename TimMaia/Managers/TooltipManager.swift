@@ -15,6 +15,8 @@ class TooltipManager {
   var customAction: SKAction?
   var timer: Timer!
   
+  var animationRunning = false
+  
   var hideTooltip: () -> Void = { () }
   
   init(
@@ -280,9 +282,15 @@ class TooltipManager {
       userInfo: nil,
       repeats: true
     )
+    
+    animationRunning = true
   }
   
   func stopAnimation() {
+    if animationRunning {
+      return
+    }
+    
     hideTooltip()
     timer.invalidate()
   }
