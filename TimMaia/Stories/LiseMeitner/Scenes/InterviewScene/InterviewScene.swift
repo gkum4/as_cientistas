@@ -26,12 +26,12 @@ class InterviewScene: SKScene {
   
   private var conversationNodes = [SKLabelNode]()
   private var conversation: [String] = [
-    "Entrevistador: olá amiga, como você está?",
-    "Lise: suave, agradeço por perguntar",
-    "Entrevistador: como foi ser uma pessoa incrível?",
-    "Lise: foi legal, super recomendo tentar",
-    "Entrevistador: okay, vou voltar a estudar",
-    "Lise: precisando de ajuda é só me chamar hehe",
+    "👱🏻‍♂️ Hi Lise, welcome!",
+    "👩🏻‍🦰 Thanks! It's great to be here.",
+    "👱🏻‍♂️ Tell us about dinner with \n President Truman and how it \n felt to be recognized as Woman \n of the Year.",
+    "👩🏻‍🦰 It was a great dinner, I was \n very happy for the nomination.",
+    "👱🏻‍♂️ Great! This shows that your \n work is very important to the world, \n even without Otto having recognized \n you in the Nobel Prize.",
+    "👩🏻‍🦰 Yes! He should have named me at \n the awards, since I was the one \n who discovered nuclear fission. \n But anyway I'm being recognized \n  in other ways.",
   ]
   
   static func create() -> SKScene {
@@ -52,6 +52,8 @@ class InterviewScene: SKScene {
       label.alpha = 0
       label.numberOfLines = 0
       label.fontColor = .black
+      label.fontName = "NewYorkSmall-Regular"
+      label.fontSize = 40
       
       conversationNodes.append(label)
       addChild(label)
@@ -60,11 +62,11 @@ class InterviewScene: SKScene {
   
   private func animateConversation() {
     for (index, node) in conversationNodes.enumerated() {
-      let aditionalTime = 5 * Double(index)
+      let aditionalTime = 6 * Double(index)
       
       let beginAfter = SKAction.wait(forDuration: aditionalTime)
       let fadeIn = SKAction.fadeIn(withDuration: 1)
-      let wait = SKAction.wait(forDuration: 3)
+      let wait = SKAction.wait(forDuration: 4)
       let fadeOut = SKAction.fadeOut(withDuration: 1)
       let sequence = SKAction.sequence([beginAfter, fadeIn, wait, fadeOut])
       node.run(sequence)

@@ -8,9 +8,23 @@
 import SpriteKit
 
 class NobelLetterScene: SKScene {
-  private var text = DynamicTextManager(text: "Vou ter que te ensinar a fazer tudo? Da seus corre parceiro",
+  private var currentPage = 0
+  private var letterPages = [
+    "Hi, I'm physicist Lise Meitner. I discovered the nuclear fission process by proving that the",
+    "splitting of the Uranium atom (into Barium and Krypton atoms) releases energy and neutrons,",
+    "which in turn cause fission in more atoms releasing more neutrons and so on, creating a series",
+    "of nuclear  fissions with continuous release of energy, in a process called chain reaction."
+  ]
+  
+  private var text = DynamicTextManager(text: "Hi, I'm physicist Lise Meitner. I discovered the nuclear fission process by proving that the",
                                     startPos: CGPoint(x: -220, y: 470),
-                                    textWidth: 440, lineHeight: 120, textRotation: 0.1)
+                                    textWidth: 440, lineHeight: 115, textRotation: 0.1,
+                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 30, color: .black))
+  
+  
+  private lazy var button: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "Button") as! SKSpriteNode
+  }()
 
   
   private var textSize: Int?
@@ -28,11 +42,36 @@ class NobelLetterScene: SKScene {
     textSize = text.textSize
     textNodes = text.lettersNodes
     for node in textNodes {
+      node.alpha = 1
       addChild(node)
     }
   }
   
+  private func changeLetterText() {
+    currentPage += 1
+    
+    let newNodes = DynamicTextManager(text: letterPages[currentPage],
+                                      startPos: CGPoint(x: -220, y: 470),
+                                      textWidth: 440, lineHeight: 115, textRotation: 0.1,
+                                      fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 30, color: .black))
+    
+    for node in newNodes.lettersNodes {
+      node.run(.fadeIn(withDuration: 2.5))
+      addChild(node)
+    }
+    
+    for node in textNodes {
+      node.run(.fadeOut(withDuration: 1))
+    }
+    
+    textNodes = newNodes.lettersNodes
+    textSize = newNodes.textSize
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
+    if button.contains(pos) {
+      changeLetterText()
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
