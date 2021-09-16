@@ -26,12 +26,12 @@ class InterviewScene: SKScene {
   
   private var conversationNodes = [SKLabelNode]()
   private var conversation: [String] = [
-    "Entrevistador: olá amiga, \n como você está?",
-    "Lise: suave, agradeço \n por perguntar",
-    "Entrevistador: como foi ser \n uma pessoa incrível?",
-    "Lise: foi legal, super \n recomendo tentar",
-    "Entrevistador: okay, vou \n voltar a estudar",
-    "Lise: precisando de ajuda \n é só me chamar hehe",
+    "Entrevistador: olá amiga, como você está?",
+    "Lise: suave, agradeço por perguntar",
+    "Entrevistador: como foi ser uma pessoa incrível?",
+    "Lise: foi legal, super recomendo tentar",
+    "Entrevistador: okay, vou voltar a estudar",
+    "Lise: precisando de ajuda é só me chamar hehe",
   ]
   
   static func create() -> SKScene {
@@ -51,7 +51,7 @@ class InterviewScene: SKScene {
       label.position = televisionText.position
       label.alpha = 0
       label.numberOfLines = 0
-      label.fontColor = .white
+      label.fontColor = .black
       
       conversationNodes.append(label)
       addChild(label)
