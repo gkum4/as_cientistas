@@ -35,7 +35,6 @@ class PeriodicTableScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    self.backgroundColor = .systemBackground
     initialElemPos = periodicElement.position
     tablePosition = periodicTable.position
     initialElemSize = periodicElement.size
