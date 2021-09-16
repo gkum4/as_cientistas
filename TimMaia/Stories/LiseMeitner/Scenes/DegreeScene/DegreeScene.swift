@@ -114,7 +114,7 @@ class DegreeScene: SKScene {
       startPos: CGPoint(x: -207, y: 230),
       textWidth: 430,
       lineHeight: 60,
-      fontStyle: .init(fontName: "TimesNewRomanPS-BoldMT", fontSize: 36, color: .black)
+      fontStyle: .init(fontName: "NewYorkSmall-Bold", fontSize: 36, color: .black)
     )
     
     let textManager = DynamicTextManager(
@@ -122,7 +122,7 @@ class DegreeScene: SKScene {
       startPos: CGPoint(x: -207, y: 100),
       textWidth: 430,
       lineHeight: 60,
-      fontStyle: .init(fontName: "TimesNewRomanPSMT", fontSize: 32, color: .black)
+      fontStyle: .init(fontName: "NewYorkSmall-Regular", fontSize: 32, color: .black)
     )
     
     var textAnimationSequence: [SKAction] = []

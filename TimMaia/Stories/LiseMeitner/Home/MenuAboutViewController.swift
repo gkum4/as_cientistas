@@ -41,7 +41,11 @@ class MenuAboutViewController: UIViewController, UITableViewDelegate, UITableVie
     }
   
 //  private func loadScene() {
-//    self.present(ViewController(), animated: true)
+//    let vc = ViewController()
+//
+//    vc.modalPresentationStyle = .fullScreen
+//
+//    self.present(vc, animated: true)
 //  }
     
     
