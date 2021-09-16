@@ -21,27 +21,54 @@ class DynamicTextManager {
   let startPos: CGPoint?
   let spacing: CGFloat?
   let textRotation: CGFloat?
+  let fontStyle: BasicFontStyle?
   
   var lettersNodes = [SKLabelNode]()
   var textSize = 0
   
   init(text: String, startPos: CGPoint, textWidth: CGFloat, lineHeight: CGFloat = 40,
-       spacing: CGFloat = 0, textRotation: CGFloat = 0) {
+       spacing: CGFloat = 0, textRotation: CGFloat = 0, fontStyle: BasicFontStyle = BasicFontStyle(), lineBreakOnWord: Bool = false) {
     self.text = text
     self.startPos = startPos
     self.textWidth = textWidth
     self.lineHeight = lineHeight
     self.spacing = spacing
     self.textRotation = textRotation
+    self.fontStyle = fontStyle
     
     buildText()
+  }
+  
+  private func checkIfWordFitsInLine(textString: String, availableWidth: CGFloat) -> Bool {
+    var totalWordWidth: CGFloat = 0
+    
+    for char in textString {
+      if char == " " {
+        break
+      }
+      
+      let defaultSpace = defaultLetterSpacing[String(char).lowercased()]
+      
+      if defaultSpace != nil {
+        totalWordWidth += defaultSpace! + spacing!
+        continue
+      }
+      
+      totalWordWidth += spacing!
+    }
+    
+    if totalWordWidth > availableWidth {
+      return false
+    }
+    
+    return true
   }
   
   private func buildText() {
     var xDisp: CGFloat = 0
     var yDisp: CGFloat = 0
     
-    for letter in text! {
+    for (i, letter) in text!.enumerated() {
       let node = SKLabelNode(text: String(letter))
       node.zPosition = 1
       node.alpha = 0
@@ -49,7 +76,9 @@ class DynamicTextManager {
       node.horizontalAlignmentMode = .center
       node.fontColor = .black
       node.position = CGPoint(x: startPos!.x + xDisp + spacing!, y: startPos!.y + yDisp)
-      
+      node.color = fontStyle?.color
+      node.fontName = fontStyle?.fontName
+      node.fontSize = fontStyle!.fontSize
       
       let defaultSpace = defaultLetterSpacing[String(letter).lowercased()]
       if defaultSpace != nil {
@@ -59,7 +88,14 @@ class DynamicTextManager {
         xDisp += spacing!
       }
       
-      if textWidth! < xDisp {
+      let index = text!.index(text!.startIndex, offsetBy: i+1)
+      
+      let nextWordFitInLine = checkIfWordFitsInLine(
+        textString: String(text![index...]),
+        availableWidth: textWidth! - xDisp
+      )
+      
+      if textWidth! < xDisp || !nextWordFitInLine {
         xDisp = 0
         yDisp -= lineHeight!
       }
@@ -69,4 +105,10 @@ class DynamicTextManager {
     
     textSize = text!.count
   }
+}
+
+struct BasicFontStyle {
+  var fontName: String = "HelveticaNeue-UltraLight"
+  var fontSize: CGFloat = 32.0
+  var color: UIColor = .black
 }

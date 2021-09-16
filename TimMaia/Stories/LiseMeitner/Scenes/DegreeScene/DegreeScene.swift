@@ -111,24 +111,34 @@ class DegreeScene: SKScene {
   func showDegreeText() {
     let titleTextManager = DynamicTextManager(
       text: "Berlin University Degree",
-      startPos: CGPoint(x: -225, y: 230),
-      textWidth: 450,
-      lineHeight: 60
+      startPos: CGPoint(x: -207, y: 230),
+      textWidth: 430,
+      lineHeight: 60,
+      fontStyle: .init(fontName: "TimesNewRomanPS-BoldMT", fontSize: 36, color: .black)
     )
     
     let textManager = DynamicTextManager(
       text: "We awarded Lise Meitner the Ph.D. title with honors for her studies in radioactivity and nuclear physics.",
-      startPos: CGPoint(x: -225, y: 110),
-      textWidth: 450,
-      lineHeight: 60
+      startPos: CGPoint(x: -207, y: 100),
+      textWidth: 430,
+      lineHeight: 60,
+      fontStyle: .init(fontName: "TimesNewRomanPSMT", fontSize: 32, color: .black)
     )
     
     var textAnimationSequence: [SKAction] = []
     
+    let charNodeAnimation: SKAction = .group([
+      .scale(by: 0.8, duration: 0.2),
+      .fadeIn(withDuration: 0.2)
+    ])
+    
     for charNode in titleTextManager.lettersNodes {
       textAnimationSequence.append(.run {
-        charNode.alpha = 1
         self.addChild(charNode)
+        charNode.setScale(1.2)
+        
+        charNode.run(charNodeAnimation)
+        
         self.symbolsManager.generateAnimatedSymbol(at: charNode.position)
       })
       textAnimationSequence.append(.wait(forDuration: 0.1))
@@ -136,8 +146,11 @@ class DegreeScene: SKScene {
     
     for charNode in textManager.lettersNodes {
       textAnimationSequence.append(.run {
-        charNode.alpha = 1
         self.addChild(charNode)
+        charNode.setScale(1.2)
+        
+        charNode.run(charNodeAnimation)
+        
         self.symbolsManager.generateAnimatedSymbol(at: charNode.position)
       })
       textAnimationSequence.append(.wait(forDuration: 0.1))
