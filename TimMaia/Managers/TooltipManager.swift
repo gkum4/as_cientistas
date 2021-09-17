@@ -14,6 +14,8 @@ class TooltipManager {
   var animationType: TooltipAnimationType
   var customAction: SKAction?
   var timer: Timer!
+  var text: String
+  var textStyle: BasicFontStyle
   
   var hideTooltip: () -> Void = { () }
   
@@ -21,7 +23,9 @@ class TooltipManager {
     scene: SKScene,
     startPosition: CGPoint,
     timeBetweenAnimations: TimeInterval,
-    animationType: TooltipAnimationType
+    animationType: TooltipAnimationType,
+    text: String = "",
+    textStyle: BasicFontStyle = BasicFontStyle()
   ) {
     self.scene = scene
     
@@ -30,6 +34,10 @@ class TooltipManager {
     self.timeInterval = timeBetweenAnimations
     
     self.animationType = animationType
+    
+    self.text = text
+    
+    self.textStyle = textStyle
   }
   
   func getTooltipStyle() -> SKShapeNode {
@@ -226,6 +234,31 @@ class TooltipManager {
     ]))
   }
   
+  private func textAnimation() {
+    let label = SKLabelNode()
+    label.text = text
+    label.alpha = 0
+    label.position = startPosition
+    label.fontColor = textStyle.color
+    label.fontName = textStyle.fontName
+    label.fontSize = textStyle.fontSize
+    
+    self.hideTooltip = {
+      label.alpha = 0
+    }
+    
+    scene.addChild(label)
+    
+    label.run(.sequence([
+      .fadeAlpha(to: 0.5, duration: 0.5),
+      .wait(forDuration: 1),
+      .fadeOut(withDuration: 0.5),
+      .run {
+        label.removeFromParent()
+      }
+    ]))
+  }
+  
   private func customAnimation() {
     let tooltip = getTooltipStyle()
     
@@ -263,6 +296,9 @@ class TooltipManager {
     case .slideToLeft:
       slideToLeftAnimation()
       
+    case .text:
+      textAnimation()
+      
     case .custom:
       if customAction == nil {
         print("no custom action set")
@@ -296,5 +332,6 @@ enum TooltipAnimationType {
   case slideToTop
   case slideToRight
   case slideToLeft
+  case text
   case custom
 }

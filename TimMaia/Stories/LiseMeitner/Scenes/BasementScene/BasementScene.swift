@@ -19,6 +19,7 @@ class BasementScene: SKScene {
   
   private var animationRunning = false
   
+  private var tooltipManager: TooltipManager!
   private var coreHapticsManager: BasementSceneCoreHapticsManager?
   
   static func create() -> SKScene {
@@ -34,6 +35,20 @@ class BasementScene: SKScene {
     }
     
     blowDetector.startDetecting()
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: 0, y: -720),
+      timeBetweenAnimations: 5,
+      animationType: .text,
+      text: "Blow",
+      textStyle: .init(
+        fontName: "NewYorkSmall-Medium",
+        fontSize: 55,
+        color: .white
+      )
+    )
+    tooltipManager.startAnimation()
     
     timer = Timer.scheduledTimer(
       timeInterval: 0.2,
@@ -77,6 +92,7 @@ class BasementScene: SKScene {
   func onGameEnd() {
     timer.invalidate()
     blowDetector.stop()
+    tooltipManager.stopAnimation()
     
     print("game ended")
   }
