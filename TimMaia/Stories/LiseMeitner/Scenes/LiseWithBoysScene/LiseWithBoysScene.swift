@@ -19,6 +19,8 @@ class LiseWithBoysScene: SKScene {
   var numberOfBoys = 5
   var gameEnded = false
   
+  private var nextButton: SKSpriteNode!
+  
   private var coreHapticsManager: LiseWithBoysSceneCoreHapticsManager?
   
   static func create() -> SKScene {
@@ -30,6 +32,9 @@ class LiseWithBoysScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = UIColor(named: "DarkerSand")!
+    
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
     
     let blackboardImage = (self.childNode(withName: "blackboard") as! SKSpriteNode)
     blackboardImage.removeFromParent()
@@ -110,8 +115,6 @@ class LiseWithBoysScene: SKScene {
   }
   
   func onGameEnd() {
-    gameEnded = true
-    
     tooltipManager1.stopAnimation()
     tooltipManager2.stopAnimation()
     
@@ -136,11 +139,26 @@ class LiseWithBoysScene: SKScene {
     blackboard.run(blackboardAnimation)
     lise.run(liseAnimation)
     
-    print("game ended")
+    nextButton.run(.sequence([
+      .wait(forDuration: 1),
+      .fadeIn(withDuration: 1),
+      .run {
+        self.gameEnded = true
+      }
+    ]))
   }
   
   func touchDown(atPoint pos : CGPoint) {
     if gameEnded {
+      if nextButton.contains(pos) {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: DegreeScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition:  SKTransition.fade(withDuration: 2)
+        )
+      }
+      
       return
     }
     
