@@ -50,6 +50,8 @@ class LiseFinalScene: SKScene {
   private var textSizes = [Int]()
   private var textNodes = [[SKLabelNode]]()
   
+  private var symbolsManager: SymbolsManager!
+  
   static func create() -> SKScene {
     let scene = LiseFinalScene(fileNamed: "LiseFinalScene")
 
@@ -59,6 +61,7 @@ class LiseFinalScene: SKScene {
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
 
+    symbolsManager = SymbolsManager(scene: self)
     setupText()
   }
   
@@ -80,6 +83,8 @@ class LiseFinalScene: SKScene {
   }
   
   func touchMoved(toPoint pos : CGPoint) {
+    symbolsManager.generateAnimatedSymbol(at: pos)
+    
     for totalText in 0..<textSizes.count {
       for i in 1..<textSizes[totalText]-1 {
         if textNodes[totalText][i].contains(pos) {

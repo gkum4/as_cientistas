@@ -66,16 +66,23 @@ class PeriodicTableScene: SKScene {
   }
   
   private func showSceneText() {
-    sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
+    sceneText.alpha = 0
     sceneText.fontSize = 40
+    sceneText.numberOfLines = 0
+    sceneText.fontColor = .black
+    sceneText.position = sceneTextView.position
     sceneText.fontName = "NewYorkSmall-Semibold"
-    sceneText.text = "The Mt element \n(Meitnerium) was \nnamed after Lise Meitner"
+    sceneText.preferredMaxLayoutWidth = sceneTextView.frame.width - 100
+    sceneText.text = "The Mt element (Meitnerium) was named after Lise Meitner"
+    addChild(sceneText)
     
     let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
     let wait = SKAction.wait(forDuration: 5)
     let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1.5)
     let sequence = SKAction.sequence([fadeIn, wait, fadeOut])
+    
     sceneTextView.run(sequence)
+    sceneText.run(sequence)
   }
   
   func touchUp(atPoint pos : CGPoint) {
