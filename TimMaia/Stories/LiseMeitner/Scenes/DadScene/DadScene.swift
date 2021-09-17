@@ -69,7 +69,7 @@ class DadScene: SKScene {
       }
     }
     
-    if result >= textNodes.count-4 {
+    if result == textNodes.count {
       onGameEnd()
     }
   }
@@ -77,12 +77,19 @@ class DadScene: SKScene {
   func onGameEnd() {
     completedGame = true
     tooltipManager1.stopAnimation()
-    
-    // scene transition
   }
   
   func touchDown(atPoint pos : CGPoint) {
     tooltipManager1.stopAnimation()
+    
+    if completedGame {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: LiseWithBoysScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.flipVertical(withDuration: 2)
+      )
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
