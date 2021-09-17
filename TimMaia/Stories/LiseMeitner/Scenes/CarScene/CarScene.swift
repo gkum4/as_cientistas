@@ -30,6 +30,8 @@ class CarScene: SKScene {
   
   var allPointsTouched = false
   
+  private var nextButton: SKSpriteNode!
+  
   private var coreHapticsManager: CarSceneCoreHapticsManager?
   private var tooltipManager: TooltipManager!
   
@@ -42,6 +44,8 @@ class CarScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = UIColor(red: 0.95, green: 0.73, blue: 0.6, alpha: 1)
+    self.nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
     
     car = (self.childNode(withName: "car") as! SKSpriteNode)
     
@@ -194,6 +198,15 @@ class CarScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if allPointsTouched && nextButton.contains(pos) {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: SwedishUniversityScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.push(with: .left, duration: 2)
+      )
+    }
+    
     if animationRunning {
       return
     }
@@ -214,14 +227,20 @@ class CarScene: SKScene {
             pointIdSelected: clickablePointIds[i],
             onAnimationEnd: {
               self.showLocationTextAnimation(id: i, onAnimationEnd: {
-                self.allPointsTouched ? nil : self.tooltipManager.startAnimation()
+                if self.allPointsTouched {
+                  self.nextButton.run(.fadeIn(withDuration: 1.5))
+                }
+                self.tooltipManager.startAnimation()
                 self.animationRunning = false
               })
             }
           )
         } else {
           showLocationTextAnimation(id: i, onAnimationEnd: {
-            self.allPointsTouched ? nil : self.tooltipManager.startAnimation()
+            if self.allPointsTouched {
+              self.nextButton.run(.fadeIn(withDuration: 1.5))
+            }
+            self.tooltipManager.startAnimation()
             self.animationRunning = false
           })
         }
