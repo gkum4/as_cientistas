@@ -36,8 +36,8 @@ class LiseFinalScene: SKScene {
   
   private var text3 = DynamicTextManager(
     text: NSLocalizedString("LiseFinalScene3", comment: "Comment"),
-    startPos: CGPoint(x: -200, y: -270),
-    textWidth: 420,
+    startPos: CGPoint(x: -220, y: -270),
+    textWidth: 460,
     spacing: 4,
     textRotation: 0.1,
     fontStyle: BasicFontStyle(
@@ -49,7 +49,7 @@ class LiseFinalScene: SKScene {
   
   private var text4 = DynamicTextManager(
     text: NSLocalizedString("LiseFinalScene4", comment: "Comment"),
-    startPos: CGPoint(x: 0, y: -380),
+    startPos: CGPoint(x: -60, y: -380),
     textWidth: 360,
     spacing: 6,
     textRotation: 0.1,
@@ -106,7 +106,6 @@ class LiseFinalScene: SKScene {
     
     for node in textNodes {
       node.fontColor = .white
-      node.alpha = 1
       addChild(node)
     }
   }
