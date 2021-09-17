@@ -79,12 +79,23 @@ class LaboratoryScene: SKScene {
                                  restore: true),
                 withKey: "knobAnimation")
     hapticsManager?.triggerWarning()
-    notice.run(.fadeAlpha(to: notice.alpha + 0.2, duration: 1))
+    notice.run(.sequence([
+      .fadeAlpha(to: notice.alpha + 0.2, duration: 1),
+      .wait(forDuration: 1),
+      .run {
+        if self.notice.alpha >= 0.6 {
+          self.tooltipManager.stopAnimation()
+          SceneTransition.executeDefaultTransition(
+            from: self,
+            to: BasementDoorScene.create(),
+            nextSceneScaleMode: .aspectFill,
+            transition: SKTransition.push(with: .left, duration: 2)
+          )
+        }
+      }
+    ]))
     
-    if notice.alpha >= 0.6 {
-      tooltipManager.stopAnimation()
-      print("Próxima cena")
-    }
+    
   }
   
   func touchDown(atPoint pos : CGPoint) {
@@ -95,7 +106,7 @@ class LaboratoryScene: SKScene {
   }
   
   func touchUp(atPoint pos : CGPoint) {
-    if knobArea.contains(pos) {
+    if knobArea.contains(pos) && self.notice.alpha < 0.6 {
       tooltipManager.startAnimation()
       animateKnob()
     }
