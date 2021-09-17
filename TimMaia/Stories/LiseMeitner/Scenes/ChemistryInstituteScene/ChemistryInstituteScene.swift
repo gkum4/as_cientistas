@@ -8,7 +8,7 @@
 import SpriteKit
 
 class ChemistryInstituteScene: SKScene {
-  private var sceneAnimation = SKSpriteNode()
+  private var sceneAnimation: SKSpriteNode!
   private var sceneFrames: [SKTexture] = []
   
   private lazy var instituteName: SKLabelNode = { [unowned self] in
@@ -22,13 +22,15 @@ class ChemistryInstituteScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    buildSceneAnimation()
+    animateScene()
+    
     instituteName.text = "Kaiser Wilhelm \n Institute"
     instituteName.fontSize = 55
     instituteName.fontName = "NewYorkSmall-Bold"
     instituteName.position.y += 15
-    
-    buildSceneAnimation()
-    animateScene()
+    instituteName.removeFromParent()
+    sceneAnimation.addChild(instituteName)
   }
   
   private func buildSceneAnimation() {
@@ -50,11 +52,29 @@ class ChemistryInstituteScene: SKScene {
   }
   
   private func animateScene() {
-    sceneAnimation.run(SKAction.animate(with: sceneFrames,
-                                 timePerFrame: 0.4,
-                                 resize: false,
-                                 restore: true),
-                withKey: "instituteAnimation")
+    let animationSequence: [SKAction] = [
+      .animate(
+        with: sceneFrames,
+        timePerFrame: 0.4,
+        resize: false,
+        restore: true
+      ),
+      .wait(forDuration: 0.5),
+      .group([
+        .move(by: CGVector(dx: 0, dy: 400), duration: 1),
+        .scale(by: 1.5, duration: 1)
+      ]),
+      .run {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: LaboratoryScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: SKTransition.fade(withDuration: 2)
+        )
+      }
+    ]
+    
+    sceneAnimation.run(.sequence(animationSequence))
   }
   
   func touchDown(atPoint pos : CGPoint) {
