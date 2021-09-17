@@ -34,10 +34,10 @@
 		0CF1B2A926E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */; };
 		0CF1B2AC26E110CE002B87F0 /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */; };
 		0CF1B2AE26E110DF002B87F0 /* SKView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2AD26E110DF002B87F0 /* SKView+.swift */; };
-		0CF1B2DE26ED3CCD002B87F0 /* SceneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2DD26ED3CCD002B87F0 /* SceneTransition.swift */; };
 		0CF1B2CE26E7A953002B87F0 /* CarScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CF1B2CD26E7A952002B87F0 /* CarScene.sks */; };
 		0CF1B2D026E7A95F002B87F0 /* CarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */; };
 		0CF1B2D226E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */; };
+		0CF1B2DE26ED3CCD002B87F0 /* SceneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1B2DD26ED3CCD002B87F0 /* SceneTransition.swift */; };
 		420C209D26EF856B00D32A7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C209C26EF856B00D32A7D /* HomeViewController.swift */; };
 		420C20A626F0D21C00D32A7D /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C20A526F0D21C00D32A7D /* CardTableViewCell.swift */; };
 		420C20B426F0EDAF00D32A7D /* NewYorkSmall-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 420C20A826F0EDAD00D32A7D /* NewYorkSmall-Black.otf */; };
@@ -149,10 +149,10 @@
 		0CF1B2A826E106DA002B87F0 /* BlackboardSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackboardSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0CF1B2AB26E110CE002B87F0 /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
 		0CF1B2AD26E110DF002B87F0 /* SKView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+.swift"; sourceTree = "<group>"; };
-		0CF1B2DD26ED3CCD002B87F0 /* SceneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransition.swift; sourceTree = "<group>"; };
 		0CF1B2CD26E7A952002B87F0 /* CarScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CarScene.sks; sourceTree = "<group>"; };
 		0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarScene.swift; sourceTree = "<group>"; };
 		0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		0CF1B2DD26ED3CCD002B87F0 /* SceneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransition.swift; sourceTree = "<group>"; };
 		420C209C26EF856B00D32A7D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		420C20A526F0D21C00D32A7D /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		420C20A826F0EDAD00D32A7D /* NewYorkSmall-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Black.otf"; sourceTree = "<group>"; };
@@ -380,6 +380,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		0CF1B2CC26E7A93D002B87F0 /* CarScene */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1B2CD26E7A952002B87F0 /* CarScene.sks */,
+				0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */,
+				0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */,
+				0C3C7BAB26F2316800A6A904 /* ClickablePoint.swift */,
+			);
+			path = CarScene;
+			sourceTree = "<group>";
+		};
 		0CF1B2DB26ED3CB6002B87F0 /* SceneTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,17 +405,6 @@
 				0CF1B2DB26ED3CB6002B87F0 /* SceneTransition */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		0CF1B2CC26E7A93D002B87F0 /* CarScene */ = {
-			isa = PBXGroup;
-			children = (
-				0CF1B2CD26E7A952002B87F0 /* CarScene.sks */,
-				0CF1B2CF26E7A95F002B87F0 /* CarScene.swift */,
-				0CF1B2D126E7A96F002B87F0 /* CarSceneCoreHapticsManager.swift */,
-				0C3C7BAB26F2316800A6A904 /* ClickablePoint.swift */,
-			);
-			path = CarScene;
 			sourceTree = "<group>";
 		};
 		420C209B26EF850400D32A7D /* Home */ = {
@@ -972,7 +972,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQJF9G685U;
+				DEVELOPMENT_TEAM = L5C36X97NN;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -991,7 +991,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HQJF9G685U;
+				DEVELOPMENT_TEAM = L5C36X97NN;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

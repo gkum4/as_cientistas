@@ -241,6 +241,13 @@ class MapZoomScene: SKScene {
       targetLocation.run(SKAction.sequence([SKAction.wait(forDuration: 1), SKAction.fadeOut(withDuration: 0.5)]))
       targetLocation.zPosition = 2
       rescaleCameraOnViewChange(pos: CGPoint(x: 0, y: 0), scale: 1.0, duration: 1)
+      
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: LisePlayingScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.fade(withDuration: 2)
+      )
     }
   }
   

@@ -11,6 +11,10 @@ class LisePlayingScene: SKScene {
   private var sceneAnimation = SKSpriteNode()
   private var sceneFrames: [SKTexture] = []
   
+  private var nextButton: SKSpriteNode!
+  
+  private var animationEnded = false
+  
   private var liseCharNodes: [SKLabelNode] = []
   private var problemCharNodes: [SKLabelNode] = []
   
@@ -21,6 +25,9 @@ class LisePlayingScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
+    
     buildSceneAnimation()
     animateScene()
   }
@@ -92,18 +99,32 @@ class LisePlayingScene: SKScene {
   }
   
   private func animateScene() {
-    sceneAnimation.run(.animate(
-      with: sceneFrames,
-      timePerFrame: 0.2,
-      resize: false,
-      restore: false
-    ))
+    sceneAnimation.run(.sequence([
+      .animate(
+        with: sceneFrames,
+        timePerFrame: 0.2,
+        resize: false,
+        restore: false
+      ),
+      .run {
+        self.animationEnded = true
+        self.nextButton.run(.fadeIn(withDuration: 1))
+      }
+    ]))
     
     showLiseText()
     showProblemText()
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if animationEnded && nextButton.contains(pos) {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: DadScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.push(with: .left, duration: 2)
+      )
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
