@@ -62,6 +62,10 @@ final class BlowDetector {
   }
   
   func stop() {
+    if audioRecorder == nil {
+      return
+    }
+    
     audioRecorder.stop()
     audioRecorder = nil
   }

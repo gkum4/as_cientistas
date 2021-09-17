@@ -18,6 +18,11 @@ class PeriodicTableScene: SKScene {
     return self.periodicTable.children.first as! SKSpriteNode
   }()
   
+  private lazy var sceneTextView: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "sceneTextView") as! SKSpriteNode
+  }()
+  private var sceneText = SKLabelNode()
+  
   private var initialElemPos: CGPoint?
   private var tablePosition: CGPoint?
   private var initialElemSize: CGSize?
@@ -35,7 +40,6 @@ class PeriodicTableScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    self.backgroundColor = .systemBackground
     initialElemPos = periodicElement.position
     tablePosition = periodicTable.position
     initialElemSize = periodicElement.size
@@ -61,6 +65,19 @@ class PeriodicTableScene: SKScene {
     }
   }
   
+  private func showSceneText() {
+    sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
+    sceneText.fontSize = 40
+    sceneText.fontName = "NewYorkSmall-Semibold"
+    sceneText.text = "The Mt element \n(Meitnerium) was \nnamed after Lise Meitner"
+    
+    let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
+    let wait = SKAction.wait(forDuration: 5)
+    let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1.5)
+    let sequence = SKAction.sequence([fadeIn, wait, fadeOut])
+    sceneTextView.run(sequence)
+  }
+  
   func touchUp(atPoint pos : CGPoint) {
     if nodeTouched == periodicElement {
       let convertedCoord = convert(periodicElement.position, to: periodicTable)
@@ -69,6 +86,8 @@ class PeriodicTableScene: SKScene {
         elementOnTable.alpha = 1
         periodicElement.alpha = 0
         hapticsManager?.triggerSuccess()
+        
+        showSceneText()
       }
       else { // Moves to initial position on wrong placement
         guard let position = initialElemPos else {
