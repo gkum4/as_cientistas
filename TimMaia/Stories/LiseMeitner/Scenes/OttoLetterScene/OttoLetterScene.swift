@@ -19,6 +19,13 @@ class OttoLetterScene: SKScene {
   private var textSize: Int?
   private var textNodes = [SKLabelNode]()
   
+  private var gameEnded = false
+  
+  private var nextButton: SKSpriteNode!
+  
+  private var tooltipManager: TooltipManager!
+  private var symbolsManager: SymbolsManager!
+  
   static func create() -> SKScene {
     let scene = OttoLetterScene(fileNamed: "OttoLetterScene")
 
@@ -27,12 +34,25 @@ class OttoLetterScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
+    
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
 
     textSize = text.textSize
     textNodes = text.lettersNodes
     for node in textNodes {
       addChild(node)
     }
+    
+    symbolsManager = SymbolsManager(scene: self, color: .black)
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: -200, y: 470),
+      timeBetweenAnimations: 5,
+      animationType: .slideToRight
+    )
+    tooltipManager.startAnimation()
     
     buildLetterAnimation()
     animateLetter()
@@ -64,20 +84,62 @@ class OttoLetterScene: SKScene {
                 withKey: "letterAnimation")
   }
   
-  func touchDown(atPoint pos : CGPoint) {
-  }
-  
-  func touchMoved(toPoint pos : CGPoint) {
-    for i in 1..<textSize!-1 {
-      if textNodes[i].contains(pos) {
-        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
+  private func checkAllNodesAppeared() {
+    var count = 0
+    
+    for charNode in textNodes {
+      if charNode.alpha != 0 {
+        count += 1
       }
+    }
+    
+    if count >= textSize!-6 {
+      gameEnded = true
+      tooltipManager.stopAnimation()
+      print("game ended")
+      
+      nextButton.run(.fadeIn(withDuration: 1.5))
     }
   }
   
+  func touchDown(atPoint pos : CGPoint) {
+    if gameEnded && nextButton.contains(pos) {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: NewsScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.push(with: .left, duration: 2)
+      )
+      return
+    }
+    tooltipManager.stopAnimation()
+  }
+  
+  func touchMoved(toPoint pos : CGPoint) {
+    symbolsManager.generateAnimatedSymbol(at: pos)
+    
+    if gameEnded {
+      return
+    }
+    
+    for i in 1..<textSize!-1 {
+      if textNodes[i].contains(pos) {
+        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 0.7))
+        textNodes[i].run(SKAction.fadeIn(withDuration: 0.7))
+        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 0.7))
+        break
+      }
+    }
+    
+    checkAllNodesAppeared()
+  }
+  
   func touchUp(atPoint pos : CGPoint) {
+    if gameEnded {
+      return
+    }
+    
+    tooltipManager.startAnimation()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
