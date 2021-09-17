@@ -70,6 +70,10 @@
 		C43CBC7126F0E99E003B6FAB /* PrizesSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */; };
 		C442C56C26F404C1007FE075 /* LiseHelpsOttoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442C56B26F404C1007FE075 /* LiseHelpsOttoScene.swift */; };
 		C442C57026F404DD007FE075 /* LiseHelpsOttoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C442C56F26F404DD007FE075 /* LiseHelpsOttoScene.sks */; };
+		C442C57326F4210E007FE075 /* InstituteAttackedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442C57226F4210E007FE075 /* InstituteAttackedScene.swift */; };
+		C442C57526F4211A007FE075 /* InstituteAttackedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C442C57426F4211A007FE075 /* InstituteAttackedScene.sks */; };
+		C442C57726F42378007FE075 /* TankAnimation.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C442C57626F42377007FE075 /* TankAnimation.atlas */; };
+		C442C57B26F427B4007FE075 /* InstituteAttackedSceneCoreHapitcsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442C57A26F427B4007FE075 /* InstituteAttackedSceneCoreHapitcsManager.swift */; };
 		C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */; };
 		C44C607826EFEDF60049F370 /* LiseTeachingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */; };
 		C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */; };
@@ -180,6 +184,10 @@
 		C43CBC7026F0E99E003B6FAB /* PrizesSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizesSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C442C56B26F404C1007FE075 /* LiseHelpsOttoScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseHelpsOttoScene.swift; sourceTree = "<group>"; };
 		C442C56F26F404DD007FE075 /* LiseHelpsOttoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseHelpsOttoScene.sks; sourceTree = "<group>"; };
+		C442C57226F4210E007FE075 /* InstituteAttackedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteAttackedScene.swift; sourceTree = "<group>"; };
+		C442C57426F4211A007FE075 /* InstituteAttackedScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InstituteAttackedScene.sks; sourceTree = "<group>"; };
+		C442C57626F42377007FE075 /* TankAnimation.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TankAnimation.atlas; sourceTree = "<group>"; };
+		C442C57A26F427B4007FE075 /* InstituteAttackedSceneCoreHapitcsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteAttackedSceneCoreHapitcsManager.swift; sourceTree = "<group>"; };
 		C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LaboratorySceneKnob.atlas; sourceTree = "<group>"; };
 		C44C607726EFEDF60049F370 /* LiseTeachingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiseTeachingScene.swift; sourceTree = "<group>"; };
 		C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiseTeachingScene.sks; sourceTree = "<group>"; };
@@ -266,6 +274,7 @@
 		0C106B6E26D67FBD004B0CD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C442C57126F420FE007FE075 /* InstituteAttackedScene */,
 				C442C56A26F404B2007FE075 /* LiseHelpsOttoScene */,
 				C4B9FF2D26F3813B0052BDB8 /* SwedishUniversityScene */,
 				C4880E9526F2D38500A3BB01 /* NewsScene */,
@@ -443,6 +452,17 @@
 				C442C56F26F404DD007FE075 /* LiseHelpsOttoScene.sks */,
 			);
 			path = LiseHelpsOttoScene;
+			sourceTree = "<group>";
+		};
+		C442C57126F420FE007FE075 /* InstituteAttackedScene */ = {
+			isa = PBXGroup;
+			children = (
+				C442C57626F42377007FE075 /* TankAnimation.atlas */,
+				C442C57226F4210E007FE075 /* InstituteAttackedScene.swift */,
+				C442C57426F4211A007FE075 /* InstituteAttackedScene.sks */,
+				C442C57A26F427B4007FE075 /* InstituteAttackedSceneCoreHapitcsManager.swift */,
+			);
+			path = InstituteAttackedScene;
 			sourceTree = "<group>";
 		};
 		C44C607926EFEE020049F370 /* LiseTeachingScene */ = {
@@ -701,6 +721,7 @@
 				C4B9FF3126F3815C0052BDB8 /* SwedishUniversityScene.sks in Resources */,
 				C4D80BD426EF927400B870AB /* ChemistryInstituteScene.atlas in Resources */,
 				C4B9FF3326F384AF0052BDB8 /* SwedishUniversityScene.atlas in Resources */,
+				C442C57526F4211A007FE075 /* InstituteAttackedScene.sks in Resources */,
 				420C20BB26F0EDAF00D32A7D /* NewYorkSmall-Semibold.otf in Resources */,
 				0C3CCE2326D52C20007A4CEA /* Main.storyboard in Resources */,
 				420C20BD26F0EDAF00D32A7D /* NewYorkSmall-Bold.otf in Resources */,
@@ -712,6 +733,7 @@
 				C422051826DDBB0800293DDE /* Oscillate.ahap in Resources */,
 				0CF1B2CE26E7A953002B87F0 /* CarScene.sks in Resources */,
 				420C20BC26F0EDAF00D32A7D /* NewYorkSmall-Heavy.otf in Resources */,
+				C442C57726F42378007FE075 /* TankAnimation.atlas in Resources */,
 				420C20BF26F0EDAF00D32A7D /* NewYorkSmall-Regular.otf in Resources */,
 				420C20BE26F0EDAF00D32A7D /* NewYorkSmall-Medium.otf in Resources */,
 				C4B4F68426DE52F800BB8E36 /* MapZoomScene.sks in Resources */,
@@ -766,6 +788,8 @@
 				C4A325A626F2190900934998 /* NobelLetterScene.swift in Sources */,
 				C4A8AC8F26E16D5900CED26E /* TrophyScene.swift in Sources */,
 				0C3C7BAC26F2316800A6A904 /* ClickablePoint.swift in Sources */,
+				C442C57B26F427B4007FE075 /* InstituteAttackedSceneCoreHapitcsManager.swift in Sources */,
+				C442C57326F4210E007FE075 /* InstituteAttackedScene.swift in Sources */,
 				C492D61F26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift in Sources */,
 				C4A325AC26F227C200934998 /* InterviewScene.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
@@ -928,7 +952,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L5C36X97NN;
+				DEVELOPMENT_TEAM = HQJF9G685U;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -947,7 +971,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L5C36X97NN;
+				DEVELOPMENT_TEAM = HQJF9G685U;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
