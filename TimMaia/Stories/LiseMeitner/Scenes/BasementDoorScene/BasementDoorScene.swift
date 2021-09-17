@@ -90,8 +90,12 @@ class BasementDoorScene: SKScene {
       self.tooltipManager.stopAnimation()
       
       animateScene(onAnimationEnd: {
-        
-        // scene transition
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: BasementScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: SKTransition.fade(withDuration: 2)
+        )
       })
       hapticsManager?.triggerSuccess()
     }
