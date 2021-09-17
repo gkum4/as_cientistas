@@ -50,53 +50,43 @@ class LisePlayingScene: SKScene {
   }
   
   private func showLiseText() {
-    let textManager = DynamicTextManager(
-      text: "One day I'll be a scientist!",
-      startPos: CGPoint(x: -310, y: 420),
-      textWidth: 250,
-      fontStyle: .init(
-        fontName: "NewYorkSmall-Bold",
-        fontSize: 38,
-        color: .black
-      )
-    )
+    let label = SKLabelNode()
+    label.fontName = "NewYorkSmall-Bold"
+    label.fontSize = 38
+    label.fontColor = .black
+    label.text = "One day\nI'll be\na scientist!"
+    label.position = CGPoint(x: -210, y: 320)
+    label.numberOfLines = 3
+    label.alpha = 0
     
     self.run(.sequence([
       .wait(forDuration: 1),
       .run {
-        for charNode in textManager.lettersNodes {
-          charNode.run(.fadeIn(withDuration: 0.2))
-          self.liseCharNodes.append(charNode)
-          self.addChild(charNode)
-        }
+        label.run(.fadeIn(withDuration: 0.2))
+        self.addChild(label)
       },
       .wait(forDuration: 3.2),
       .run {
-        self.eraseText(textNodes: self.liseCharNodes)
+        label.run(.fadeOut(withDuration: 0.2))
       }
     ]))
   }
   
   private func showProblemText() {
-    let textManager = DynamicTextManager(
-      text: "Women cannot be scientists!",
-      startPos: CGPoint(x: -340, y: 443),
-      textWidth: 300,
-      fontStyle: .init(
-        fontName: "NewYorkSmall-Bold",
-        fontSize: 38,
-        color: .red
-      )
-    )
+    let label = SKLabelNode()
+    label.fontName = "NewYorkSmall-Bold"
+    label.fontSize = 38
+    label.fontColor = .red
+    label.text = "Women cannot\nbe scientists!"
+    label.position = CGPoint(x: -220, y: 365)
+    label.numberOfLines = 2
+    label.alpha = 0
     
     self.run(.sequence([
       .wait(forDuration: 5.6),
       .run {
-        for charNode in textManager.lettersNodes {
-          charNode.run(.fadeIn(withDuration: 0.2))
-          self.problemCharNodes.append(charNode)
-          self.addChild(charNode)
-        }
+        label.run(.fadeIn(withDuration: 0.2))
+        self.addChild(label)
       }
     ]))
   }
