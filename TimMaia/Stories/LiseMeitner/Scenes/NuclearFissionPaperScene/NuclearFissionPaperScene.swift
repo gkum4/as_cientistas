@@ -15,6 +15,8 @@ class NuclearFissionPaperScene: SKScene {
   
   private var gameEnded = false
   
+  private var nextButton: SKSpriteNode!
+  
   private var tooltipManager: TooltipManager!
   private var coreHapticsManager: NuclearFissionPaperSceneCoreHapticsManager?
   private var symbolsManager: SymbolsManager!
@@ -28,6 +30,8 @@ class NuclearFissionPaperScene: SKScene {
   
   override func didMove(to view: SKView) {
     paper = (self.childNode(withName: "//paper") as! SKSpriteNode)
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
     
     let paperStandByAnimation: SKAction = .repeatForever(.sequence([
       .move(by: CGVector(dx: 0, dy: -50), duration: 0.6),
@@ -68,6 +72,15 @@ class NuclearFissionPaperScene: SKScene {
   
   func touchDown(atPoint pos : CGPoint) {
     if gameEnded {
+      if nextButton.contains(pos) {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: InstituteAttackedScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: SKTransition.push(with: .down, duration: 2)
+        )
+      }
+      
       return
     }
     
@@ -92,7 +105,10 @@ class NuclearFissionPaperScene: SKScene {
     if movementSize >= 5 {
       paper.removeAllActions()
       
-      let paperMoveAnimation: SKAction = .move(to: CGPoint(x: -7, y: -30), duration: 1.2)
+      let paperMoveAnimation: SKAction = .move(
+        to: CGPoint(x: -7, y: -30),
+        duration: 1.2
+      )
       
       paper.run(paperMoveAnimation)
       
@@ -100,10 +116,14 @@ class NuclearFissionPaperScene: SKScene {
         .wait(forDuration: 1.21),
         .run {
           self.coreHapticsManager?.playClickPattern()
+          self.nextButton.run(.sequence([
+            .fadeIn(withDuration: 1.5),
+            .run {
+              self.gameEnded = true
+            }
+          ]))
         }
       ]))
-      
-      gameEnded = true
       
       return
     }

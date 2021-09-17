@@ -25,6 +25,8 @@ class InstituteAttackedScene: SKScene {
     return childNode(withName : "TankFinalPosition") as! SKSpriteNode
   }()
   
+  private var tooltipManager: TooltipManager!
+  
   private var coreHapticsManager: InstituteAttackedSceneCoreHapitcsManager?
   
   static func create() -> SKScene {
@@ -38,6 +40,14 @@ class InstituteAttackedScene: SKScene {
     setupInstituteName()
     buildSceneAnimation()
     animateScene()
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: tankPosition.position,
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+    tooltipManager.startAnimation()
   }
   
   private func setupInstituteName() {
@@ -65,7 +75,7 @@ class InstituteAttackedScene: SKScene {
   }
   
   private func animateScene() {
-    sceneAnimation.run(SKAction.animate(with: sceneFrames,
+    sceneAnimation.run(.animate(with: sceneFrames,
                                  timePerFrame: 0.3,
                                  resize: false,
                                  restore: false),
@@ -74,7 +84,21 @@ class InstituteAttackedScene: SKScene {
   
   func touchDown(atPoint pos : CGPoint) {
     if tankPosition.contains(pos) {
-      institute.alpha = 0
+      tooltipManager.stopAnimation()
+      institute.run(.sequence([
+        .run {
+          self.institute.alpha = 0
+        },
+        .wait(forDuration: 2),
+        .run {
+          SceneTransition.executeDefaultTransition(
+            from: self,
+            to: CarScene.create(),
+            nextSceneScaleMode: .aspectFill,
+            transition: SKTransition.push(with: .left, duration: 2)
+          )
+        }
+      ]))
       coreHapticsManager?.playFilePattern()
     }
   }
