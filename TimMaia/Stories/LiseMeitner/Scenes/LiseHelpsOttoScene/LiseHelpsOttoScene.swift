@@ -15,6 +15,10 @@ class LiseHelpsOttoScene: SKScene {
     return childNode(withName : "LiseSpeech") as! SKLabelNode
   }()
   
+  private var nextButton: SKSpriteNode!
+  
+  private var canGoToNextScene = false
+  
   static func create() -> SKScene {
     let scene = LiseHelpsOttoScene(fileNamed: "LiseHelpsOttoScene")
 
@@ -22,6 +26,9 @@ class LiseHelpsOttoScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
+    
     setupText()
   }
   
@@ -37,10 +44,26 @@ class LiseHelpsOttoScene: SKScene {
     ottoText.run(fadeIn)
     
     let wait = SKAction.wait(forDuration: 5)
-    liseText.run(SKAction.sequence([wait, fadeIn]))
+    liseText.run(SKAction.sequence([
+      wait,
+      fadeIn,
+      .wait(forDuration: 2),
+      .run {
+        self.nextButton.run(.fadeIn(withDuration: 1.5))
+        self.canGoToNextScene = true
+      }
+    ]))
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if canGoToNextScene && nextButton.contains(pos) {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: NobelLetterScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.push(with: .left, duration: 2)
+      )
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {

@@ -16,14 +16,25 @@ class NobelLetterScene: SKScene {
     "of nuclear  fissions with continuous release of energy, in a process called chain reaction."
   ]
   
-  private var text = DynamicTextManager(text: "Hi, I'm physicist Lise Meitner. I discovered the nuclear fission process by proving that the",
-                                    startPos: CGPoint(x: -220, y: 470),
-                                    textWidth: 440, lineHeight: 115, textRotation: 0.1,
-                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 30, color: .black))
+  private var gameEnded = false
+  private var animationRunning = false
+  
+  private var text = DynamicTextManager(
+    text: "Hi, I'm physicist Lise Meitner. I discovered the nuclear fission process by proving that the",
+    startPos: CGPoint(x: -220, y: 470),
+    textWidth: 440,
+    lineHeight: 115,
+    textRotation: 0.1,
+    fontStyle: BasicFontStyle(
+      fontName: "NewYorkSmall-Regular",
+      fontSize: 30,
+      color: .black
+    )
+  )
   
   
   private lazy var button: SKSpriteNode = { [unowned self] in
-    return childNode(withName : "Button") as! SKSpriteNode
+    return childNode(withName : "button") as! SKSpriteNode
   }()
 
   
@@ -48,12 +59,36 @@ class NobelLetterScene: SKScene {
   }
   
   private func changeLetterText() {
+    if animationRunning {
+      return
+    }
+    
     currentPage += 1
     
-    let newNodes = DynamicTextManager(text: letterPages[currentPage],
-                                      startPos: CGPoint(x: -220, y: 470),
-                                      textWidth: 440, lineHeight: 115, textRotation: 0.1,
-                                      fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 30, color: .black))
+    if currentPage >= letterPages.count {
+      gameEnded = true
+      
+      button.run(.repeatForever(.sequence([
+        .fadeAlpha(to: 0.3, duration: 1),
+        .fadeIn(withDuration: 1)
+      ])))
+      return
+    }
+    
+    let newNodes = DynamicTextManager(
+      text: letterPages[currentPage],
+      startPos: CGPoint(x: -220, y: 470),
+      textWidth: 440,
+      lineHeight: 115,
+      textRotation: 0.1,
+      fontStyle: BasicFontStyle(
+        fontName: "NewYorkSmall-Regular",
+        fontSize: 30,
+        color: .black
+      )
+    )
+    
+    animationRunning = true
     
     for node in newNodes.lettersNodes {
       node.run(.fadeIn(withDuration: 2.5))
@@ -64,24 +99,42 @@ class NobelLetterScene: SKScene {
       node.run(.fadeOut(withDuration: 1))
     }
     
+    self.run(.sequence([
+      .wait(forDuration: 1.8),
+      .run {
+        self.animationRunning = false
+      }
+    ]))
+    
     textNodes = newNodes.lettersNodes
     textSize = newNodes.textSize
   }
   
   func touchDown(atPoint pos : CGPoint) {
     if button.contains(pos) {
+      if gameEnded {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: TrophyScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: SKTransition.push(with: .left, duration: 2)
+        )
+        
+        return
+      }
+      
       changeLetterText()
     }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
-    for i in 1..<textSize!-1 {
-      if textNodes[i].contains(pos) {
-        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
-      }
-    }
+//    for i in 1..<textSize!-1 {
+//      if textNodes[i].contains(pos) {
+//        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
+//        textNodes[i].run(SKAction.fadeIn(withDuration: 1))
+//        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
+//      }
+//    }
   }
   
   func touchUp(atPoint pos : CGPoint) {

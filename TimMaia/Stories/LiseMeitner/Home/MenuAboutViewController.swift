@@ -44,6 +44,7 @@ class MenuAboutViewController: UIViewController, UITableViewDelegate, UITableVie
     let vc = ViewController()
 
     vc.modalPresentationStyle = .fullScreen
+    vc.modalTransitionStyle = .crossDissolve
 
     self.present(vc, animated: true)
   }

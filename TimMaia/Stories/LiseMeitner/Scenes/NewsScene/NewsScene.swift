@@ -19,6 +19,10 @@ class NewsScene: SKScene {
   private var scdPageTextLeft = SKLabelNode()
   private var scdPageTextRight = SKLabelNode()
   
+  private var tooltipManager: TooltipManager!
+  
+  private var canGoToNextScene = false
+  
   static func create() -> SKScene {
     let scene = NewsScene(fileNamed: "NewsScene")
 
@@ -26,6 +30,14 @@ class NewsScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: 0, y: 0),
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+    tooltipManager.startAnimation()
+    
     setupText()
   }
   
@@ -42,9 +54,24 @@ class NewsScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if canGoToNextScene {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: LiseHelpsOttoScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.push(with: .down, duration: 2)
+      )
+    }
+    
     if firstPage.contains(pos) {
+      tooltipManager.stopAnimation()
       firstPage.run(.fadeOut(withDuration: 2))
-      secondPage.run(.fadeIn(withDuration: 2))
+      secondPage.run(.sequence([
+        .fadeIn(withDuration: 2),
+        .run {
+          self.canGoToNextScene = true
+        }
+      ]))
     }
   }
   
