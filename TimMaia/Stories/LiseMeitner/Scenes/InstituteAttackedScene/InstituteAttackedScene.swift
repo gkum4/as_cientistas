@@ -51,7 +51,7 @@ class InstituteAttackedScene: SKScene {
   }
   
   private func setupInstituteName() {
-    instituteName.text = "Kaiser Wilhelm \nInstitute"
+    instituteName.text = NSLocalizedString("LiseChemistryIntitute", comment: "Comment")
     instituteName.fontSize = 55
     instituteName.fontName = "NewYorkSmall-Bold"
   }

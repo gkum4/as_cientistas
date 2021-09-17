@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TimMaia
+
+  Created by João Pedro Picolo on 17/09/21.
+  
+*/
+
+"LiseChemistryIntitute" = "Kaiser Wilhelm Institute";
+
+"LisePlayingScene1" = "One day I'll be a scientist!";
+"LisePlayingScene2" = "Women cannot be scientists!";
+
+"LiseDadScene1" = "Dad";
+"LiseDadScene2" = "No matter what they say, I will pay for my daughter's studies!";
+
+"LiseDegreeScene1" = "Berlin University Degree";
+"LiseDegreeScene2" = "We awarded Lise Meitner the Ph.D. title with honors for her studies in radioactivity and nuclear physics.";
+
+"LiseLaboratoryScene1" = "Physics Laboratory";
+"LiseLaboratoryScene2" = "Men only";
+
+"LiseInterviewScene1" = "👱🏻‍♂️ Hi Lise, welcome!";
+"LiseInterviewScene2" = "👩🏻‍🦰 Thanks! It's great to be here.";
+"LiseInterviewScene3" = "👱🏻‍♂️ Tell us about dinner with President Truman and how it felt to be recognized as Woman of the Year.";
+"LiseInterviewScene4" = "👩🏻‍🦰 It was a great dinner, I was very happy for the nomination.";
+"LiseInterviewScene5" = "👱🏻‍♂️ Great! This shows that your work is very important to the world, even without Otto having recognized you in the Nobel Prize.";
+"LiseInterviewScene6" = "👩🏻‍🦰 Yes! He should have named me at the awards, since I was the one who discovered nuclear fission. But anyway I'm being recognized in other ways.";
+

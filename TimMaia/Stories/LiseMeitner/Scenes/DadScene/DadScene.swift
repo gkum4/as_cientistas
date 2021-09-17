@@ -12,7 +12,7 @@ class DadScene: SKScene {
     return childNode(withName : "DadBadge") as! SKLabelNode
   }()
   private var dadSpeech = DynamicTextManager(
-    text: "No matter what they say, I will pay for my daughter's studies!",
+    text: NSLocalizedString("LiseDadScene2", comment: "Comment"),
     startPos: CGPoint(x: -225, y: -270),
     textWidth: 460,
     lineHeight: 100,
@@ -40,7 +40,7 @@ class DadScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    badge.text = "Dad"
+    badge.text = NSLocalizedString("LiseDadScene1", comment: "Comment")
     
     textSize = dadSpeech.textSize
     textNodes = dadSpeech.lettersNodes

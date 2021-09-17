@@ -26,12 +26,12 @@ class InterviewScene: SKScene {
   
   private var conversationNodes = [SKLabelNode]()
   private var conversation: [String] = [
-    "👱🏻‍♂️ Hi Lise, welcome!",
-    "👩🏻‍🦰 Thanks! It's great to be here.",
-    "👱🏻‍♂️ Tell us about dinner with \nPresident Truman and how it \nfelt to be recognized as Woman \nof the Year.",
-    "👩🏻‍🦰 It was a great dinner, I was \nvery happy for the nomination.",
-    "👱🏻‍♂️ Great! This shows that your \nwork is very important to the world, \neven without Otto having recognized \nyou in the Nobel Prize.",
-    "👩🏻‍🦰 Yes! He should have named me at \nthe awards, since I was the one \nwho discovered nuclear fission. \nBut anyway I'm being recognized \nin other ways.",
+    NSLocalizedString("LiseInterviewScene1", comment: "Comment"),
+    NSLocalizedString("LiseInterviewScene2", comment: "Comment"),
+    NSLocalizedString("LiseInterviewScene3", comment: "Comment"),
+    NSLocalizedString("LiseInterviewScene4", comment: "Comment"),
+    NSLocalizedString("LiseInterviewScene5", comment: "Comment"),
+    NSLocalizedString("LiseInterviewScene6", comment: "Comment"),
   ]
   
   private var nextButton: SKSpriteNode!

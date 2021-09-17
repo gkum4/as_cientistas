@@ -25,7 +25,7 @@ class ChemistryInstituteScene: SKScene {
     buildSceneAnimation()
     animateScene()
     
-    instituteName.text = "Kaiser Wilhelm \n Institute"
+    instituteName.text = NSLocalizedString("LiseChemistryIntitute", comment: "Comment")
     instituteName.fontSize = 55
     instituteName.fontName = "NewYorkSmall-Bold"
     instituteName.position.y += 15

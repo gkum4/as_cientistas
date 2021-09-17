@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TimMaia
+
+  Created by João Pedro Picolo on 17/09/21.
+  
+*/
+
+"LiseChemistryIntitute" = "Instituto Kaiser Wilhelm";
+
+"LisePlayingScene1" = "Um dia eu vou me tornar uma cientista!";
+"LisePlayingScene2" = "Mulheres não podem ser cientistas!";
+
+"LiseDadScene1" = "Pai";
+"LiseDadScene2" = "Não importa o que todos dizem, eu vou pagar pelos estudos da minha filha!";
+
+"LiseDegreeScene1" = "Diploma da Universidade de Berlim";
+"LiseDegreeScene2" = "Nós concedemos a Lise Meitner o grau de doutora, por estudar radioatividade e física nuclear com muita excelência.";
+
+"LiseLaboratoryScene1" = "Laboratório de Física";
+"LiseLaboratoryScene2" = "Apenas homens";
+
+"LiseInterviewScene1" = "👱🏻‍♂️ Olá Lise, bem-vinda! ";
+"LiseInterviewScene2" = "👩🏻‍🦰 Obrigada! É muito bom estar aqui.";
+"LiseInterviewScene3" = "👱🏻‍♂️ Nos conte sobre a janta com o presidente Truman e sobre como você se sentiu sendo reconhecida como a mulher do ano.";
+"LiseInterviewScene4" = "👱🏻‍♂️ Nos conte sobre a janta com o presidente Truman e sobre como você se sentiu sendo reconhecida como a mulher do ano.";
+"LiseInterviewScene5" = "👱🏻‍♂️ Nos conte sobre a janta com o presidente Truman e sobre como você se sentiu sendo reconhecida como a mulher do ano.";
+"LiseInterviewScene6" = "👩🏻‍🦰 Sim! Ele deveria ter me citado na premiação, já que fui eu quem descobriu a fissão nuclear. Mas de qualquer forma eu estou sendo reconhecida de outras formas.";
+

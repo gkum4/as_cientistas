@@ -61,7 +61,7 @@ class LisePlayingScene: SKScene {
     label.fontName = "NewYorkSmall-Bold"
     label.fontSize = 38
     label.fontColor = .black
-    label.text = "One day\nI'll be\na scientist!"
+    label.text = NSLocalizedString("LisePlayingScene1", comment: "Comment")
     label.position = CGPoint(x: -210, y: 320)
     label.numberOfLines = 3
     label.alpha = 0
@@ -84,7 +84,7 @@ class LisePlayingScene: SKScene {
     label.fontName = "NewYorkSmall-Bold"
     label.fontSize = 38
     label.fontColor = .red
-    label.text = "Women cannot\nbe scientists!"
+    label.text = NSLocalizedString("LisePlayingScene2", comment: "Comment")
     label.position = CGPoint(x: -220, y: 365)
     label.numberOfLines = 2
     label.alpha = 0
