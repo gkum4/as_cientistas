@@ -23,8 +23,6 @@ class NuclearFissionScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    self.backgroundColor = UIColor.white
-    
     tooltipManager = TooltipManager(
       scene: self,
       startPosition: CGPoint(x: 0, y: 0),
