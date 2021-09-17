@@ -118,7 +118,7 @@ class DegreeScene: SKScene {
   func showDegreeText() {
     let titleTextManager = DynamicTextManager(
       text: NSLocalizedString("LiseDegreeScene1", comment: "Comment"),
-      startPos: CGPoint(x: -207, y: 230),
+      startPos: CGPoint(x: -207, y: 260),
       textWidth: 430,
       lineHeight: 60,
       fontStyle: .init(fontName: "NewYorkSmall-Bold", fontSize: 36, color: .black)

@@ -31,7 +31,7 @@ class SwedishUniversityScene: SKScene {
   private func setupUniversityName() {
     universityName.fontSize = 40
     universityName.fontName = "NewYorkSmall-Medium"
-    universityName.text = "University \nof Sweden"
+    universityName.text = NSLocalizedString("LiseSwedishUniversity", comment: "Comment")
     
     universityName.removeFromParent()
     sceneAnimation.addChild(universityName)

@@ -9,9 +9,9 @@ import SpriteKit
 
 class LiseFinalScene: SKScene {
   private var text1 = DynamicTextManager(
-    text: "Life does not have",
-    startPos: CGPoint(x: -200, y: -10),
-    textWidth: 420,
+    text: NSLocalizedString("LiseFinalScene1", comment: "Comment"),
+    startPos: CGPoint(x: -220, y: -10),
+    textWidth: 440,
     spacing: 4,
     textRotation: 0.1,
     fontStyle: BasicFontStyle(
@@ -22,7 +22,7 @@ class LiseFinalScene: SKScene {
   )
   
   private var text2 = DynamicTextManager(
-    text: "to be easy",
+    text: NSLocalizedString("LiseFinalScene2", comment: "Comment"),
     startPos: CGPoint(x: -100, y: -100),
     textWidth: 360,
     spacing: 6,
@@ -35,7 +35,7 @@ class LiseFinalScene: SKScene {
   )
   
   private var text3 = DynamicTextManager(
-    text: "as long it has not",
+    text: NSLocalizedString("LiseFinalScene3", comment: "Comment"),
     startPos: CGPoint(x: -200, y: -270),
     textWidth: 420,
     spacing: 4,
@@ -48,7 +48,7 @@ class LiseFinalScene: SKScene {
   )
   
   private var text4 = DynamicTextManager(
-    text: "been empty",
+    text: NSLocalizedString("LiseFinalScene4", comment: "Comment"),
     startPos: CGPoint(x: 0, y: -380),
     textWidth: 360,
     spacing: 6,
@@ -106,6 +106,7 @@ class LiseFinalScene: SKScene {
     
     for node in textNodes {
       node.fontColor = .white
+      node.alpha = 1
       addChild(node)
     }
   }

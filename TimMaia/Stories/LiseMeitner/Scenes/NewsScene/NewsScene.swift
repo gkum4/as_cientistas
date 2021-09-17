@@ -47,10 +47,10 @@ class NewsScene: SKScene {
 
     fstPageText.fontName = "NewYorkSmall-Semibold"
     fstPageText.fontSize = 45
-    fstPageText.text = "Otto wins \nthe Nobel \nPrize in \nChemistry"
+    fstPageText.text = NSLocalizedString("LiseNewsScene1", comment: "Comment")
     
     scdPageTextLeft.fontName = "NewYorkSmall-Regular"
-    scdPageTextLeft.text = "The German \nchemist Otto Hahn, \nwas recognized for \ndiscovering the \nprocess of nuclear \nfission. \n\nHe was grateful for \nthe recognition of \nhis research and did not mention other \nparticipants who influenced this \nachievement, such as the physicist \nLise Weitmer, who was actually \nresponsible for the research \nand discovery."
+    scdPageTextLeft.text = NSLocalizedString("LiseNewsScene2", comment: "Comment")
   }
   
   func touchDown(atPoint pos : CGPoint) {

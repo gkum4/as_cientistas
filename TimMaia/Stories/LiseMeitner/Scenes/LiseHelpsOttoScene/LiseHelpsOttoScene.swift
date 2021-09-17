@@ -34,10 +34,10 @@ class LiseHelpsOttoScene: SKScene {
   
   private func setupText() {
     ottoText.fontName = "NewYorkSmall-Regular"
-    ottoText.text = "Hi Lise! You must have \nseen me win the Nobel \nPrize in Chemistry. \nI can't explain how we \ngot to the nuclear \nfission result, can you \nhelp me?"
+    ottoText.text = NSLocalizedString("LiseHelpsOttoScene1", comment: "Comment")
     
     liseText.fontName = "NewYorkSmall-Regular"
-    liseText.text = "Hello Otto! I will send a letter to \nthe committee explaining the \nresearch we did together. I wanted \nto know why I wasn't named \nat the awards and I wasn't \neven recognized for actually \ndiscovering nuclear fission."
+    liseText.text = NSLocalizedString("LiseHelpsOttoScene2", comment: "Comment")
     
     
     let fadeIn = SKAction.fadeIn(withDuration: 1)

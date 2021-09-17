@@ -87,6 +87,7 @@
 		C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44C607A26EFEE130049F370 /* LiseTeachingScene.sks */; };
 		C44C607D26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C607C26EFF2D70049F370 /* LiseTeachingSceneHapticsManager.swift */; };
 		C453BCAC26F51849001280FF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C453BCAE26F51849001280FF /* Localizable.strings */; };
+		C453BCB526F524EB001280FF /* LaboratoryScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C453BCB426F524EB001280FF /* LaboratoryScene.sks */; };
 		C4626E6C26E7D10D00BFBD12 /* OttoLetterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4626E6B26E7D10D00BFBD12 /* OttoLetterScene.swift */; };
 		C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */; };
 		C4880E9726F2D38E00A3BB01 /* NewsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4880E9626F2D38E00A3BB01 /* NewsScene.swift */; };
@@ -211,6 +212,7 @@
 		C453BCAB26F516E9001280FF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		C453BCAD26F51849001280FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C453BCAF26F5184C001280FF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C453BCB426F524EB001280FF /* LaboratoryScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaboratoryScene.sks; sourceTree = "<group>"; };
 		C4626E6B26E7D10D00BFBD12 /* OttoLetterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OttoLetterScene.swift; sourceTree = "<group>"; };
 		C4626E6D26E7D12900BFBD12 /* OttoLetterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OttoLetterScene.sks; sourceTree = "<group>"; };
 		C4880E9626F2D38E00A3BB01 /* NewsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScene.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				C44C607526EFD9F40049F370 /* LaboratorySceneKnob.atlas */,
 				C4C40BE026EE70F900CAEDE0 /* LaboratoryScene.swift */,
 				C4C40BE426EE796D00CAEDE0 /* LaboratorySceneHapticsManager.swift */,
+				C453BCB426F524EB001280FF /* LaboratoryScene.sks */,
 			);
 			path = LaboratoryScene;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				0C3C7BB526F2BBAF00A6A904 /* NuclearFissionScene.sks in Resources */,
 				C422051926DDBB0800293DDE /* Sparkle.ahap in Resources */,
 				C422051B26DDBB0800293DDE /* Heartbeats.ahap in Resources */,
+				C453BCB526F524EB001280FF /* LaboratoryScene.sks in Resources */,
 				420C20B626F0EDAF00D32A7D /* NewYorkSmall-MediumItalic.otf in Resources */,
 				0CF1B2A726E10671002B87F0 /* BlackboardScene.sks in Resources */,
 				C43CBC6F26F0D23B003B6FAB /* PrizesScene.sks in Resources */,

@@ -35,11 +35,13 @@ class LaboratoryScene: SKScene {
   
   override func didMove(to view: SKView) {
     let noticeText = notice.children.first as! SKLabelNode
-    noticeText.text = "Men \n only"
+    noticeText.text = NSLocalizedString("LiseLaboratoryScene2", comment: "Comment")
     noticeText.fontName = "NewYorkSmall-Regular"
     noticeText.fontColor = .red
     
-    (self.childNode(withName: "LaboratorySignText") as! SKLabelNode).fontName = "NewYorkSmall-Medium"
+    let signText = childNode(withName: "LaboratorySignText") as! SKLabelNode
+    signText.text = NSLocalizedString("LiseLaboratoryScene1", comment: "Comment")
+    signText.fontName = "NewYorkSmall-Medium"
     
     tooltipManager = TooltipManager(
       scene: self,

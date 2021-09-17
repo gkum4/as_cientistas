@@ -120,7 +120,7 @@ class PeriodicTableScene: SKScene {
     sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
     sceneText.fontSize = 40
     sceneText.fontName = "NewYorkSmall-Semibold"
-    sceneText.text = "The Mt element \n(Meitnerium) was \nnamed after Lise Meitner"
+    sceneText.text = NSLocalizedString("LisePeriodicTableScene", comment: "Comment")
     
     let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
     let wait = SKAction.wait(forDuration: 5)
