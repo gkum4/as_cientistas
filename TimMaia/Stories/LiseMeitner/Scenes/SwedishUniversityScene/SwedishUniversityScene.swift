@@ -8,7 +8,7 @@
 import SpriteKit
 
 class SwedishUniversityScene: SKScene {
-  private var sceneAnimation = SKSpriteNode()
+  private var sceneAnimation: SKSpriteNode!
   private var sceneFrames: [SKTexture] = []
   
   private lazy var universityName: SKLabelNode = { [unowned self] in
@@ -22,8 +22,9 @@ class SwedishUniversityScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    setupUniversityName()
     buildSceneAnimation()
+    setupUniversityName()
+    
     animateScene()
   }
   
@@ -31,6 +32,9 @@ class SwedishUniversityScene: SKScene {
     universityName.fontSize = 40
     universityName.fontName = "NewYorkSmall-Medium"
     universityName.text = "University \nof Sweden"
+    
+    universityName.removeFromParent()
+    sceneAnimation.addChild(universityName)
   }
   
   private func buildSceneAnimation() {
@@ -52,11 +56,26 @@ class SwedishUniversityScene: SKScene {
   }
   
   private func animateScene() {
-    sceneAnimation.run(SKAction.animate(with: sceneFrames,
-                                 timePerFrame: 0.6,
-                                 resize: false,
-                                 restore: false),
-                withKey: "universityAnimation")
+    sceneAnimation.run(.sequence([
+      .animate(
+        with: sceneFrames,
+         timePerFrame: 0.6,
+         resize: false,
+         restore: false
+      ),
+      .group([
+        .scale(by: 1.5, duration: 2),
+        .move(by: CGVector(dx: 0, dy: 400), duration: 2)
+      ]),
+      .run {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: OttoLetterScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: SKTransition.fade(withDuration: 2)
+        )
+      }
+    ]))
   }
   
   func touchDown(atPoint pos : CGPoint) {
