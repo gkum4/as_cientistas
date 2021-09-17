@@ -8,29 +8,66 @@
 import SpriteKit
 
 class LiseFinalScene: SKScene {
-  private var text1 = DynamicTextManager(text: "Life does not have",
-                                    startPos: CGPoint(x: -200, y: -10),
-                                    textWidth: 420, spacing: 4, textRotation: 0.1,
-                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
+  private var text1 = DynamicTextManager(
+    text: "Life does not have",
+    startPos: CGPoint(x: -200, y: -10),
+    textWidth: 420,
+    spacing: 4,
+    textRotation: 0.1,
+    fontStyle: BasicFontStyle(
+      fontName: "NewYorkSmall-Regular",
+      fontSize: 35,
+      color: .black
+    )
+  )
   
-  private var text2 = DynamicTextManager(text: "to be easy",
-                                    startPos: CGPoint(x: -100, y: -100),
-                                    textWidth: 360, spacing: 6, textRotation: 0.1,
-                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
+  private var text2 = DynamicTextManager(
+    text: "to be easy",
+    startPos: CGPoint(x: -100, y: -100),
+    textWidth: 360,
+    spacing: 6,
+    textRotation: 0.1,
+    fontStyle: BasicFontStyle(
+      fontName: "NewYorkSmall-Regular",
+      fontSize: 35,
+      color: .black
+    )
+  )
   
-  private var text3 = DynamicTextManager(text: "as long it has not",
-                                    startPos: CGPoint(x: -200, y: -270),
-                                    textWidth: 420, spacing: 4, textRotation: 0.1,
-                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
+  private var text3 = DynamicTextManager(
+    text: "as long it has not",
+    startPos: CGPoint(x: -200, y: -270),
+    textWidth: 420,
+    spacing: 4,
+    textRotation: 0.1,
+    fontStyle: BasicFontStyle(
+      fontName: "NewYorkSmall-Regular",
+      fontSize: 35,
+      color: .black
+    )
+  )
   
-  private var text4 = DynamicTextManager(text: "been empty",
-                                    startPos: CGPoint(x: 0, y: -380),
-                                    textWidth: 360, spacing: 6, textRotation: 0.1,
-                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
-
+  private var text4 = DynamicTextManager(
+    text: "been empty",
+    startPos: CGPoint(x: 0, y: -380),
+    textWidth: 360,
+    spacing: 6,
+    textRotation: 0.1,
+    fontStyle: BasicFontStyle(
+      fontName: "NewYorkSmall-Regular",
+      fontSize: 35,
+      color: .black
+    )
+  )
   
   private var textSize: Int?
   private var textNodes = [SKLabelNode]()
+  
+  private var replayButton: SKLabelNode!
+  
+  private var tooltipManager: TooltipManager!
+  private var symbolsManager: SymbolsManager!
+  private var gameEnded = false
   
   static func create() -> SKScene {
     let scene = LiseFinalScene(fileNamed: "LiseFinalScene")
@@ -40,6 +77,21 @@ class LiseFinalScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
+    
+    replayButton = (self.childNode(withName: "replayButton") as! SKLabelNode)
+    replayButton.alpha = 0
+    replayButton.fontName = "NewYorkSmall-Semibold"
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: -200, y: 0),
+      timeBetweenAnimations: 5,
+      animationType: .slideToRight
+    )
+    
+    symbolsManager = SymbolsManager(scene: self)
+    
+    tooltipManager.startAnimation()
 
     setupText()
   }
@@ -58,20 +110,58 @@ class LiseFinalScene: SKScene {
     }
   }
   
+  private func checkEndedGame() {
+    var count = 0
+    
+    for charNode in textNodes {
+      if charNode.alpha != 0 {
+        count += 1
+      }
+    }
+    
+    if count >= textNodes.count-4 {
+      gameEnded = true
+      replayButton.run(.repeatForever(.sequence([
+        .fadeIn(withDuration: 1),
+        .wait(forDuration: 3),
+        .fadeOut(withDuration: 0.5)
+      ])))
+    }
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
+    tooltipManager.stopAnimation()
+    
+    if gameEnded && replayButton.contains(pos) {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: MapZoomScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.doorsCloseVertical(withDuration: 2)
+      )
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
+    symbolsManager.generateAnimatedSymbol(at: pos)
+    
     for i in 1..<textSize!-1 {
       if textNodes[i].contains(pos) {
-        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
+        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 0.7))
+        textNodes[i].run(SKAction.fadeIn(withDuration: 0.7))
+        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 0.7))
+        checkEndedGame()
+        break
       }
     }
   }
   
   func touchUp(atPoint pos : CGPoint) {
+    if gameEnded {
+      return
+    }
+    
+    tooltipManager.startAnimation()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
