@@ -17,6 +17,10 @@ class DegreeScene: SKScene {
   
   var gameEnded = false
   
+  var textAnimationEnded = false
+  
+  private var nextButton: SKSpriteNode!
+  
   private var symbolsManager: SymbolsManager!
   private var tooltipManager: TooltipManager!
   private var coreHapticsManager: DegreeSceneCoreHapticsManager?
@@ -30,6 +34,9 @@ class DegreeScene: SKScene {
   
   override func didMove(to view: SKView) {
     self.backgroundColor = UIColor(named: "Areia")!
+    
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
     
     for i in 0..<numberOfPoints {
       let newPoint = PointProps(
@@ -156,6 +163,15 @@ class DegreeScene: SKScene {
       textAnimationSequence.append(.wait(forDuration: 0.1))
     }
     
+    textAnimationSequence.append(.run {
+      self.nextButton.run(.sequence([
+        .fadeIn(withDuration: 1),
+        .run {
+          self.textAnimationEnded = true
+        }
+      ]))
+    })
+    
     self.run(.sequence(textAnimationSequence))
   }
   
@@ -196,6 +212,14 @@ class DegreeScene: SKScene {
   
   func touchDown(atPoint pos : CGPoint) {
     if gameEnded {
+      if textAnimationEnded && nextButton.contains(pos) {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: ChemistryInstituteScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: .push(with: .down, duration: 2)
+        )
+      }
       return
     }
     
@@ -218,6 +242,7 @@ class DegreeScene: SKScene {
     }
     
     if checkIfCompletedGame() {
+      tooltipManager.stopAnimation()
       onGameEnd()
       return
     }
