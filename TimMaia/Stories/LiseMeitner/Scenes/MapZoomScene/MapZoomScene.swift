@@ -34,6 +34,7 @@ class MapZoomScene: SKScene {
   private var zoomOutScale: CGFloat = 0.008
   private var previousGestureScale: CGFloat = 1.0
   
+  private var tooltipManager: TooltipManager!
   private var hapticsManager: MapZoomSceneHapticsManager?
 
   static func create() -> SKScene {
@@ -54,6 +55,15 @@ class MapZoomScene: SKScene {
     
     addPinchGesture()
     getLineEquation()
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: 0, y: 0),
+      timeBetweenAnimations: 5,
+      animationType: .pinchIn
+    )
+    
+    tooltipManager.startAnimation()
   }
   
   private func addPinchGesture() {
@@ -76,9 +86,31 @@ class MapZoomScene: SKScene {
     didReachTarget = false
   }
   
+  private func configureTooltipForPinchIn() {
+    tooltipManager.stopAnimation()
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: 0, y: 0),
+      timeBetweenAnimations: 5,
+      animationType: .pinchIn
+    )
+  }
+  
+  private func configureTooltipForTouch(at pos: CGPoint) {
+    tooltipManager.stopAnimation()
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: pos,
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+  }
+  
   private func checkForTarget(pos: CGPoint) {
     if abs(pos.x - targetLocation.position.x) <= 1 {
       didReachTarget = true
+      configureTooltipForTouch(at: targetLocation.position)
+      tooltipManager.startAnimation()
       print(targetLocation.xScale)
       let scaleUp = SKAction.scale(to: targetInitialScale! * 1.3, duration: 2)
       let scaleDown = SKAction.scale(to: targetInitialScale!, duration: 2)
@@ -213,9 +245,17 @@ class MapZoomScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    tooltipManager.stopAnimation()
+    
     if targetLocation.contains(pos) && didReachTarget {
       hapticsManager?.triggerSuccess()
+      
       changeMapView()
+      
+      if sceneNumber < totalScenes - 1 {
+        configureTooltipForPinchIn()
+        tooltipManager.startAnimation()
+      }
     }
   }
   
@@ -223,6 +263,9 @@ class MapZoomScene: SKScene {
   }
   
   func touchUp(atPoint pos : CGPoint) {
+    if sceneNumber < totalScenes - 1 && !isTransitioning {
+      tooltipManager.startAnimation()
+    }
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
