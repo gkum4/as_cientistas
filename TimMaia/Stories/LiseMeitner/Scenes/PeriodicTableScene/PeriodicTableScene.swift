@@ -21,6 +21,11 @@ class PeriodicTableScene: SKScene {
   private lazy var sceneTextView: SKSpriteNode = { [unowned self] in
     return childNode(withName : "sceneTextView") as! SKSpriteNode
   }()
+  
+  private lazy var nextButton: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "button") as! SKSpriteNode
+  }()
+  
   private var sceneText = SKLabelNode()
   
   private var initialElemPos: CGPoint?
@@ -30,6 +35,11 @@ class PeriodicTableScene: SKScene {
   private var firstTouchPos: CGPoint?
   private var hapticsManager: PeriodicTableSceneHapticsManager?
   private var coreHapticsManager: PeriodicTableSceneCoreHapticsManager?
+  private var tooltipManager1: TooltipManager!
+  private var tooltipManager2: TooltipManager!
+  
+  private var periodicTableMoved = false
+  private var gameEnded = false
   
   static func create() -> SKScene {
     let scene = PeriodicTableScene(fileNamed: "PeriodicTableScene")
@@ -40,21 +50,60 @@ class PeriodicTableScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    nextButton.alpha = 0
+    
     initialElemPos = periodicElement.position
     tablePosition = periodicTable.position
     initialElemSize = periodicElement.size
+    
+    tooltipManager1 = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: 50, y: 240),
+      timeBetweenAnimations: 5,
+      animationType: .slideToLeft
+    )
+    
+    tooltipManager2 = TooltipManager(
+      scene: self,
+      startPosition: periodicElement.position,
+      timeBetweenAnimations: 5,
+      animationType: .slideToTop
+    )
+    
+    tooltipManager1.startAnimation()
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if gameEnded && nextButton.contains(pos) {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: PrizesScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.push(with: .down, duration: 2)
+      )
+    }
+    
     nodeTouched = self.atPoint(pos) as? SKSpriteNode
     if nodeTouched == periodicElement {
-      periodicElement.scale(to: CGSize(width: periodicElement.size.width * 1.3,
-                                       height: periodicElement.size.height * 1.3))
+      tooltipManager2.stopAnimation()
+      periodicElement.scale(to: CGSize(
+          width: periodicElement.size.width * 1.3,
+          height: periodicElement.size.height * 1.3
+      ))
     }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
     if nodeTouched == periodicTable { // Table is only moved on x-axis
+      tooltipManager1.stopAnimation()
+      
+      if !periodicTableMoved {
+        tooltipManager2.stopAnimation()
+        tooltipManager2.startAnimation()
+      }
+      
+      periodicTableMoved = true
+      
       if firstTouchPos == nil {
         firstTouchPos = pos
       }
@@ -66,6 +115,8 @@ class PeriodicTableScene: SKScene {
   }
   
   private func showSceneText() {
+    tooltipManager2.stopAnimation()
+    
     sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
     sceneText.fontSize = 40
     sceneText.fontName = "NewYorkSmall-Semibold"
@@ -74,8 +125,14 @@ class PeriodicTableScene: SKScene {
     let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
     let wait = SKAction.wait(forDuration: 5)
     let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1.5)
-    let sequence = SKAction.sequence([fadeIn, wait, fadeOut])
-    sceneTextView.run(sequence)
+    var sequence: [SKAction] = [fadeIn, wait, fadeOut]
+    
+    sequence.append(.run {
+      self.nextButton.run(.fadeIn(withDuration: 1.5))
+      self.gameEnded = true
+    })
+    
+    sceneTextView.run(.sequence(sequence))
   }
   
   func touchUp(atPoint pos : CGPoint) {

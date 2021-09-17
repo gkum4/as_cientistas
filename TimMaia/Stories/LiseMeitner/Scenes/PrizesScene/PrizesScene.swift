@@ -11,7 +11,13 @@ class PrizesScene: SKScene {
   private var numberOfPrizes = 4
   private var prizesNodes =  [SKSpriteNode]()
   
+  private var nextButton: SKSpriteNode!
+  
   private var hapticsManager: PrizesSceneHapticsManager?
+  
+  private var tooltipManager: TooltipManager!
+  
+  private var gameEnded = false
   
   static func create() -> SKScene {
     let scene = PrizesScene(fileNamed: "PrizesScene")
@@ -21,7 +27,32 @@ class PrizesScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
+    
     fetchPrizes()
+      
+    startTooltip()
+  }
+  
+  private func startTooltip() {
+    if tooltipManager != nil {
+      tooltipManager.stopAnimation()
+    }
+    
+    for itemNode in prizesNodes {
+      if itemNode.alpha != 0 {
+        tooltipManager = TooltipManager(
+          scene: self,
+          startPosition: itemNode.position,
+          timeBetweenAnimations: 4,
+          animationType: .touch
+        )
+        tooltipManager.startAnimation()
+        
+        return
+      }
+    }
   }
   
   private func fetchPrizes() {
@@ -31,16 +62,53 @@ class PrizesScene: SKScene {
     }
   }
   
-  private func fadeNodeOut(node: SKSpriteNode) {
-    node.run(.fadeOut(withDuration: 2))
+  private func fadeNodeOut(
+    node: SKSpriteNode,
+    onAnimationEnd: @escaping () -> Void
+  ) {
+    node.run(.sequence([
+      .fadeOut(withDuration: 2),
+      .run {
+        onAnimationEnd()
+      }
+    ]))
     hapticsManager?.triggerSuccess()
   }
   
+  private func checkGameEnded() {
+    for itemNode in prizesNodes {
+      if itemNode.alpha != 0 {
+        return
+      }
+    }
+    
+    gameEnded = true
+    nextButton.run(.fadeIn(withDuration: 1.5))
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
+    if gameEnded {
+      if nextButton.contains(pos) {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: LiseFinalScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: SKTransition.reveal(with: .left, duration: 2)
+        )
+      }
+      
+      return
+    }
+    
     for index in 0..<numberOfPrizes {
       let prizeBack = prizesNodes[index]
       if prizeBack.contains(pos) {
-        fadeNodeOut(node: prizeBack)
+        fadeNodeOut(node: prizeBack, onAnimationEnd: {
+          self.startTooltip()
+          self.checkGameEnded()
+        })
+        
+        break
       }
     }
   }
