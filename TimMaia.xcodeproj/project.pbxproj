@@ -24,6 +24,9 @@
 		0C3C7BB526F2BBAF00A6A904 /* NuclearFissionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C7BB426F2BBAF00A6A904 /* NuclearFissionScene.sks */; };
 		0C3C7BB726F2BC3600A6A904 /* NuclearFissionScene.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C7BB626F2BC3600A6A904 /* NuclearFissionScene.atlas */; };
 		0C3C7BB926F2C08B00A6A904 /* NuclearFissionSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BB826F2C08B00A6A904 /* NuclearFissionSceneCoreHapticsManager.swift */; };
+		0C3C7BBC26F2CC8400A6A904 /* NuclearFissionPaperScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BBB26F2CC8400A6A904 /* NuclearFissionPaperScene.swift */; };
+		0C3C7BBE26F2CC9F00A6A904 /* NuclearFissionPaperScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C7BBD26F2CC9F00A6A904 /* NuclearFissionPaperScene.sks */; };
+		0C3C7BC026F2CCB100A6A904 /* NuclearFissionPaperSceneCoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C7BBF26F2CCB100A6A904 /* NuclearFissionPaperSceneCoreHapticsManager.swift */; };
 		0C3CCE1C26D52C20007A4CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */; };
 		0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */; };
 		0C3CCE2026D52C20007A4CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CCE1F26D52C20007A4CEA /* ViewController.swift */; };
@@ -141,6 +144,9 @@
 		0C3C7BB426F2BBAF00A6A904 /* NuclearFissionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NuclearFissionScene.sks; sourceTree = "<group>"; };
 		0C3C7BB626F2BC3600A6A904 /* NuclearFissionScene.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NuclearFissionScene.atlas; sourceTree = "<group>"; };
 		0C3C7BB826F2C08B00A6A904 /* NuclearFissionSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuclearFissionSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
+		0C3C7BBB26F2CC8400A6A904 /* NuclearFissionPaperScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuclearFissionPaperScene.swift; sourceTree = "<group>"; };
+		0C3C7BBD26F2CC9F00A6A904 /* NuclearFissionPaperScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NuclearFissionPaperScene.sks; sourceTree = "<group>"; };
+		0C3C7BBF26F2CCB100A6A904 /* NuclearFissionPaperSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuclearFissionPaperSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		0C3CCE1826D52C20007A4CEA /* TimMaia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimMaia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3CCE1B26D52C20007A4CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C3CCE1D26D52C20007A4CEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -291,6 +297,7 @@
 				C4A325AA26F227A600934998 /* InterviewScene */,
 				C4AFC71226F266FB00E6E2AF /* LiseFinalScene */,
 				0C3C7BB126F2BB8E00A6A904 /* NuclearFissionScene */,
+				0C3C7BBA26F2CC7600A6A904 /* NuclearFissionPaperScene */,
 				C4A325A426F218E800934998 /* NobelLetterScene */,
 				C43CBC6B26F0D220003B6FAB /* PrizesScene */,
 				C44C607926EFEE020049F370 /* LiseTeachingScene */,
@@ -343,6 +350,16 @@
 				0C3C7BB826F2C08B00A6A904 /* NuclearFissionSceneCoreHapticsManager.swift */,
 			);
 			path = NuclearFissionScene;
+			sourceTree = "<group>";
+		};
+		0C3C7BBA26F2CC7600A6A904 /* NuclearFissionPaperScene */ = {
+			isa = PBXGroup;
+			children = (
+				0C3C7BBB26F2CC8400A6A904 /* NuclearFissionPaperScene.swift */,
+				0C3C7BBD26F2CC9F00A6A904 /* NuclearFissionPaperScene.sks */,
+				0C3C7BBF26F2CCB100A6A904 /* NuclearFissionPaperSceneCoreHapticsManager.swift */,
+			);
+			path = NuclearFissionPaperScene;
 			sourceTree = "<group>";
 		};
 		0C3CCE0F26D52C20007A4CEA = {
@@ -730,6 +747,7 @@
 				C44C607626EFD9F40049F370 /* LaboratorySceneKnob.atlas in Resources */,
 				C44C607B26EFEE130049F370 /* LiseTeachingScene.sks in Resources */,
 				C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */,
+				0C3C7BBE26F2CC9F00A6A904 /* NuclearFissionPaperScene.sks in Resources */,
 				C4A325A926F2191D00934998 /* NobelLetterScene.sks in Resources */,
 				C4D80BD026EF7C1E00B870AB /* ChemistryInstituteScene.sks in Resources */,
 				C4626E6E26E7D12900BFBD12 /* OttoLetterScene.sks in Resources */,
@@ -826,6 +844,7 @@
 				0C3C7BB326F2BBA200A6A904 /* NuclearFissionScene.swift in Sources */,
 				0C106B7926DE515A004B0CD6 /* BasementScene.swift in Sources */,
 				C43CBC7126F0E99E003B6FAB /* PrizesSceneHapticsManager.swift in Sources */,
+				0C3C7BC026F2CCB100A6A904 /* NuclearFissionPaperSceneCoreHapticsManager.swift in Sources */,
 				C492D61926EE8A6E00478CB5 /* BasementDoorScene.swift in Sources */,
 				0C3CCE1E26D52C20007A4CEA /* SceneDelegate.swift in Sources */,
 				0CF1B2A026E100AB002B87F0 /* DegreeSceneCoreHapticsManager.swift in Sources */,
@@ -837,6 +856,7 @@
 				C442C57326F4210E007FE075 /* InstituteAttackedScene.swift in Sources */,
 				C492D61F26EE8DF600478CB5 /* BasementDoorSceneHapticsManager.swift in Sources */,
 				C4A325AC26F227C200934998 /* InterviewScene.swift in Sources */,
+				0C3C7BBC26F2CC8400A6A904 /* NuclearFissionPaperScene.swift in Sources */,
 				C42204E226DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift in Sources */,
 				0C3C7BA826EFE4F600A6A904 /* LiseWithBoysSceneCoreHapticsManager.swift in Sources */,
 				C4B12D2F26DC61D60061F46B /* CoreHapticsManager.swift in Sources */,
