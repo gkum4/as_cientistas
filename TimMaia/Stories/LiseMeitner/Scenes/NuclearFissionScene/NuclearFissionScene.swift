@@ -12,6 +12,8 @@ class NuclearFissionScene: SKScene {
   private var sceneFrames: [SKTexture] = []
   private var nuclearFissionAnimationTime: Float!
   
+  private var animationRunning = false
+  
   private var coreHapticsManager: NuclearFissionSceneCoreHapticsManager?
   private var tooltipManager: TooltipManager!
   
@@ -58,12 +60,22 @@ class NuclearFissionScene: SKScene {
   }
   
   private func animateScene() {
-    let animation: SKAction = .animate(
-      with: sceneFrames,
-     timePerFrame: 0.2,
-     resize: false,
-     restore: false
-    )
+    let animation: SKAction = .sequence([
+      .animate(
+        with: sceneFrames,
+         timePerFrame: 0.2,
+         resize: false,
+         restore: false
+      ),
+      .run {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: NuclearFissionPaperScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: .fade(withDuration: 2)
+        )
+      }
+    ])
     
     sceneAnimation.run(animation)
     
@@ -71,6 +83,11 @@ class NuclearFissionScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if animationRunning {
+      return
+    }
+    
+    animationRunning = true
     tooltipManager.stopAnimation()
     animateScene()
     Timer.scheduledTimer(withTimeInterval: 4.4, repeats: false, block: {_ in
