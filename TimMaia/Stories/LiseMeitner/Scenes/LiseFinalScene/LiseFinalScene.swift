@@ -10,19 +10,23 @@ import SpriteKit
 class LiseFinalScene: SKScene {
   private var text1 = DynamicTextManager(text: "Life does not have",
                                     startPos: CGPoint(x: -200, y: -10),
-                                    textWidth: 360, textRotation: 0.1)
+                                    textWidth: 420, spacing: 4, textRotation: 0.1,
+                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
   
   private var text2 = DynamicTextManager(text: "to be easy",
                                     startPos: CGPoint(x: -100, y: -100),
-                                    textWidth: 360, textRotation: 0.1)
+                                    textWidth: 360, spacing: 6, textRotation: 0.1,
+                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
   
   private var text3 = DynamicTextManager(text: "as long it has not",
                                     startPos: CGPoint(x: -200, y: -270),
-                                    textWidth: 360, textRotation: 0.1)
+                                    textWidth: 420, spacing: 4, textRotation: 0.1,
+                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
   
   private var text4 = DynamicTextManager(text: "been empty",
                                     startPos: CGPoint(x: 0, y: -380),
-                                    textWidth: 360, textRotation: 0.1)
+                                    textWidth: 360, spacing: 6, textRotation: 0.1,
+                                    fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 35, color: .black))
 
   
   private var textSize: Int?

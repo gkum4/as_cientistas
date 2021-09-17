@@ -177,6 +177,8 @@ class CarScene: SKScene {
   }
   
   private func showLocationTextAnimation(id: Int, onAnimationEnd: @escaping () -> Void ) {
+    locationTextLabel.fontSize = 40
+    locationTextLabel.fontName = "NewYorkSmall-Semibold"
     locationTextLabel.text = locationTexts[id]
     
     let whiteOverlayAnimationSequence: SKAction = .sequence([

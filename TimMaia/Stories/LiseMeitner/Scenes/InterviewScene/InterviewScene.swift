@@ -28,10 +28,10 @@ class InterviewScene: SKScene {
   private var conversation: [String] = [
     "👱🏻‍♂️ Hi Lise, welcome!",
     "👩🏻‍🦰 Thanks! It's great to be here.",
-    "👱🏻‍♂️ Tell us about dinner with \n President Truman and how it \n felt to be recognized as Woman \n of the Year.",
-    "👩🏻‍🦰 It was a great dinner, I was \n very happy for the nomination.",
-    "👱🏻‍♂️ Great! This shows that your \n work is very important to the world, \n even without Otto having recognized \n you in the Nobel Prize.",
-    "👩🏻‍🦰 Yes! He should have named me at \n the awards, since I was the one \n who discovered nuclear fission. \n But anyway I'm being recognized \n  in other ways.",
+    "👱🏻‍♂️ Tell us about dinner with \nPresident Truman and how it \nfelt to be recognized as Woman \nof the Year.",
+    "👩🏻‍🦰 It was a great dinner, I was \nvery happy for the nomination.",
+    "👱🏻‍♂️ Great! This shows that your \nwork is very important to the world, \neven without Otto having recognized \nyou in the Nobel Prize.",
+    "👩🏻‍🦰 Yes! He should have named me at \nthe awards, since I was the one \nwho discovered nuclear fission. \nBut anyway I'm being recognized \nin other ways.",
   ]
   
   static func create() -> SKScene {

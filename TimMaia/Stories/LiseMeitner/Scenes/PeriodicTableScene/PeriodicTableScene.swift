@@ -43,9 +43,6 @@ class PeriodicTableScene: SKScene {
     initialElemPos = periodicElement.position
     tablePosition = periodicTable.position
     initialElemSize = periodicElement.size
-    
-    sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
-    sceneText.text = "O elemento Mt (Meitnério) \n recebeu esse nome em \n homenagem a Lise Meitner"
   }
   
   func touchDown(atPoint pos : CGPoint) {
@@ -69,7 +66,12 @@ class PeriodicTableScene: SKScene {
   }
   
   private func showSceneText() {
-    let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 1.5)
+    sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
+    sceneText.fontSize = 40
+    sceneText.fontName = "NewYorkSmall-Semibold"
+    sceneText.text = "The Mt element \n(Meitnerium) was \nnamed after Lise Meitner"
+    
+    let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
     let wait = SKAction.wait(forDuration: 5)
     let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1.5)
     let sequence = SKAction.sequence([fadeIn, wait, fadeOut])

@@ -27,10 +27,10 @@ class LiseHelpsOttoScene: SKScene {
   
   private func setupText() {
     ottoText.fontName = "NewYorkSmall-Regular"
-    ottoText.text = "Hi Lise! You must have \n seen me win the Nobel \n Prize in Chemistry. \n I can't explain how we \n got to the nuclear \n fission result, can you \n help me?"
+    ottoText.text = "Hi Lise! You must have \nseen me win the Nobel \nPrize in Chemistry. \nI can't explain how we \ngot to the nuclear \nfission result, can you \nhelp me?"
     
     liseText.fontName = "NewYorkSmall-Regular"
-    liseText.text = "Hello Otto! I will send a letter to \n the committee explaining the \n research we did together. I wanted \n to know why I wasn't named \n at the awards and I wasn't \n even recognized for actually \n discovering nuclear fission."
+    liseText.text = "Hello Otto! I will send a letter to \nthe committee explaining the \nresearch we did together. I wanted \nto know why I wasn't named \nat the awards and I wasn't \neven recognized for actually \ndiscovering nuclear fission."
     
     
     let fadeIn = SKAction.fadeIn(withDuration: 1)
