@@ -19,6 +19,11 @@ class BasementScene: SKScene {
   
   private var animationRunning = false
   
+  private var gameEnded = false
+  
+  private var background: SKSpriteNode!
+  private var nextButton: SKSpriteNode!
+  
   private var tooltipManager: TooltipManager!
   private var coreHapticsManager: BasementSceneCoreHapticsManager?
   
@@ -30,6 +35,12 @@ class BasementScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    background = (self.childNode(withName: "background") as! SKSpriteNode)
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
+    nextButton.removeFromParent()
+    background.addChild(nextButton)
+    
     for i in 1...numberOfDusts {
       dusts.append((self.childNode(withName: "dust\(i)") as! SKSpriteNode))
     }
@@ -94,10 +105,23 @@ class BasementScene: SKScene {
     blowDetector.stop()
     tooltipManager.stopAnimation()
     
-    print("game ended")
+    gameEnded = true
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if gameEnded && nextButton.contains(pos) {
+      background.run(.sequence([
+        .scale(by: 1.5, duration: 1),
+        .run {
+          SceneTransition.executeDefaultTransition(
+            from: self,
+            to: NuclearFissionScene.create(),
+            nextSceneScaleMode: .aspectFill,
+            transition: SKTransition.fade(withDuration: 2)
+          )
+        }
+      ]))
+    }
   }
   
   func touchMoved(toPoint pos : CGPoint) {
