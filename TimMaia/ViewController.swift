@@ -15,7 +15,7 @@ class ViewController: UIViewController {
   }
   
   override func loadView() {
-    let scene = CarScene.create()
+    let scene = InstituteAttackedScene.create()
     let sceneView = SKView()
     scene.scaleMode = .aspectFill
     sceneView.presentScene(scene)
