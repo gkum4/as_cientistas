@@ -34,6 +34,11 @@ class InterviewScene: SKScene {
     "👩🏻‍🦰 Yes! He should have named me at \nthe awards, since I was the one \nwho discovered nuclear fission. \nBut anyway I'm being recognized \nin other ways.",
   ]
   
+  private var nextButton: SKSpriteNode!
+  private var talkEnded = false
+  
+  private var tooltipManager: TooltipManager!
+  
   static func create() -> SKScene {
     let scene = InterviewScene(fileNamed: "InterviewScene")
 
@@ -41,6 +46,18 @@ class InterviewScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: clickableArea.position.x, y: clickableArea.position.y-28),
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+    
+    tooltipManager.startAnimation()
+    
     setupConversation()
   }
   
@@ -68,8 +85,17 @@ class InterviewScene: SKScene {
       let fadeIn = SKAction.fadeIn(withDuration: 1)
       let wait = SKAction.wait(forDuration: 4)
       let fadeOut = SKAction.fadeOut(withDuration: 1)
-      let sequence = SKAction.sequence([beginAfter, fadeIn, wait, fadeOut])
-      node.run(sequence)
+      var sequence: [SKAction] = [beginAfter, fadeIn, wait, fadeOut]
+      
+      if index == conversationNodes.count-1 {
+        sequence.append(.wait(forDuration: 1))
+        sequence.append(.run {
+          self.nextButton.run(.fadeIn(withDuration: 1.5))
+          self.talkEnded = true
+        })
+      }
+      
+      node.run(.sequence(sequence))
     }
   }
   
@@ -81,7 +107,17 @@ class InterviewScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
-    if clickableArea.contains(pos) {
+    if talkEnded && nextButton.contains(pos) {
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: LiseTeachingScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.fade(withDuration: 2)
+      )
+    }
+    
+    if !isTvOn && clickableArea.contains(pos) {
+      tooltipManager.stopAnimation()
       turnTvOn()
     }
   }
