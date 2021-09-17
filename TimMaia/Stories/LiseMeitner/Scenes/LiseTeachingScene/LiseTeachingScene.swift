@@ -15,7 +15,10 @@ class LiseTeachingScene: SKScene {
     return childNode(withName : "TeachingScene-1") as! SKSpriteNode
   }()
   
+  private var tooltipManager: TooltipManager!
   private var hapticsManager: LiseTeachingSceneHapticsManager?
+  
+  private var sceneChanged = false
   
   static func create() -> SKScene {
     let scene = LiseTeachingScene(fileNamed: "LiseTeachingScene")
@@ -25,22 +28,48 @@ class LiseTeachingScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: 0, y: 0),
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+    tooltipManager.startAnimation()
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    if sceneChanged {
+      tooltipManager.stopAnimation()
+      
+      SceneTransition.executeDefaultTransition(
+        from: self,
+        to: PeriodicTableScene.create(),
+        nextSceneScaleMode: .aspectFill,
+        transition: SKTransition.push(with: .down, duration: 2)
+      )
+      return
+    }
+    
+    changeScene()
   }
   
   func touchMoved(toPoint pos : CGPoint) {
   }
   
   func touchUp(atPoint pos : CGPoint) {
-    changeScene()
   }
   
   private func changeScene() {
+    tooltipManager.stopAnimation()
     hapticsManager?.triggerSuccess()
     firstScene.run(.fadeOut(withDuration: 2))
-    secondScene.run(.fadeIn(withDuration: 2))
+    secondScene.run(.sequence([
+      .fadeIn(withDuration: 2),
+      .run {
+        self.sceneChanged = true
+        self.tooltipManager.startAnimation()
+      }
+    ]))
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
