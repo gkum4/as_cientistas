@@ -11,6 +11,9 @@ class LisePlayingScene: SKScene {
   private var sceneAnimation = SKSpriteNode()
   private var sceneFrames: [SKTexture] = []
   
+  private var liseCharNodes: [SKLabelNode] = []
+  private var problemCharNodes: [SKLabelNode] = []
+  
   static func create() -> SKScene {
     let scene = LisePlayingScene(fileNamed: "LisePlayingScene")
 
@@ -40,12 +43,64 @@ class LisePlayingScene: SKScene {
     addChild(sceneAnimation)
   }
   
+  private func eraseText(textNodes: [SKLabelNode]) {
+    for charNode in textNodes {
+      charNode.run(.fadeAlpha(to: 0, duration: 0.5))
+    }
+  }
+  
+  private func showLiseText() {
+    let label = SKLabelNode()
+    label.fontName = "NewYorkSmall-Bold"
+    label.fontSize = 38
+    label.fontColor = .black
+    label.text = "One day\nI'll be\na scientist!"
+    label.position = CGPoint(x: -210, y: 320)
+    label.numberOfLines = 3
+    label.alpha = 0
+    
+    self.run(.sequence([
+      .wait(forDuration: 1),
+      .run {
+        label.run(.fadeIn(withDuration: 0.2))
+        self.addChild(label)
+      },
+      .wait(forDuration: 3.2),
+      .run {
+        label.run(.fadeOut(withDuration: 0.2))
+      }
+    ]))
+  }
+  
+  private func showProblemText() {
+    let label = SKLabelNode()
+    label.fontName = "NewYorkSmall-Bold"
+    label.fontSize = 38
+    label.fontColor = .red
+    label.text = "Women cannot\nbe scientists!"
+    label.position = CGPoint(x: -220, y: 365)
+    label.numberOfLines = 2
+    label.alpha = 0
+    
+    self.run(.sequence([
+      .wait(forDuration: 5.6),
+      .run {
+        label.run(.fadeIn(withDuration: 0.2))
+        self.addChild(label)
+      }
+    ]))
+  }
+  
   private func animateScene() {
-    sceneAnimation.run(SKAction.animate(with: sceneFrames,
-                                 timePerFrame: 0.2,
-                                 resize: false,
-                                 restore: false),
-                withKey: "playingAnimation")
+    sceneAnimation.run(.animate(
+      with: sceneFrames,
+      timePerFrame: 0.2,
+      resize: false,
+      restore: false
+    ))
+    
+    showLiseText()
+    showProblemText()
   }
   
   func touchDown(atPoint pos : CGPoint) {

@@ -11,9 +11,24 @@ class DadScene: SKScene {
   private lazy var badge: SKLabelNode = { [unowned self] in
     return childNode(withName : "DadBadge") as! SKLabelNode
   }()
-  private var dadSpeech = DynamicTextManager(text: "Do not worry, I will pay for your studies",
-                                    startPos: CGPoint(x: -220, y: -350),
-                                    textWidth: 450, lineHeight: 100, textRotation: 0.2)
+  private var dadSpeech = DynamicTextManager(
+    text: "No matter what they say, I will pay for my daughter's studies!",
+    startPos: CGPoint(x: -225, y: -270),
+    textWidth: 460,
+    lineHeight: 100,
+    textRotation: 0.2,
+    fontStyle: .init(
+      fontName: "NewYorkSmall-Medium",
+      fontSize: 36,
+      color: .black
+    )
+  )
+  
+  private var completedGame = false
+  
+  private var tooltipManager1: TooltipManager!
+  private var tooltipManager2: TooltipManager!
+  private var symbolsManager: SymbolsManager!
   
   private var textSize: Int?
   private var textNodes = [SKLabelNode]()
@@ -32,22 +47,65 @@ class DadScene: SKScene {
     for node in textNodes {
       addChild(node)
     }
+    
+    symbolsManager = SymbolsManager(scene: self)
+    
+    tooltipManager1 = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: -130, y: -250),
+      timeBetweenAnimations: 5,
+      animationType: .slideToRight
+    )
+    
+    tooltipManager1.startAnimation()
+  }
+  
+  func checkIfCompletedGame() {
+    var result = 0
+    
+    for charNode in textNodes {
+      if charNode.alpha != 0 {
+        result += 1
+      }
+    }
+    
+    if result >= textNodes.count-4 {
+      onGameEnd()
+    }
+  }
+  
+  func onGameEnd() {
+    completedGame = true
+    tooltipManager1.stopAnimation()
+    
+    // scene transition
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    tooltipManager1.stopAnimation()
   }
   
   func touchMoved(toPoint pos : CGPoint) {
+    symbolsManager.generateAnimatedSymbol(at: pos)
+    
     for i in 1..<textSize!-1 {
       if textNodes[i].contains(pos) {
-        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i].run(SKAction.fadeIn(withDuration: 1))
-        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 1))
+        textNodes[i - 1].run(SKAction.fadeIn(withDuration: 0.7))
+        textNodes[i].run(SKAction.fadeIn(withDuration: 0.7))
+        textNodes[i + 1].run(SKAction.fadeIn(withDuration: 0.7))
+        
+        checkIfCompletedGame()
+        break
       }
     }
   }
   
   func touchUp(atPoint pos : CGPoint) {
+    if completedGame {
+      return
+    }
+    
+    tooltipManager1.startAnimation()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
