@@ -16,6 +16,7 @@ class BasementDoorScene: SKScene {
   private var sceneFrames: [SKTexture] = []
   private var attempts = 0
   
+  private var tooltipManager: TooltipManager!
   private var hapticsManager: BasementDoorSceneHapticsManager?
   
   static func create() -> SKScene {
@@ -26,6 +27,14 @@ class BasementDoorScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: CGPoint(x: knobArea.position.x+9, y: knobArea.position.y-9),
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+    tooltipManager.startAnimation()
+    
     buildSceneAnimation()
   }
   
@@ -47,7 +56,7 @@ class BasementDoorScene: SKScene {
     addChild(sceneAnimation)
   }
   
-  private func animateScene() {
+  private func animateScene(onAnimationEnd: @escaping () -> Void) {
     sceneAnimation.run(SKAction.animate(with: sceneFrames,
                                  timePerFrame: 0.1,
                                  resize: false,
@@ -56,21 +65,35 @@ class BasementDoorScene: SKScene {
     
     let wait = SKAction.wait(forDuration: 2)
     let zoomIn = SKAction.scale(to: 1.3, duration: 1)
-    let sequence = SKAction.sequence([wait, zoomIn])
+    let sequence = SKAction.sequence([
+      wait,
+      zoomIn,
+      .run {
+        onAnimationEnd()
+      }
+    ])
     sceneAnimation.run(sequence)
   }
   
   private func checkForDoorOpen(atPoint pos: CGPoint) {
     if knobArea.contains(pos) {
-      attempts += 1
+//      attempts += 1
+//
+//      if attempts >= 3 {
+//        animateScene()
+//        hapticsManager?.triggerSuccess()
+//      }
+//      else {
+//        hapticsManager?.triggerWarning()
+//      }
       
-      if attempts >= 3 {
-        animateScene()
-        hapticsManager?.triggerSuccess()
-      }
-      else {
-        hapticsManager?.triggerWarning()
-      }
+      self.tooltipManager.stopAnimation()
+      
+      animateScene(onAnimationEnd: {
+        
+        // scene transition
+      })
+      hapticsManager?.triggerSuccess()
     }
   }
   
