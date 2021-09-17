@@ -22,10 +22,15 @@ class SwedishUniversityScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    universityName.text = "University of \n Sweden"
-    
+    setupUniversityName()
     buildSceneAnimation()
     animateScene()
+  }
+  
+  private func setupUniversityName() {
+    universityName.fontSize = 40
+    universityName.fontName = "NewYorkSmall-Medium"
+    universityName.text = "University \nof Sweden"
   }
   
   private func buildSceneAnimation() {
@@ -48,7 +53,7 @@ class SwedishUniversityScene: SKScene {
   
   private func animateScene() {
     sceneAnimation.run(SKAction.animate(with: sceneFrames,
-                                 timePerFrame: 0.4,
+                                 timePerFrame: 0.6,
                                  resize: false,
                                  restore: false),
                 withKey: "universityAnimation")

@@ -32,13 +32,13 @@ class NewsScene: SKScene {
   private func setupText() {
     fstPageText = firstPage.childNode(withName: "NewsText-0") as! SKLabelNode
     scdPageTextLeft = secondPage.childNode(withName: "NewsText-1") as! SKLabelNode
-    scdPageTextRight = secondPage.childNode(withName: "NewsText-2") as! SKLabelNode
 
-    fstPageText.text = "Desta maneira, a \n lorem ipsum sit \n dolor amet kaka \n sit dolor again"
+    fstPageText.fontName = "NewYorkSmall-Semibold"
+    fstPageText.fontSize = 45
+    fstPageText.text = "Otto wins \nthe Nobel \nPrize in \nChemistry"
     
-    scdPageTextLeft.text = "Desta maneira, a \n lorem ipsum sit \n dolor amet kaka \n sit dolor again \n Desta maneira, a \n lorem ipsum sit \n dolor amet kaka \n sit dolor again \n Desta maneira, a \n lorem ipsum sit \n dolor amet kaka \n sit dolor again \n Desta maneira, a \n lorem ipsum sit \n dolor amet kaka \n sit dolor again \n "
-    
-    scdPageTextRight.text = "Desta maneira, a \n lorem ipsum sit \n dolor amet kaka \n sit dolor again"
+    scdPageTextLeft.fontName = "NewYorkSmall-Regular"
+    scdPageTextLeft.text = "The German \nchemist Otto Hahn, \nwas recognized for \ndiscovering the \nprocess of nuclear \nfission. \n\nHe was grateful for \nthe recognition of \nhis research and did not mention other \nparticipants who influenced this \nachievement, such as the physicist \nLise Weitmer, who was actually \nresponsible for the research \nand discovery."
   }
   
   func touchDown(atPoint pos : CGPoint) {
