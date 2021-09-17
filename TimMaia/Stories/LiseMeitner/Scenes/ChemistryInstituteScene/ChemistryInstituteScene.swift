@@ -23,6 +23,9 @@ class ChemistryInstituteScene: SKScene {
   
   override func didMove(to view: SKView) {
     instituteName.text = "Kaiser Wilhelm \n Institute"
+    instituteName.fontSize = 55
+    instituteName.fontName = "NewYorkSmall-Bold"
+    instituteName.position.y += 15
     
     buildSceneAnimation()
     animateScene()
