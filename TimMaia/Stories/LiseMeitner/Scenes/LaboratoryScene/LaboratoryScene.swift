@@ -21,7 +21,7 @@ class LaboratoryScene: SKScene {
   private var knobAnimation = SKSpriteNode()
   private var knobFrames: [SKTexture] = []
   
-  
+  private var tooltipManager: TooltipManager!
   private var hapticsManager: LaboratorySceneHapticsManager?
   private var totalClicks = 0
   
@@ -36,6 +36,18 @@ class LaboratoryScene: SKScene {
   override func didMove(to view: SKView) {
     let noticeText = notice.children.first as! SKLabelNode
     noticeText.text = "Men \n only"
+    noticeText.fontName = "NewYorkSmall-Regular"
+    noticeText.fontColor = .red
+    
+    (self.childNode(withName: "LaboratorySignText") as! SKLabelNode).fontName = "NewYorkSmall-Medium"
+    
+    tooltipManager = TooltipManager(
+      scene: self,
+      startPosition: knobArea.position,
+      timeBetweenAnimations: 5,
+      animationType: .touch
+    )
+    tooltipManager.startAnimation()
 
     buildKnobAnimation()
   }
@@ -67,14 +79,16 @@ class LaboratoryScene: SKScene {
                                  restore: true),
                 withKey: "knobAnimation")
     hapticsManager?.triggerWarning()
-    notice.run(.fadeAlpha(to: notice.alpha + 0.1, duration: 1))
+    notice.run(.fadeAlpha(to: notice.alpha + 0.2, duration: 1))
     
     if notice.alpha >= 0.6 {
+      tooltipManager.stopAnimation()
       print("Próxima cena")
     }
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    tooltipManager.stopAnimation()
   }
   
   func touchMoved(toPoint pos : CGPoint) {
@@ -82,6 +96,7 @@ class LaboratoryScene: SKScene {
   
   func touchUp(atPoint pos : CGPoint) {
     if knobArea.contains(pos) {
+      tooltipManager.startAnimation()
       animateKnob()
     }
   }
