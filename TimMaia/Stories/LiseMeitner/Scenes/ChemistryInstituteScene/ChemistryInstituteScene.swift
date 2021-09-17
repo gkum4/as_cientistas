@@ -11,6 +11,9 @@ class ChemistryInstituteScene: SKScene {
   private var sceneAnimation = SKSpriteNode()
   private var sceneFrames: [SKTexture] = []
   
+  private lazy var instituteNameView: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "InstituteNameView") as! SKSpriteNode
+  }()
   private lazy var instituteName: SKLabelNode = { [unowned self] in
     return childNode(withName : "InstituteName") as! SKLabelNode
   }()
@@ -22,13 +25,18 @@ class ChemistryInstituteScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    instituteName.text = "Kaiser Wilhelm \n Institute"
-    instituteName.fontSize = 55
-    instituteName.fontName = "NewYorkSmall-Bold"
-    instituteName.position.y += 15
-    
+    setupInstituteName()
     buildSceneAnimation()
     animateScene()
+  }
+  
+  private func setupInstituteName() {
+    instituteName.fontSize = 55
+    instituteName.fontName = "NewYorkSmall-Bold"
+    instituteName.text = "Kaiser Wilhelm Institute"
+    
+    instituteName.position.x = instituteNameView.position.x
+    instituteName.preferredMaxLayoutWidth = instituteNameView.frame.width
   }
   
   private func buildSceneAnimation() {

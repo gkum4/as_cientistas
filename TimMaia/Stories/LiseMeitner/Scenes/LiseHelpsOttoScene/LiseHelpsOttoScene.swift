@@ -8,11 +8,11 @@
 import SpriteKit
 
 class LiseHelpsOttoScene: SKScene {
-  private lazy var ottoText: SKLabelNode = { [unowned self] in
-    return childNode(withName : "OttoSpeech") as! SKLabelNode
+  private lazy var ottoTextArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "OttoTextArea") as! SKSpriteNode
   }()
-  private lazy var liseText: SKLabelNode = { [unowned self] in
-    return childNode(withName : "LiseSpeech") as! SKLabelNode
+  private lazy var liseTextArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "LiseTextArea") as! SKSpriteNode
   }()
   
   static func create() -> SKScene {
@@ -26,18 +26,27 @@ class LiseHelpsOttoScene: SKScene {
   }
   
   private func setupText() {
+    let ottoText = SKLabelNode(text: "Hi Lise! You must have seen me win the Nobel Prize in Chemistry. I can't explain how we got to the nuclear fission result, can you help me?")
+    ottoText.zPosition = 3
+    ottoText.numberOfLines = 0
     ottoText.fontName = "NewYorkSmall-Regular"
-    ottoText.text = "Hi Lise! You must have \nseen me win the Nobel \nPrize in Chemistry. \nI can't explain how we \ngot to the nuclear \nfission result, can you \nhelp me?"
+    ottoText.position = ottoTextArea.position
+    ottoText.preferredMaxLayoutWidth = ottoTextArea.frame.width
+    addChild(ottoText)
     
+    let liseText = SKLabelNode(text: "Hello Otto! I will send a letter to the committee explaining the research we did together. I wanted to know why I wasn't named at the awards and I wasn't even recognized for actually discovering nuclear fission.")
+    liseText.numberOfLines = 0
     liseText.fontName = "NewYorkSmall-Regular"
-    liseText.text = "Hello Otto! I will send a letter to \nthe committee explaining the \nresearch we did together. I wanted \nto know why I wasn't named \nat the awards and I wasn't \neven recognized for actually \ndiscovering nuclear fission."
+    liseText.position = liseTextArea.position
+    liseText.preferredMaxLayoutWidth = liseTextArea.frame.width
+    addChild(liseText)
     
     
-    let fadeIn = SKAction.fadeIn(withDuration: 1)
-    ottoText.run(fadeIn)
-    
-    let wait = SKAction.wait(forDuration: 5)
-    liseText.run(SKAction.sequence([wait, fadeIn]))
+//    let fadeIn = SKAction.fadeIn(withDuration: 1)
+//    ottoText.run(fadeIn)
+//
+//    let wait = SKAction.wait(forDuration: 5)
+//    liseText.run(SKAction.sequence([wait, fadeIn]))
   }
   
   func touchDown(atPoint pos : CGPoint) {

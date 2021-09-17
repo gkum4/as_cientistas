@@ -17,8 +17,9 @@ class InterviewScene: SKScene {
   private lazy var clickableArea: SKSpriteNode = { [unowned self] in
     return childNode(withName : "TelevisionButtonArea") as! SKSpriteNode
   }()
-  private lazy var televisionText: SKLabelNode = { [unowned self] in
-    return childNode(withName : "TelevisionText") as! SKLabelNode
+  
+  private lazy var textView: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "TelevisionTextView") as! SKSpriteNode
   }()
   
   
@@ -28,10 +29,10 @@ class InterviewScene: SKScene {
   private var conversation: [String] = [
     "👱🏻‍♂️ Hi Lise, welcome!",
     "👩🏻‍🦰 Thanks! It's great to be here.",
-    "👱🏻‍♂️ Tell us about dinner with \nPresident Truman and how it \nfelt to be recognized as Woman \nof the Year.",
-    "👩🏻‍🦰 It was a great dinner, I was \nvery happy for the nomination.",
-    "👱🏻‍♂️ Great! This shows that your \nwork is very important to the world, \neven without Otto having recognized \nyou in the Nobel Prize.",
-    "👩🏻‍🦰 Yes! He should have named me at \nthe awards, since I was the one \nwho discovered nuclear fission. \nBut anyway I'm being recognized \nin other ways.",
+    "👱🏻‍♂️ Tell us about dinner with President Truman and how it felt to be recognized as Woman of the Year.",
+    "👩🏻‍🦰 It was a great dinner, I was very happy for the nomination.",
+    "👱🏻‍♂️ Great! This shows that your work is very important to the world, even without Otto having recognized you in the Nobel Prize.",
+    "👩🏻‍🦰 Yes! He should have named me at the awards, since I was the one who discovered nuclear fission. But anyway I'm being recognized in other ways.",
   ]
   
   static func create() -> SKScene {
@@ -48,12 +49,14 @@ class InterviewScene: SKScene {
     for line in conversation {
       
       let label = SKLabelNode(text: line)
-      label.position = televisionText.position
       label.alpha = 0
+      label.fontSize = 40
       label.numberOfLines = 0
       label.fontColor = .black
       label.fontName = "NewYorkSmall-Regular"
-      label.fontSize = 40
+      
+      label.position = textView.position
+      label.preferredMaxLayoutWidth = textView.frame.width
       
       conversationNodes.append(label)
       addChild(label)

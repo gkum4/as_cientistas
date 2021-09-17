@@ -18,9 +18,13 @@ class InstituteAttackedScene: SKScene {
     return childNode(withName : "Institute-1") as! SKSpriteNode
   }()
   
+  private lazy var instituteNameView: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "InstituteNameView") as! SKSpriteNode
+  }()
   private lazy var instituteName: SKLabelNode = { [unowned self] in
     return childNode(withName : "InstituteName") as! SKLabelNode
   }()
+
   private lazy var tankPosition: SKSpriteNode = { [unowned self] in
     return childNode(withName : "TankFinalPosition") as! SKSpriteNode
   }()
@@ -41,9 +45,12 @@ class InstituteAttackedScene: SKScene {
   }
   
   private func setupInstituteName() {
-    instituteName.text = "Kaiser Wilhelm \nInstitute"
     instituteName.fontSize = 55
     instituteName.fontName = "NewYorkSmall-Bold"
+    instituteName.text = "Kaiser Wilhelm Institute"
+    
+    instituteName.preferredMaxLayoutWidth = instituteNameView.frame.width
+    instituteName.position.x = instituteNameView.position.x
   }
   
   private func buildSceneAnimation() {
