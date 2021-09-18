@@ -21,6 +21,8 @@
 "LiseLaboratoryScene1" = "Physics Laboratory";
 "LiseLaboratoryScene2" = "Men only";
 
+"LiseBasementScene" = "Blow";
+
 "LiseCarScene1" = "Denmark";
 "LiseCarScene2" = "Switzerland";
 "LiseCarScene3" = "Netherlands";

@@ -50,7 +50,7 @@ class BasementScene: SKScene {
       startPosition: CGPoint(x: 0, y: -720),
       timeBetweenAnimations: 5,
       animationType: .text,
-      text: "Blow",
+      text: NSLocalizedString("LiseBasementScene", comment: "Comment"),
       textStyle: .init(
         fontName: "NewYorkSmall-Medium",
         fontSize: 55,
