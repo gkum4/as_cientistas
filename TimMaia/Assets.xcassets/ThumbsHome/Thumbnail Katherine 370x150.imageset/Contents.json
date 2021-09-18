@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Card 2.png",
+      "filename" : "Thumbnail Katherine 370x150.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Card 2@2x.png",
+      "filename" : "Thumbnail Katherine 370x150@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Card 2@3x.png",
+      "filename" : "Thumbnail Katherine 370x150@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

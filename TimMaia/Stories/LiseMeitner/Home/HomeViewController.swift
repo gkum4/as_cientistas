@@ -11,12 +11,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableCards: UITableView!
     
-    let images : [UIImage] = [#imageLiteral(resourceName: "CardImage1"),#imageLiteral(resourceName: "Card 3"),#imageLiteral(resourceName: "Card 2"),#imageLiteral(resourceName: "Card 5"),#imageLiteral(resourceName: "Card 4")]
+    let images : [UIImage] = [#imageLiteral(resourceName: "Thumbnail Lise 370x150"),#imageLiteral(resourceName: "Thumbnail Rosalind 370x150"),#imageLiteral(resourceName: "Thumbnail Annie 370x150"),#imageLiteral(resourceName: "Thumbnail Katherine 370x150"),#imageLiteral(resourceName: "Thumbnail Lilian 370x150")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableCards.backgroundColor = .white
         
         tableCards.delegate = self
         tableCards.dataSource = self
