@@ -71,6 +71,10 @@ final class BlowDetector {
   }
   
   func detectedBlow() -> Bool {
+    if audioRecorder == nil {
+      return false
+    }
+    
     self.audioRecorder.updateMeters()
     
     if audioRecorder.averagePower(forChannel: 0) > detectionThreshold {
