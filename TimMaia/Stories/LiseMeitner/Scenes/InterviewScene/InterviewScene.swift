@@ -17,8 +17,8 @@ class InterviewScene: SKScene {
   private lazy var clickableArea: SKSpriteNode = { [unowned self] in
     return childNode(withName : "TelevisionButtonArea") as! SKSpriteNode
   }()
-  private lazy var televisionText: SKLabelNode = { [unowned self] in
-    return childNode(withName : "TelevisionText") as! SKLabelNode
+  private lazy var televisionTextArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "TelevisionTextArea") as! SKSpriteNode
   }()
   
   
@@ -65,7 +65,8 @@ class InterviewScene: SKScene {
     for line in conversation {
       
       let label = SKLabelNode(text: line)
-      label.position = televisionText.position
+      label.position = televisionTextArea.position
+      label.preferredMaxLayoutWidth = televisionTextArea.frame.width
       label.alpha = 0
       label.numberOfLines = 0
       label.fontColor = .black

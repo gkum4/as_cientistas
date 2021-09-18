@@ -25,6 +25,9 @@ class PeriodicTableScene: SKScene {
   private lazy var nextButton: SKSpriteNode = { [unowned self] in
     return childNode(withName : "button") as! SKSpriteNode
   }()
+  private lazy var textArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "textViewArea") as! SKSpriteNode
+  }()
   
   private var sceneText = SKLabelNode()
   
@@ -121,6 +124,7 @@ class PeriodicTableScene: SKScene {
     sceneText.fontSize = 40
     sceneText.fontName = "NewYorkSmall-Semibold"
     sceneText.text = NSLocalizedString("LisePeriodicTableScene", comment: "Comment")
+    sceneText.preferredMaxLayoutWidth = textArea.frame.width
     
     let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
     let wait = SKAction.wait(forDuration: 5)

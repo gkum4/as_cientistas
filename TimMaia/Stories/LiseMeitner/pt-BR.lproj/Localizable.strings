@@ -29,15 +29,16 @@
 "LiseOttoLetterScene" = "Olá Otto! Segue o andamento da nossa pesquisa. Descobri que a divisão do átomo de Urânio libera energia e nêutrons, dando origem a uma série de fissões nucleares com liberação contínua de energia, e isso é a fissão nuclear.";
 
 "LiseNewsScene1" = "Otto ganha Nobel de Química";
-"LiseNewsScene2" = "O químico alemão Otto Hahn, foi reconhecido por descobrir o processo da fissão nuclear. \n\nEle agradeceu pelo reconhecimento de sua pesquisa e não citou outros participantes que influenciaram esse feito, como a física Lise Weitmer, que foi a real responsável pela pesquisa e pela descoberta.";
+"LiseNewsScene2" = "O químico alemão Otto Hahn, foi reconhecido por descobrir o processo da fissão nuclear. \n\nEle agradeceu pelo reconhecimento de sua pesquisa e não citou outros participantes que influenciaram esse";
+"LiseNewsScene3" = "feito, como a física Lise Weitmer, que foi a real responsável pela pesquisa e pela descoberta.";
 
 "LiseHelpsOttoScene1" = "Olá Lise! Você deve ter visto que eu ganhei o Nobel de Química. Eu não sei explicar como chegamos ao resultado da fissão nuclear, você pode me ajudar?";
 "LiseHelpsOttoScene2" = "Olá Otto! Vou enviar uma carta para o comite explicando a pesquisa que fizemos juntos. Queria saber por que eu não fui citada na premiação e nem tive reconhecimento por ter realmente descoberto a fissão nuclear.";
 
-"LiseNobelLetterScene1" = "Olá, eu sou a física Lise Meitner. Eu descobri o processo de fissão nuclear provando que";
-"LiseNobelLetterScene2" = "a divisão do átomo de Urânio (em átomos de Bário e Criptônio) libera energia e nêutrons,";
-"LiseNobelLetterScene3" = "que por sua vez causam fissão em mais átomos liberando neutrões e assim sucessivamente, dando origem a uma série";
-"LiseNobelLetterScene4" = "de fissões nucleares com liberação contínua de energia, num processo denominado reação em cadeia.";
+"LiseNobelLetterScene1" = "Olá, sou a física Lise Meitner. Descobri o processo de fissão nuclear provando que a divisão";
+"LiseNobelLetterScene2" = "do átomo de Urânio (em átomos de Bário e Criptônio) libera energia e nêutrons, causando fissão";
+"LiseNobelLetterScene3" = "em mais átomos liberando neutrões e assim sucessivamente, dando origem a uma série de fissões";
+"LiseNobelLetterScene4" = "nucleares com liberação contínua de energia, num processo denominado reação em cadeia.";
 
 "LiseInterviewScene1" = "👱🏻‍♂️ Olá Lise, bem-vinda! ";
 "LiseInterviewScene2" = "👩🏻‍🦰 Obrigada! É muito bom estar aqui.";
@@ -53,3 +54,4 @@
 "LiseFinalScene2" = "ser fácil";
 "LiseFinalScene3" = "desde que não tenha";
 "LiseFinalScene4" = "sido vazia";
+"LiseFinalScene5" = "Jogar novamente";

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
   }
   
   override func loadView() {
-    let scene = SwedishUniversityScene.create()
+    let scene = LiseFinalScene.create()
     let sceneView = SKView()
     scene.scaleMode = .aspectFill
     sceneView.presentScene(scene)

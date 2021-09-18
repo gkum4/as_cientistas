@@ -8,11 +8,11 @@
 import SpriteKit
 
 class LiseHelpsOttoScene: SKScene {
-  private lazy var ottoText: SKLabelNode = { [unowned self] in
-    return childNode(withName : "OttoSpeech") as! SKLabelNode
+  private lazy var ottoTextArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "OttoTextArea") as! SKSpriteNode
   }()
-  private lazy var liseText: SKLabelNode = { [unowned self] in
-    return childNode(withName : "LiseSpeech") as! SKLabelNode
+  private lazy var liseTextArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "LiseTextArea") as! SKSpriteNode
   }()
   
   private var nextButton: SKSpriteNode!
@@ -33,11 +33,24 @@ class LiseHelpsOttoScene: SKScene {
   }
   
   private func setupText() {
+    let ottoText = SKLabelNode()
     ottoText.fontName = "NewYorkSmall-Regular"
     ottoText.text = NSLocalizedString("LiseHelpsOttoScene1", comment: "Comment")
+    ottoText.position = ottoTextArea.position
+    ottoText.numberOfLines = 0
+    ottoText.alpha = 0
+    ottoText.preferredMaxLayoutWidth = ottoTextArea.frame.width
+    addChild(ottoText)
     
+    
+    let liseText = SKLabelNode()
     liseText.fontName = "NewYorkSmall-Regular"
     liseText.text = NSLocalizedString("LiseHelpsOttoScene2", comment: "Comment")
+    liseText.position = liseTextArea.position
+    liseText.numberOfLines = 0
+    liseText.alpha = 0
+    liseText.preferredMaxLayoutWidth = liseTextArea.frame.width
+    addChild(liseText)
     
     
     let fadeIn = SKAction.fadeIn(withDuration: 1)
