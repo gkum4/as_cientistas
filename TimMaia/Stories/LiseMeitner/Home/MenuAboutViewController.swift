@@ -39,15 +39,6 @@ class MenuAboutViewController: UIViewController, UITableViewDelegate, UITableVie
         tableMenuAbout.delegate = self
         tableMenuAbout.dataSource = self
     }
-  
-  private func loadScene() {
-    let vc = ViewController()
-
-    vc.modalPresentationStyle = .fullScreen
-    vc.modalTransitionStyle = .crossDissolve
-
-    self.present(vc, animated: true)
-  }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,9 +47,8 @@ class MenuAboutViewController: UIViewController, UITableViewDelegate, UITableVie
         
         switch indexPath.row {
         case 0:
-//            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
-//            self.present(vc, animated: true)
-            loadScene()
+            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
+            self.present(vc, animated: true)
         case 1:
             let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
             self.present(vc, animated: true)

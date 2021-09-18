@@ -22,6 +22,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableCards.delegate = self
         tableCards.dataSource = self
     }
+  
+    private func loadScene() {
+      let vc = ViewController()
+
+      vc.modalPresentationStyle = .fullScreen
+      vc.modalTransitionStyle = .crossDissolve
+
+      self.present(vc, animated: true)
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -43,9 +52,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
-            self.present(vc, animated: true)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
+//            self.present(vc, animated: true)
+          loadScene()
         case 1:
             print ("vai para a tela da história 2") //substituir o print para a mudança de tela
         case 2:

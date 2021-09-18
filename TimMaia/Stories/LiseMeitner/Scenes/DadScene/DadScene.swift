@@ -13,7 +13,7 @@ class DadScene: SKScene {
   }()
   private var dadSpeech = DynamicTextManager(
     text: NSLocalizedString("LiseDadScene2", comment: "Comment"),
-    startPos: CGPoint(x: -225, y: -270),
+    startPos: CGPoint(x: -225, y: -275),
     textWidth: 460,
     lineHeight: 100,
     textRotation: 0.2,

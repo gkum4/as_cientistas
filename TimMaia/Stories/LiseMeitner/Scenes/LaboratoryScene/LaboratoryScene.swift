@@ -8,6 +8,9 @@
 import SpriteKit
 
 class LaboratoryScene: SKScene {
+  private lazy var noticeArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "LaboratoryNoticeArea") as! SKSpriteNode
+  }()
   private lazy var notice: SKSpriteNode = { [unowned self] in
     return childNode(withName : "LaboratoryNotice") as! SKSpriteNode
   }()
@@ -34,15 +37,6 @@ class LaboratoryScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
-    let noticeText = notice.children.first as! SKLabelNode
-    noticeText.text = NSLocalizedString("LiseLaboratoryScene2", comment: "Comment")
-    noticeText.fontName = "NewYorkSmall-Regular"
-    noticeText.fontColor = .red
-    
-    let signText = childNode(withName: "LaboratorySignText") as! SKLabelNode
-    signText.text = NSLocalizedString("LiseLaboratoryScene1", comment: "Comment")
-    signText.fontName = "NewYorkSmall-Medium"
-    
     tooltipManager = TooltipManager(
       scene: self,
       startPosition: knobArea.position,
@@ -51,7 +45,21 @@ class LaboratoryScene: SKScene {
     )
     tooltipManager.startAnimation()
 
+    setupText()
     buildKnobAnimation()
+  }
+  
+  private func setupText() {
+    let signText = childNode(withName: "LaboratorySignText") as! SKLabelNode
+    signText.text = NSLocalizedString("LiseLaboratoryScene1", comment: "Comment")
+    signText.fontName = "NewYorkSmall-Medium"
+    
+    let noticeText = notice.children.first as! SKLabelNode
+    noticeText.text = NSLocalizedString("LiseLaboratoryScene2", comment: "Comment")
+    noticeText.fontName = "NewYorkSmall-Regular"
+    noticeText.fontColor = .red
+    noticeText.fontSize = 28
+    noticeText.preferredMaxLayoutWidth = noticeArea.frame.width
   }
   
   private func buildKnobAnimation() {

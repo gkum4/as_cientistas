@@ -11,6 +11,9 @@ class SwedishUniversityScene: SKScene {
   private var sceneAnimation: SKSpriteNode!
   private var sceneFrames: [SKTexture] = []
   
+  private lazy var universityNameArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "UniversityNameArea") as! SKSpriteNode
+  }()
   private lazy var universityName: SKLabelNode = { [unowned self] in
     return childNode(withName : "UniversityName") as! SKLabelNode
   }()
@@ -29,9 +32,10 @@ class SwedishUniversityScene: SKScene {
   }
   
   private func setupUniversityName() {
-    universityName.fontSize = 40
+    universityName.fontSize = 36
     universityName.fontName = "NewYorkSmall-Medium"
     universityName.text = NSLocalizedString("LiseSwedishUniversity", comment: "Comment")
+    universityName.preferredMaxLayoutWidth = universityNameArea.frame.width
     
     universityName.removeFromParent()
     sceneAnimation.addChild(universityName)

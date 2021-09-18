@@ -18,6 +18,9 @@ class InstituteAttackedScene: SKScene {
     return childNode(withName : "Institute-1") as! SKSpriteNode
   }()
   
+  private lazy var instituteNameArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "InstituteNameArea") as! SKSpriteNode
+  }()
   private lazy var instituteName: SKLabelNode = { [unowned self] in
     return childNode(withName : "InstituteName") as! SKLabelNode
   }()
@@ -54,6 +57,8 @@ class InstituteAttackedScene: SKScene {
     instituteName.text = NSLocalizedString("LiseChemistryIntitute", comment: "Comment")
     instituteName.fontSize = 55
     instituteName.fontName = "NewYorkSmall-Bold"
+    instituteName.position.y += 15
+    instituteName.preferredMaxLayoutWidth = instituteNameArea.frame.width
   }
   
   private func buildSceneAnimation() {
