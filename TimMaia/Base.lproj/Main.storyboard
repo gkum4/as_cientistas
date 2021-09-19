@@ -356,6 +356,9 @@
                                                         <state key="normal" title="Start" backgroundImage="Fundo botão">
                                                             <color key="titleColor" red="0.14117647059999999" green="0.32156862749999998" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onStartPress:" destination="bbw-LI-GTm" eventType="touchUpInside" id="Hcn-Xh-hii"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -29,7 +29,12 @@ class IntroHistoriaViewController: UIViewController {
         setupTextViewSinopse()
     }
     
-    
+  private func loadScene(vc: UIViewController) {
+      vc.modalPresentationStyle = .fullScreen
+      vc.modalTransitionStyle = .crossDissolve
+
+      self.present(vc, animated: true)
+    }
     
     func setupTextViewSinopse () {
         
@@ -43,7 +48,10 @@ class IntroHistoriaViewController: UIViewController {
         
     }
 
-    /*
+  @IBAction func onStartPress(_ sender: Any) {
+    loadScene(vc: LiseMeitnerSceneViewController())
+  }
+  /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

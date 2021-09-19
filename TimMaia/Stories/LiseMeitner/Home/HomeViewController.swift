@@ -23,17 +23,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableCards.dataSource = self
         
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
-    }
-  
-  private func loadScene(vc: UIViewController) {
-      vc.modalPresentationStyle = .fullScreen
-      vc.modalTransitionStyle = .crossDissolve
-
-      self.present(vc, animated: true)
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -49,9 +38,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
        
       cell.selectionStyle = .none
       
-      if indexPath.row != 0 {
-        cell.contentView.alpha = 0.4
-      }
+//      if indexPath.row != 0 {
+//        cell.contentView.alpha = 0.4
+//      }
       
         return cell
     }
@@ -61,10 +50,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         switch indexPath.row {
         case 0:
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
-//            self.present(vc, animated: true)
-          loadScene(vc: LiseMeitnerSceneViewController())
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
+            self.present(vc, animated: true)
+//          loadScene(vc: LiseMeitnerSceneViewController())
         case 1:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "segundaHistoria")
