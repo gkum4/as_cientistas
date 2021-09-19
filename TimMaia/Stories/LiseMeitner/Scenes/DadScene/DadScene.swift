@@ -26,6 +26,8 @@ class DadScene: SKScene {
   
   private var completedGame = false
   
+  private var nextButton: SKSpriteNode!
+  
   private var tooltipManager1: TooltipManager!
   private var tooltipManager2: TooltipManager!
   private var symbolsManager: SymbolsManager!
@@ -40,6 +42,9 @@ class DadScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    nextButton = (self.childNode(withName: "button") as! SKSpriteNode)
+    nextButton.alpha = 0
+    
     badge.text = NSLocalizedString("LiseDadScene1", comment: "Comment")
     
     textSize = dadSpeech.textSize
@@ -77,18 +82,23 @@ class DadScene: SKScene {
   func onGameEnd() {
     completedGame = true
     tooltipManager1.stopAnimation()
+    nextButton.run(.fadeIn(withDuration: 1.5))
   }
   
   func touchDown(atPoint pos : CGPoint) {
     tooltipManager1.stopAnimation()
     
     if completedGame {
-      SceneTransition.executeDefaultTransition(
-        from: self,
-        to: LiseWithBoysScene.create(),
-        nextSceneScaleMode: .aspectFill,
-        transition: SKTransition.flipVertical(withDuration: 2)
-      )
+      if nextButton.contains(pos) {
+        SceneTransition.executeDefaultTransition(
+          from: self,
+          to: LiseWithBoysScene.create(),
+          nextSceneScaleMode: .aspectFill,
+          transition: SKTransition.flipVertical(withDuration: 2)
+        )
+      }
+      
+      return
     }
   }
   

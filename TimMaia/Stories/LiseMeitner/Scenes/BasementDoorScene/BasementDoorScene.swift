@@ -12,6 +12,10 @@ class BasementDoorScene: SKScene {
     return childNode(withName : "KnobArea") as! SKSpriteNode
   }()
   
+  private lazy var basementSignText: SKLabelNode = { [unowned self] in
+    return childNode(withName : "SignText") as! SKLabelNode
+  }()
+  
   private var sceneAnimation = SKSpriteNode()
   private var sceneFrames: [SKTexture] = []
   private var attempts = 0
@@ -36,6 +40,17 @@ class BasementDoorScene: SKScene {
     tooltipManager.startAnimation()
     
     buildSceneAnimation()
+    buildText()
+  }
+  
+  private func buildText() {
+    basementSignText.text = NSLocalizedString("LiseBasementDoor", comment: "Comment")
+    basementSignText.fontColor = .black
+    basementSignText.fontSize = 45
+    basementSignText.fontName = "NewYorkSmall-Regular"
+
+    basementSignText.removeFromParent()
+    sceneAnimation.addChild(basementSignText)
   }
   
   private func buildSceneAnimation() {

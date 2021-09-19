@@ -74,9 +74,9 @@ class MapZoomScene: SKScene {
     targetInitialScale = targetLocation.xScale
     
     targetLocationName.text = NSLocalizedString("LiseLocationName\(sceneNumber)", comment: "Comment")
-    targetLocationName.fontColor = .black
+    targetLocationName.fontColor = .white
     targetLocationName.fontSize = 15
-    targetLocationName.fontName = "NewYorkMediumItalic"
+    targetLocationName.fontName = "NewYorkSmall-MediumItalic"
   }
   
   private func addPinchGesture() {
@@ -243,9 +243,9 @@ class MapZoomScene: SKScene {
     nextTargetLocationName?.run(newActionsSeq)
     
     nextTargetLocationName!.text = NSLocalizedString("LiseLocationName\(sceneNumber)", comment: "Comment")
-    nextTargetLocationName!.fontColor = .black
+    nextTargetLocationName!.fontColor = .white
     nextTargetLocationName!.fontSize = 15 * CGFloat(sceneNumber)
-    nextTargetLocationName!.fontName = "NewYorkMediumItalic"
+    nextTargetLocationName!.fontName = "NewYorkSmall-MediumItalic"
     
     targetLocationName = nextTargetLocationName!
   }

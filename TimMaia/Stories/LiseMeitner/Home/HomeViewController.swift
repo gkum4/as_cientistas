@@ -23,9 +23,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableCards.dataSource = self
     }
   
-    private func loadScene() {
-      let vc = ViewController()
-
+  private func loadScene(vc: UIViewController) {
       vc.modalPresentationStyle = .fullScreen
       vc.modalTransitionStyle = .crossDissolve
 
@@ -44,6 +42,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.thumbnails.image = image
        
+      cell.selectionStyle = .none
+      
+      if indexPath.row != 0 {
+        cell.contentView.alpha = 0.4
+      }
+      
         return cell
     }
     
@@ -55,7 +59,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
 //            self.present(vc, animated: true)
-          loadScene()
+          loadScene(vc: LiseMeitnerSceneViewController())
         case 1:
             print ("vai para a tela da história 2") //substituir o print para a mudança de tela
         case 2:

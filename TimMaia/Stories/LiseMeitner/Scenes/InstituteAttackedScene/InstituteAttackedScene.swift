@@ -54,11 +54,19 @@ class InstituteAttackedScene: SKScene {
   }
   
   private func setupInstituteName() {
-    instituteName.text = NSLocalizedString("LiseChemistryIntitute", comment: "Comment")
-    instituteName.fontSize = 55
-    instituteName.fontName = "NewYorkSmall-Bold"
-    instituteName.position.y += 15
+    // Prepares NSAttributedString
+    let text = NSLocalizedString("LiseChemistryIntitute", comment: "Comment")
+    let attrString = NSMutableAttributedString(string: text)
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    let range = NSRange(location: 0, length: text.count)
+    attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: range)
+    attrString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "NewYorkSmall-Bold", size: 55)!], range: range)
+    
+    instituteName.attributedText = attrString
     instituteName.preferredMaxLayoutWidth = instituteNameArea.frame.width
+    instituteName.horizontalAlignmentMode = .center
+    instituteName.position.y -= 15
   }
   
   private func buildSceneAnimation() {

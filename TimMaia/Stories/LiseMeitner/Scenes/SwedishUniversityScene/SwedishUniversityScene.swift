@@ -32,11 +32,18 @@ class SwedishUniversityScene: SKScene {
   }
   
   private func setupUniversityName() {
-    universityName.fontSize = 36
-    universityName.fontName = "NewYorkSmall-Medium"
-    universityName.text = NSLocalizedString("LiseSwedishUniversity", comment: "Comment")
-    universityName.preferredMaxLayoutWidth = universityNameArea.frame.width
+    // Prepares NSAttributedString
+    let text = NSLocalizedString("LiseSwedishUniversity", comment: "Comment")
+    let attrString = NSMutableAttributedString(string: text)
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    let range = NSRange(location: 0, length: text.count)
+    attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: range)
+    attrString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "NewYorkSmall-Medium", size: 36)!], range: range)
     
+    universityName.attributedText = attrString
+    universityName.preferredMaxLayoutWidth = universityNameArea.frame.width
+    universityName.horizontalAlignmentMode = .center
     universityName.removeFromParent()
     sceneAnimation.addChild(universityName)
   }

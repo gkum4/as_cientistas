@@ -120,11 +120,19 @@ class PeriodicTableScene: SKScene {
   private func showSceneText() {
     tooltipManager2.stopAnimation()
     
+    // Prepares NSAttributedString
+    let text = NSLocalizedString("LisePeriodicTableScene", comment: "Comment")
+    let attrString = NSMutableAttributedString(string: text)
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    let range = NSRange(location: 0, length: text.count)
+    attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: range)
+    attrString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "NewYorkSmall-Semibold", size: 40)!], range: range)
+    
     sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
-    sceneText.fontSize = 40
-    sceneText.fontName = "NewYorkSmall-Semibold"
-    sceneText.text = NSLocalizedString("LisePeriodicTableScene", comment: "Comment")
+    sceneText.attributedText = attrString
     sceneText.preferredMaxLayoutWidth = textArea.frame.width
+    sceneText.horizontalAlignmentMode = .center
     
     let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
     let wait = SKAction.wait(forDuration: 5)

@@ -10,6 +10,8 @@
 "LiseLocationName1" = "Viena";
 "LiseLocationName2" = "Leopoldstadt";
 
+"LiseBasementDoor" = "Porão";
+
 "LiseChemistryIntitute" = "Instituto Kaiser Wilhelm";
 "LiseSwedishUniversity" = "Universidade da Suécia";
 
@@ -63,4 +65,4 @@
 "LiseFinalScene2" = "ser fácil";
 "LiseFinalScene3" = "desde que não tenha";
 "LiseFinalScene4" = "sido vazia";
-"LiseFinalScene5" = "Jogar novamente";
+"LiseFinalScene5" = "Voltar para início";

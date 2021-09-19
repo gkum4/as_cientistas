@@ -10,6 +10,8 @@
 "LiseLocationName1" = "Vienna";
 "LiseLocationName2" = "Leopoldstadt";
 
+"LiseBasementDoor" = "Basement";
+
 "LiseChemistryIntitute" = "Kaiser Wilhelm Institute";
 "LiseSwedishUniversity" = "University of Sweden";
 
@@ -63,4 +65,4 @@
 "LiseFinalScene2" = "to be easy";
 "LiseFinalScene3" = "as long it has not";
 "LiseFinalScene4" = "been empty";
-"LiseFinalScene5" = "Replay";
+"LiseFinalScene5" = "Go back to Home";

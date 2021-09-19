@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Her Science Stories</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,6 +24,20 @@
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>O app usa o microfone para realizar interações dentro das histórias</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NewYorkSmall-Black.otf</string>
+		<string>NewYorkSmall-BlackItalic.otf</string>
+		<string>NewYorkSmall-Bold.otf</string>
+		<string>NewYorkSmall-Heavy.otf</string>
+		<string>NewYorkSmall-HeavyItalic.otf</string>
+		<string>NewYorkSmall-Medium.otf</string>
+		<string>NewYorkSmall-MediumItalic.otf</string>
+		<string>NewYorkSmall-Regular.otf</string>
+		<string>NewYorkSmall-RegularItalic.otf</string>
+		<string>NewYorkSmall-Semibold.otf</string>
+		<string>NewYorkSmall-SemiboldItalic.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -61,20 +77,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NewYorkSmall-Black.otf</string>
-		<string>NewYorkSmall-BlackItalic.otf</string>
-		<string>NewYorkSmall-Bold.otf</string>
-		<string>NewYorkSmall-Heavy.otf</string>
-		<string>NewYorkSmall-HeavyItalic.otf</string>
-		<string>NewYorkSmall-Medium.otf</string>
-		<string>NewYorkSmall-MediumItalic.otf</string>
-		<string>NewYorkSmall-Regular.otf</string>
-		<string>NewYorkSmall-RegularItalic.otf</string>
-		<string>NewYorkSmall-Semibold.otf</string>
-		<string>NewYorkSmall-SemiboldItalic.otf</string>
 	</array>
 </dict>
 </plist>

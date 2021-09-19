@@ -63,13 +63,13 @@ class LiseFinalScene: SKScene {
   private var totalNodes = 0
   private var textNodes = [[SKLabelNode]]()
   
-  private var replayButton: SKLabelNode!
+  private var goBackButton: SKLabelNode!
   
   private var tooltipManager: TooltipManager!
   private var symbolsManager: SymbolsManager!
   private var gameEnded = false
   
-  static func create() -> SKScene {
+  static func create() -> LiseFinalScene {
     let scene = LiseFinalScene(fileNamed: "LiseFinalScene")
 
     return scene!
@@ -78,10 +78,10 @@ class LiseFinalScene: SKScene {
   override func didMove(to view: SKView) {
     self.backgroundColor = .systemBackground
     
-    replayButton = (self.childNode(withName: "replayButton") as! SKLabelNode)
-    replayButton.text = NSLocalizedString("LiseFinalScene5", comment: "Comment")
-    replayButton.alpha = 0
-    replayButton.fontName = "NewYorkSmall-Semibold"
+    goBackButton = (self.childNode(withName: "goBackButton") as! SKLabelNode)
+    goBackButton.text = NSLocalizedString("LiseFinalScene5", comment: "Comment")
+    goBackButton.alpha = 0
+    goBackButton.fontName = "NewYorkSmall-Semibold"
     
     tooltipManager = TooltipManager(
       scene: self,
@@ -125,7 +125,7 @@ class LiseFinalScene: SKScene {
     
     if count >= totalNodes-4 {
       gameEnded = true
-      replayButton.run(.repeatForever(.sequence([
+      goBackButton.run(.repeatForever(.sequence([
         .fadeIn(withDuration: 1),
         .wait(forDuration: 3),
         .fadeOut(withDuration: 0.5)
@@ -136,13 +136,11 @@ class LiseFinalScene: SKScene {
   func touchDown(atPoint pos : CGPoint) {
     tooltipManager.stopAnimation()
     
-    if gameEnded && replayButton.contains(pos) {
-      SceneTransition.executeDefaultTransition(
-        from: self,
-        to: MapZoomScene.create(),
-        nextSceneScaleMode: .aspectFill,
-        transition: SKTransition.doorsCloseVertical(withDuration: 2)
-      )
+    if gameEnded && goBackButton.contains(pos) {
+      if let vc = self.parentViewController,
+         let delegate = vc as? LiseFinalSceneDelegate {
+        delegate.didFinishScene()
+      }
     }
   }
   

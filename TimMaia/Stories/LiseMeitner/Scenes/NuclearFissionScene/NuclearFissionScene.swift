@@ -18,6 +18,9 @@ class NuclearFissionScene: SKScene {
   private lazy var textArea: SKSpriteNode = { [unowned self] in
     return childNode(withName : "textViewArea") as! SKSpriteNode
   }()
+  private lazy var atomNode: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "AtomNode") as! SKSpriteNode
+  }()
   private var sceneText = SKLabelNode()
   
   private var animationRunning = false
@@ -47,16 +50,25 @@ class NuclearFissionScene: SKScene {
   }
   
   private func showSceneText() {
+    atomNode.run(.sequence([.wait(forDuration: 4), .fadeIn(withDuration: 1)]))
+    
+    // Prepares NSAttributedString
+    let text = NSLocalizedString("LiseNuclearFissionScene", comment: "Comment")
+    let attrString = NSMutableAttributedString(string: text)
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    let range = NSRange(location: 0, length: text.count)
+    attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: range)
+    attrString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "NewYorkSmall-Semibold", size: 40)!], range: range)
     
     sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
-    sceneText.fontSize = 40
-    sceneText.fontName = "NewYorkSmall-Semibold"
-    sceneText.text = NSLocalizedString("LiseNuclearFissionScene", comment: "Comment")
+    sceneText.attributedText = attrString
     sceneText.preferredMaxLayoutWidth = textArea.frame.width
+    sceneText.horizontalAlignmentMode = .center
     
-    let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
+    let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 1.5)
     let wait = SKAction.wait(forDuration: 2)
-    let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1.5)
+    let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1)
     let sequence: [SKAction] = [fadeIn, wait, fadeOut]
     
     sceneTextView.run(.sequence(sequence))
@@ -108,6 +120,7 @@ class NuclearFissionScene: SKScene {
   }
   
   func touchDown(atPoint pos : CGPoint) {
+    atomNode.run(.fadeOut(withDuration: 0.3))
     if animationRunning {
       return
     }
