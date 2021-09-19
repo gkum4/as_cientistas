@@ -39,6 +39,7 @@ class MenuAboutViewController: UIViewController, UITableViewDelegate, UITableVie
         tableMenuAbout.delegate = self
         tableMenuAbout.dataSource = self
     }
+
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
