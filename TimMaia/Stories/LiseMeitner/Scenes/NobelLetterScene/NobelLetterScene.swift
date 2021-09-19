@@ -10,17 +10,17 @@ import SpriteKit
 class NobelLetterScene: SKScene {
   private var currentPage = 0
   private var letterPages = [
-    "Hi, I'm physicist Lise Meitner. I discovered the nuclear fission process by proving that the",
-    "splitting of the Uranium atom (into Barium and Krypton atoms) releases energy and neutrons,",
-    "which in turn cause fission in more atoms releasing more neutrons and so on, creating a series",
-    "of nuclear  fissions with continuous release of energy, in a process called chain reaction."
+    NSLocalizedString("LiseNobelLetterScene1", comment: "Comment"),
+    NSLocalizedString("LiseNobelLetterScene2", comment: "Comment"),
+    NSLocalizedString("LiseNobelLetterScene3", comment: "Comment"),
+    NSLocalizedString("LiseNobelLetterScene4", comment: "Comment")
   ]
   
   private var gameEnded = false
   private var animationRunning = false
   
   private var text = DynamicTextManager(
-    text: "Hi, I'm physicist Lise Meitner. I discovered the nuclear fission process by proving that the",
+    text: NSLocalizedString("LiseNobelLetterScene1", comment: "Comment"),
     startPos: CGPoint(x: -220, y: 470),
     textWidth: 440,
     lineHeight: 115,

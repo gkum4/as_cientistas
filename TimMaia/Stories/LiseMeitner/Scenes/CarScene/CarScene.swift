@@ -15,7 +15,11 @@ class CarScene: SKScene {
   private var whiteOverlay: SKSpriteNode!
   private var locationTextLabel: SKLabelNode!
   
-  private var locationTexts = ["Denmark", "Switzerland", "Netherlands", "Stockholm, Sweden"]
+  private var locationTexts = [
+    NSLocalizedString("LiseCarScene1", comment: "Comment"),
+    NSLocalizedString("LiseCarScene2", comment: "Comment"),
+    NSLocalizedString("LiseCarScene3", comment: "Comment"),
+    NSLocalizedString("LiseCarScene4", comment: "Comment")]
   
   var clickablePointIds = [1, 5, 10, 13]
   

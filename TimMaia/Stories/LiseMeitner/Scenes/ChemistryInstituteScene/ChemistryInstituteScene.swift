@@ -15,6 +15,10 @@ class ChemistryInstituteScene: SKScene {
     return childNode(withName : "InstituteName") as! SKLabelNode
   }()
   
+  private lazy var instituteNameArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "InstituteNameArea") as! SKSpriteNode
+  }()
+  
   static func create() -> SKScene {
     let scene = ChemistryInstituteScene(fileNamed: "ChemistryInstituteScene")
 
@@ -24,11 +28,15 @@ class ChemistryInstituteScene: SKScene {
   override func didMove(to view: SKView) {
     buildSceneAnimation()
     animateScene()
-    
-    instituteName.text = "Kaiser Wilhelm \n Institute"
+    buildText()
+  }
+  
+  private func buildText() {
+    instituteName.text = NSLocalizedString("LiseChemistryIntitute", comment: "Comment")
     instituteName.fontSize = 55
     instituteName.fontName = "NewYorkSmall-Bold"
     instituteName.position.y += 15
+    instituteName.preferredMaxLayoutWidth = instituteNameArea.frame.width
     instituteName.removeFromParent()
     sceneAnimation.addChild(instituteName)
   }

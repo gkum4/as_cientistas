@@ -11,7 +11,7 @@ class OttoLetterScene: SKScene {
   private var letter = SKSpriteNode()
   private var letterFrames: [SKTexture] = []
   private var text = DynamicTextManager(
-    text: "Hello Otto! Here's an update on the progress of our research. I found that the splitting of the Uranium atom releases energy and neutrons, creating a series of nuclear fissions with continuous release of energy and this I have deemed a nuclear fission.",
+    text: NSLocalizedString("LiseOttoLetterScene", comment: "Comment"),
     startPos: CGPoint(x: -200, y: 470), textWidth: 400,
     fontStyle: BasicFontStyle(fontName: "NewYorkSmall-Regular", fontSize: 30, color: .black))
 

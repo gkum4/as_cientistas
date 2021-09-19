@@ -18,6 +18,13 @@ class LisePlayingScene: SKScene {
   private var liseCharNodes: [SKLabelNode] = []
   private var problemCharNodes: [SKLabelNode] = []
   
+  private lazy var liseBallonArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "LiseBallonArea") as! SKSpriteNode
+  }()
+  private lazy var adultBallonArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "AdultBallonArea") as! SKSpriteNode
+  }()
+  
   static func create() -> SKScene {
     let scene = LisePlayingScene(fileNamed: "LisePlayingScene")
 
@@ -59,12 +66,13 @@ class LisePlayingScene: SKScene {
   private func showLiseText() {
     let label = SKLabelNode()
     label.fontName = "NewYorkSmall-Bold"
-    label.fontSize = 38
-    label.fontColor = .black
-    label.text = "One day\nI'll be\na scientist!"
-    label.position = CGPoint(x: -210, y: 320)
-    label.numberOfLines = 3
+    label.fontSize = 32
     label.alpha = 0
+    label.numberOfLines = 3
+    label.fontColor = .black
+    label.position = liseBallonArea.position
+    label.preferredMaxLayoutWidth = liseBallonArea.frame.width
+    label.text = NSLocalizedString("LisePlayingScene1", comment: "Comment")
     
     self.run(.sequence([
       .wait(forDuration: 1),
@@ -84,10 +92,11 @@ class LisePlayingScene: SKScene {
     label.fontName = "NewYorkSmall-Bold"
     label.fontSize = 38
     label.fontColor = .red
-    label.text = "Women cannot\nbe scientists!"
-    label.position = CGPoint(x: -220, y: 365)
+    label.text = NSLocalizedString("LisePlayingScene2", comment: "Comment")
+    label.position = adultBallonArea.position
     label.numberOfLines = 2
     label.alpha = 0
+    label.preferredMaxLayoutWidth = adultBallonArea.frame.width
     
     self.run(.sequence([
       .wait(forDuration: 5.6),

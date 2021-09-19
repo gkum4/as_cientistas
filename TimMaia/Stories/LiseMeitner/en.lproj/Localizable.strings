@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  TimMaia
+
+  Created by João Pedro Picolo on 17/09/21.
+  
+*/
+
+"LiseChemistryIntitute" = "Kaiser Wilhelm Institute";
+"LiseSwedishUniversity" = "University of Sweden";
+
+"LisePlayingScene1" = "One day I'll be a scientist!";
+"LisePlayingScene2" = "Women cannot be scientists!";
+
+"LiseDadScene1" = "Dad";
+"LiseDadScene2" = "No matter what they say, I will pay for my daughter's studies!";
+
+"LiseDegreeScene1" = "Berlin University Degree";
+"LiseDegreeScene2" = "We awarded Lise Meitner the Ph.D. title with honors for her studies in radioactivity and nuclear physics.";
+
+"LiseLaboratoryScene1" = "Physics Laboratory";
+"LiseLaboratoryScene2" = "Men only";
+
+"LiseBasementScene" = "Blow";
+
+"LiseCarScene1" = "Denmark";
+"LiseCarScene2" = "Switzerland";
+"LiseCarScene3" = "Netherlands";
+"LiseCarScene4" = "Stockholm, Sweden";
+
+"LiseOttoLetterScene" = "Hello Otto! Here's an update on the progress of our research. I found that the splitting of the Uranium atom releases energy and neutrons, creating a series of nuclear fissions with continuous release of energy and this I have deemed a nuclear fission.";
+
+"LiseNewsScene1" = "Otto wins the Nobel Prize in Chemistry";
+"LiseNewsScene2" = "The German chemist Otto Hahn, was recognized for discovering the process of nuclear fission. \n\nHe was grateful for the recognition of his research and did not mention other participants who influenced this";
+"LiseNewsScene3" = "achievement, such as the physicist Lise Weitmer, who was actually responsible for the research and discovery.";
+
+"LiseHelpsOttoScene1" = "Hi Lise! You must have seen me win the Nobel Prize in Chemistry. I can't explain how we got to the nuclear fission result, can you help me?";
+"LiseHelpsOttoScene2" = "Hello Otto! I will send a letter to the committee explaining the research we did together. I wanted to know why I wasn't named at the awards and I wasn't even recognized for actually discovering nuclear fission.";
+
+"LiseNobelLetterScene1" = "Hi, I'm physicist Lise Meitner. I discovered the nuclear fission process by proving that the";
+"LiseNobelLetterScene2" = "splitting of the Uranium atom (into Barium and Krypton atoms) releases energy and neutrons,";
+"LiseNobelLetterScene3" = "which in turn cause fission in more atoms releasing more neutrons and so on, creating a series";
+"LiseNobelLetterScene4" = "series of nuclear  fissions with continuous release of energy, in a process called chain reaction.";
+
+"LiseInterviewScene1" = "👱🏻‍♂️ Hi Lise, welcome!";
+"LiseInterviewScene2" = "👩🏻‍🦰 Thanks! It's great to be here.";
+"LiseInterviewScene3" = "👱🏻‍♂️ Tell us about dinner with President Truman and how it felt to be recognized as Woman of the Year.";
+"LiseInterviewScene4" = "👩🏻‍🦰 It was a great dinner, I was very happy for the nomination.";
+"LiseInterviewScene5" = "👱🏻‍♂️ Great! This shows that your work is very important to the world, even without Otto having recognized you in the Nobel Prize.";
+"LiseInterviewScene6" = "👩🏻‍🦰 Yes! He should have named me at the awards, since I was the one who discovered nuclear fission. But anyway I'm being recognized in other ways.";
+
+"LisePeriodicTableScene" = "The Mt element \n(Meitnerium) was \nnamed after Lise Meitner";
+
+"LiseFinalScene1" = "Life does not have";
+"LiseFinalScene2" = "to be easy";
+"LiseFinalScene3" = "as long it has not";
+"LiseFinalScene4" = "been empty";
+"LiseFinalScene5" = "Go back to Home";

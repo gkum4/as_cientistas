@@ -11,15 +11,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableCards: UITableView!
     
-    let images : [UIImage] = [#imageLiteral(resourceName: "CardImage1"),#imageLiteral(resourceName: "Card 3"),#imageLiteral(resourceName: "Card 2"),#imageLiteral(resourceName: "Card 5"),#imageLiteral(resourceName: "Card 4")]
+    let images : [UIImage] = [#imageLiteral(resourceName: "Thumbnail Lise 370x150"),#imageLiteral(resourceName: "Thumbnail Rosalind 370x150"),#imageLiteral(resourceName: "Thumbnail Annie 370x150"),#imageLiteral(resourceName: "Thumbnail Katherine 370x150"),#imageLiteral(resourceName: "Thumbnail Lilian 370x150")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableCards.backgroundColor = .white
         
         tableCards.delegate = self
         tableCards.dataSource = self
+    }
+  
+  private func loadScene(vc: UIViewController) {
+      vc.modalPresentationStyle = .fullScreen
+      vc.modalTransitionStyle = .crossDissolve
+
+      self.present(vc, animated: true)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +42,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.thumbnails.image = image
        
+      cell.selectionStyle = .none
+      
+      if indexPath.row != 0 {
+        cell.contentView.alpha = 0.4
+      }
+      
         return cell
     }
     
@@ -42,9 +56,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
-            self.present(vc, animated: true)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
+//            self.present(vc, animated: true)
+          loadScene(vc: LiseMeitnerSceneViewController())
         case 1:
             print ("vai para a tela da história 2") //substituir o print para a mudança de tela
         case 2:

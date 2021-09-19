@@ -117,15 +117,15 @@ class DegreeScene: SKScene {
   
   func showDegreeText() {
     let titleTextManager = DynamicTextManager(
-      text: "Berlin University Degree",
-      startPos: CGPoint(x: -207, y: 230),
+      text: NSLocalizedString("LiseDegreeScene1", comment: "Comment"),
+      startPos: CGPoint(x: -207, y: 260),
       textWidth: 430,
       lineHeight: 60,
       fontStyle: .init(fontName: "NewYorkSmall-Bold", fontSize: 36, color: .black)
     )
     
     let textManager = DynamicTextManager(
-      text: "We awarded Lise Meitner the Ph.D. title with honors for her studies in radioactivity and nuclear physics.",
+      text: NSLocalizedString("LiseDegreeScene2", comment: "Comment"),
       startPos: CGPoint(x: -207, y: 100),
       textWidth: 430,
       lineHeight: 60,
