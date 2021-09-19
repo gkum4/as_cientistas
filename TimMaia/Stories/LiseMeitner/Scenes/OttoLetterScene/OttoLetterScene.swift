@@ -93,12 +93,20 @@ class OttoLetterScene: SKScene {
       }
     }
     
-    if count >= textSize!-6 {
+    if count >= textSize!/2 {
       gameEnded = true
       tooltipManager.stopAnimation()
-      print("game ended")
+      showAllCharsAnimation()
       
       nextButton.run(.fadeIn(withDuration: 1.5))
+    }
+  }
+  
+  private func showAllCharsAnimation() {
+    for charNode in textNodes {
+      if charNode.alpha != 1 {
+        charNode.run(.fadeIn(withDuration: 1.5))
+      }
     }
   }
   
