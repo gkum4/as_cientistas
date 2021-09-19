@@ -12,6 +12,14 @@ class NuclearFissionScene: SKScene {
   private var sceneFrames: [SKTexture] = []
   private var nuclearFissionAnimationTime: Float!
   
+  private lazy var sceneTextView: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "sceneTextView") as! SKSpriteNode
+  }()
+  private lazy var textArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "textViewArea") as! SKSpriteNode
+  }()
+  private var sceneText = SKLabelNode()
+  
   private var animationRunning = false
   
   private var coreHapticsManager: NuclearFissionSceneCoreHapticsManager?
@@ -32,9 +40,26 @@ class NuclearFissionScene: SKScene {
       animationType: .touch
     )
     
+    showSceneText()
     tooltipManager.startAnimation()
     
     buildSceneAnimation()
+  }
+  
+  private func showSceneText() {
+    
+    sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
+    sceneText.fontSize = 40
+    sceneText.fontName = "NewYorkSmall-Semibold"
+    sceneText.text = NSLocalizedString("LiseNuclearFissionScene", comment: "Comment")
+    sceneText.preferredMaxLayoutWidth = textArea.frame.width
+    
+    let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
+    let wait = SKAction.wait(forDuration: 2)
+    let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1.5)
+    let sequence: [SKAction] = [fadeIn, wait, fadeOut]
+    
+    sceneTextView.run(.sequence(sequence))
   }
   
   private func buildSceneAnimation() {

@@ -13,11 +13,16 @@ class MapZoomScene: SKScene {
   
   private var nextMapView: SKSpriteNode?
   private var nextTargetLocation: SKSpriteNode?
+  private var nextTargetLocationName: SKLabelNode?
   private lazy var mapView: SKSpriteNode = { [unowned self] in
     return childNode(withName : "MapScene-\(sceneNumber)") as! SKSpriteNode
   }()
   private lazy var targetLocation: SKSpriteNode = { [unowned self] in
     return childNode(withName : "Marker-\(sceneNumber)") as! SKSpriteNode
+  }()
+  
+  private lazy var targetLocationName: SKLabelNode = { [unowned self] in
+    return childNode(withName : "MarkerText-\(sceneNumber)") as! SKLabelNode
   }()
   
   private var equationM: CGFloat?
@@ -51,8 +56,7 @@ class MapZoomScene: SKScene {
     self.addChild(camera)
     self.camera = camera
 
-    targetInitialScale = targetLocation.xScale
-    
+    setupTarget()
     addPinchGesture()
     getLineEquation()
     
@@ -64,6 +68,15 @@ class MapZoomScene: SKScene {
     )
     
     tooltipManager.startAnimation()
+  }
+  
+  private func setupTarget() {
+    targetInitialScale = targetLocation.xScale
+    
+    targetLocationName.text = NSLocalizedString("LiseLocationName\(sceneNumber)", comment: "Comment")
+    targetLocationName.fontColor = .black
+    targetLocationName.fontSize = 15
+    targetLocationName.fontName = "NewYorkMediumItalic"
   }
   
   private func addPinchGesture() {
@@ -137,9 +150,6 @@ class MapZoomScene: SKScene {
       }
       else if (gesture.scale < previousGestureScale && !didReachTarget && !didReachCenter) {
         zoomOutMapView()
-      }
-      else if (didReachTarget){
-//        changeMapView()
       }
       
       previousGestureScale = gesture.scale
@@ -221,6 +231,25 @@ class MapZoomScene: SKScene {
     targetInitialScale = targetLocation.xScale
   }
   
+  private func targetLocationNameTransition() {
+    nextTargetLocationName = (childNode(withName : "MarkerText-\(sceneNumber)") as! SKLabelNode)
+    nextTargetLocationName?.zPosition = 1
+    targetLocationName.zPosition = 2
+    
+    // Transition between nodes
+    let oldActionsSeq = SKAction.sequence([SKAction.wait(forDuration: 0.8), SKAction.fadeOut(withDuration: 1)])
+    let newActionsSeq = SKAction.sequence([SKAction.wait(forDuration: 1.5), SKAction.fadeIn(withDuration: 1)])
+    targetLocationName.run(oldActionsSeq)
+    nextTargetLocationName?.run(newActionsSeq)
+    
+    nextTargetLocationName!.text = NSLocalizedString("LiseLocationName\(sceneNumber)", comment: "Comment")
+    nextTargetLocationName!.fontColor = .black
+    nextTargetLocationName!.fontSize = 15 * CGFloat(sceneNumber)
+    nextTargetLocationName!.fontName = "NewYorkMediumItalic"
+    
+    targetLocationName = nextTargetLocationName!
+  }
+  
   private func changeMapView() {
     sceneNumber = sceneNumber + 1
     
@@ -230,6 +259,7 @@ class MapZoomScene: SKScene {
       
       mapViewTransition()
       targetLocationTransition()
+      targetLocationNameTransition()
       
       getLineEquation()
       

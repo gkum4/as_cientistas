@@ -6,6 +6,10 @@
   
 */
 
+"LiseLocationName0" = "Austria";
+"LiseLocationName1" = "Vienna";
+"LiseLocationName2" = "Leopoldstadt";
+
 "LiseChemistryIntitute" = "Kaiser Wilhelm Institute";
 "LiseSwedishUniversity" = "University of Sweden";
 
@@ -48,6 +52,10 @@
 "LiseInterviewScene4" = "👩🏻‍🦰 It was a great dinner, I was very happy for the nomination.";
 "LiseInterviewScene5" = "👱🏻‍♂️ Great! This shows that your work is very important to the world, even without Otto having recognized you in the Nobel Prize.";
 "LiseInterviewScene6" = "👩🏻‍🦰 Yes! He should have named me at the awards, since I was the one who discovered nuclear fission. But anyway I'm being recognized in other ways.";
+
+"LisePrizesScene" = "Lise Meitner's Awards";
+
+"LiseNuclearFissionScene" = "Lise's Nuclear Fission Experiment";
 
 "LisePeriodicTableScene" = "The Mt element \n(Meitnerium) was \nnamed after Lise Meitner";
 

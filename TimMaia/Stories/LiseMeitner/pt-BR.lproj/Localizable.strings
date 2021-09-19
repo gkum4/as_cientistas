@@ -6,6 +6,10 @@
   
 */
 
+"LiseLocationName0" = "Áustria";
+"LiseLocationName1" = "Viena";
+"LiseLocationName2" = "Leopoldstadt";
+
 "LiseChemistryIntitute" = "Instituto Kaiser Wilhelm";
 "LiseSwedishUniversity" = "Universidade da Suécia";
 
@@ -49,6 +53,9 @@
 "LiseInterviewScene5" = "👱🏻‍♂️ Que bom! Isso mostra que o seu trabalho é muito importante para o mundo, mesmo sem o Otto ter te reconhecido no Prêmio Nobel.";
 "LiseInterviewScene6" = "👩🏻‍🦰 Sim! Ele deveria ter me citado na premiação, já que fui eu quem descobriu a fissão nuclear. Mas de qualquer forma eu estou sendo reconhecida de outras formas.";
 
+"LisePrizesScene" = "Prêmios concedidos a Lise Meitner";
+
+"LiseNuclearFissionScene" = "Experimento de fissão nuclear feito por Lise";
 
 "LisePeriodicTableScene" = "O elemento Mt (Meitnério) recebeu esse nome em homenagem a Lise Meitner";
 

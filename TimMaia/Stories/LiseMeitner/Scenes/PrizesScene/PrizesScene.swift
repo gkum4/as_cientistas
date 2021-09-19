@@ -11,6 +11,14 @@ class PrizesScene: SKScene {
   private var numberOfPrizes = 4
   private var prizesNodes =  [SKSpriteNode]()
   
+  private lazy var textArea: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "textViewArea") as! SKSpriteNode
+  }()
+  private lazy var sceneTextView: SKSpriteNode = { [unowned self] in
+    return childNode(withName : "sceneTextView") as! SKSpriteNode
+  }()
+  private var sceneText = SKLabelNode()
+  
   private var nextButton: SKSpriteNode!
   
   private var hapticsManager: PrizesSceneHapticsManager?
@@ -55,6 +63,23 @@ class PrizesScene: SKScene {
     }
   }
   
+  private func showSceneText() {
+    tooltipManager.stopAnimation()
+    
+    sceneText = sceneTextView.childNode(withName: "sceneText") as! SKLabelNode
+    sceneText.fontSize = 40
+    sceneText.fontName = "NewYorkSmall-Semibold"
+    sceneText.text = NSLocalizedString("LisePrizesScene", comment: "Comment")
+    sceneText.preferredMaxLayoutWidth = textArea.frame.width
+    
+    let fadeIn = SKAction.fadeAlpha(to: 0.85, duration: 2)
+    let wait = SKAction.wait(forDuration: 2)
+    let fadeOut = SKAction.fadeAlpha(to: 0, duration: 1.5)
+    let sequence: [SKAction] = [fadeIn, wait, fadeOut]
+
+    sceneTextView.run(.sequence(sequence))
+  }
+  
   private func fetchPrizes() {
     for number in 0..<numberOfPrizes {
       let backNode = childNode(withName: "PrizeBack-\(number)") as? SKSpriteNode
@@ -83,7 +108,8 @@ class PrizesScene: SKScene {
     }
     
     gameEnded = true
-    nextButton.run(.fadeIn(withDuration: 1.5))
+    showSceneText()
+    nextButton.run(.fadeIn(withDuration: 9.5))
   }
   
   func touchDown(atPoint pos : CGPoint) {
