@@ -21,7 +21,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableCards.delegate = self
         tableCards.dataSource = self
+        
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -47,16 +54,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let vc = storyboard.instantiateViewController(withIdentifier: "primeiraHistoria")
             self.present(vc, animated: true)
         case 1:
-            print ("vai para a tela da história 2") //substituir o print para a mudança de tela
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "segundaHistoria")
+            self.present(vc, animated: true)
         case 2:
-            print ("vai para a tela da história 3")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "terceiraHistoria")
+            self.present(vc, animated: true)
         case 3:
-            print ("vai para a tela da história 4")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "quartaHistoria")
+            self.present(vc, animated: true)
         case 4:
-            print ("vai para a tela da história 5")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "quintaHistoria")
+            self.present(vc, animated: true)
         default:
-            print ("card inválido")
-            
+            print ("historia inexistente")
+
         }
         
     }

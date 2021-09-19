@@ -78,5 +78,9 @@
 		<string>NewYorkSmall-Semibold.otf</string>
 		<string>NewYorkSmall-SemiboldItalic.otf</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDarkContent</string>
 </dict>
 </plist>

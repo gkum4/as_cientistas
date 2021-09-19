@@ -31,8 +31,6 @@ class IntroHistoriaViewController: UIViewController {
     
     
     
-    
-    
     func setupTextViewSinopse () {
         
         let alturaTextoSinopse = labelSinopseHistoria.frame.height
