@@ -309,6 +309,8 @@ class TooltipManager {
   }
   
   func startAnimation() {
+    timer != nil ? self.stopAnimation() : nil
+    
     timer = Timer.scheduledTimer(
       timeInterval: timeInterval,
       target: self,
