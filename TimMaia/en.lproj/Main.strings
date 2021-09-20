@@ -1,9 +1,9 @@
 
 /* Class = "UILabel"; text = "Cooming soon!"; ObjectID = "3GK-Pl-590"; */
-"3GK-Pl-590.text" = "Em breve!";
+"3GK-Pl-590.text" = "Cooming soon!";
 
 /* Class = "UIButton"; normalTitle = "Start"; ObjectID = "3lw-sf-fBz"; */
-"3lw-sf-fBz.normalTitle" = "Iniciar";
+"3lw-sf-fBz.normalTitle" = "Start";
 
 /* Class = "UILabel"; text = "Her Science Stories"; ObjectID = "6Le-Wy-7tz"; */
 "6Le-Wy-7tz.text" = "Her Science Stories";
@@ -12,64 +12,64 @@
 "7oj-2i-EWP.text" = "Lise Meitner";
 
 /* Class = "UIButton"; normalTitle = "Return"; ObjectID = "A8h-yQ-0dd"; */
-"A8h-yQ-0dd.normalTitle" = "Voltar";
+"A8h-yQ-0dd.normalTitle" = "Return";
 
 /* Class = "UIButton"; normalTitle = "Return"; ObjectID = "FeB-R5-zky"; */
-"FeB-R5-zky.normalTitle" = "Voltar";
+"FeB-R5-zky.normalTitle" = "Return";
 
 /* Class = "UILabel"; text = "Rosalind Franklin"; ObjectID = "Gfm-qj-W4S"; */
 "Gfm-qj-W4S.text" = "Rosalind Franklin";
 
 /* Class = "UIButton"; normalTitle = "Return"; ObjectID = "JA3-PL-IEc"; */
-"JA3-PL-IEc.normalTitle" = "Voltar";
+"JA3-PL-IEc.normalTitle" = "Return";
 
 /* Class = "UITextView"; text = "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Mé faiz elementum girarzis, nisi eros vermeio. Delegadis gente finis, bibendum egestas augue arcu ut est. Manduma pindureta quium dia nois paga."; ObjectID = "JRd-SK-UbV"; */
-"JRd-SK-UbV.text" = "Lillian nasceu na Califórnia no ano de 1878. Ela foi uma psicóloga e engenheira industrial estadunidense que estudou eficiência de tempo, de trabalho e ergonomia. Gilbreth foi apelidada de 'Primeira-dama da administração', criou novos layouts domésticos e de trabalho que ajudavam as mulheres nas suas tarefas diárias e recebeu 23 diplomas honorários.";
+"JRd-SK-UbV.text" = "Lillian was born in California in the year 1878. She was an American psychologist and industrial engineer who studied time efficiency, work efficiency and ergonomics. Gilbreth was nicknamed 'First Lady of Administration', created new home and work layouts that helped women in their daily tasks, and received 23 honorary degrees.";
 
 /* Class = "UILabel"; text = "Cooming soon!"; ObjectID = "K9k-Rb-7uq"; */
-"K9k-Rb-7uq.text" = "Em breve!";
+"K9k-Rb-7uq.text" = "Cooming soon!";
 
 /* Class = "UILabel"; text = "Engineering"; ObjectID = "KUG-Y0-osg"; */
-"KUG-Y0-osg.text" = "Engenharia";
+"KUG-Y0-osg.text" = "Engineering";
 
 /* Class = "UIButton"; normalTitle = "Return"; ObjectID = "LGm-uW-ZiO"; */
-"LGm-uW-ZiO.normalTitle" = "Voltar";
+"LGm-uW-ZiO.normalTitle" = "Return";
 
 /* Class = "UIButton"; normalTitle = "Return"; ObjectID = "LVe-Qq-nyl"; */
-"LVe-Qq-nyl.normalTitle" = "Voltar";
+"LVe-Qq-nyl.normalTitle" = "Return";
 
 /* Class = "UILabel"; text = "Computing"; ObjectID = "N7i-Sl-5g9"; */
-"N7i-Sl-5g9.text" = "Computação";
+"N7i-Sl-5g9.text" = "Computing";
 
 /* Class = "UITextView"; text = "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Mé faiz elementum girarzis, nisi eros vermeio. Delegadis gente finis, bibendum egestas augue arcu ut est. Manduma pindureta quium dia nois paga."; ObjectID = "SBL-mX-jR2"; */
-"SBL-mX-jR2.text" = "Katherine nasceu na Virgínia no ano de 1918. Ela foi uma matemática, física e cientista espacial norte-americana que fez contribuições fundamentais para a aeronáutica, exploração espacial e computação. Johnson trabalhou na NASA, recebeu um título honorário de doutoura pela Universidade de NY e ajudou a escrever o primeiro livro sobre viagem espacial do mundo.";
+"SBL-mX-jR2.text" = "Katherine was born in Virginia in the year 1918. She was an American mathematician, physicist and space scientist who made fundamental contributions to aeronautics, space exploration and computing. Johnson worked at NASA, received an honorary Ph.D. from the University of NY, and helped write the world's first book on space travel.";
 
 /* Class = "UITextView"; text = "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Mé faiz elementum girarzis, nisi eros vermeio. Delegadis gente finis, bibendum egestas augue arcu ut est. Manduma pindureta quium dia nois paga.\n\nQuem num gosta di mé, boa gentis num é. Quem manda na minha terra sou euzis! Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Cevadis im ampola pa arma uma pindureta.\n\nQuem num gosta di mé, boa gentis num é. Quem manda na minha terra sou euzis! Não sou faixa preta cumpadi, sou preto inteiris, inteiris."; ObjectID = "Snl-QP-mXV"; */
-"Snl-QP-mXV.text" = "Teste 3";
+"Snl-QP-mXV.text" = "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Mé faiz elementum girarzis, nisi eros vermeio. Delegadis gente finis, bibendum egestas augue arcu ut est. Manduma pindureta quium dia nois paga.\n\nQuem num gosta di mé, boa gentis num é. Quem manda na minha terra sou euzis! Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Cevadis im ampola pa arma uma pindureta.\n\nQuem num gosta di mé, boa gentis num é. Quem manda na minha terra sou euzis! Não sou faixa preta cumpadi, sou preto inteiris, inteiris.";
 
 /* Class = "UITextView"; text = "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Mé faiz elementum girarzis, nisi eros vermeio. Delegadis gente finis, bibendum egestas augue arcu ut est. Manduma pindureta quium dia nois paga."; ObjectID = "Tlt-6M-vMb"; */
-"Tlt-6M-vMb.text" = "Rosalind nasceu em Londres no ano de 1920. Ela foi uma química que contruibuiu para o entedimento das estruturas moleculares do DNA, RNA, vírus, carvão mineral e grafite. Franklin é lembrada como a mulher que deveria ter recebido um Nobel por suas pesquisas e descobertas sobre a formação do DNA.";
+"Tlt-6M-vMb.text" = "Rosalind was born in London in the year 1920. She was a chemist who contributed to the understanding of the molecular structures of DNA, RNA, viruses, mineral coal and graphite. Franklin is remembered as the woman who should have been awarded a Nobel for her research and discoveries in DNA formation.";
 
 /* Class = "UILabel"; text = "Chemistry"; ObjectID = "VMf-l4-2Cp"; */
-"VMf-l4-2Cp.text" = "Química";
+"VMf-l4-2Cp.text" = "Chemistry";
 
 /* Class = "UIButton"; normalTitle = "Return"; ObjectID = "XxN-Dq-0H0"; */
-"XxN-Dq-0H0.normalTitle" = "Voltar";
+"XxN-Dq-0H0.normalTitle" = "Return";
 
 /* Class = "UILabel"; text = "Cooming soon!"; ObjectID = "aXc-cl-pkc"; */
-"aXc-cl-pkc.text" = "Em breve!";
+"aXc-cl-pkc.text" = "Cooming soon!";
 
 /* Class = "UILabel"; text = "Physics"; ObjectID = "dl9-zV-qvt"; */
-"dl9-zV-qvt.text" = "Física";
+"dl9-zV-qvt.text" = "Physics";
 
 /* Class = "UITextView"; text = "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Mé faiz elementum girarzis, nisi eros vermeio. Delegadis gente finis, bibendum egestas augue arcu ut est. Manduma pindureta quium dia nois paga."; ObjectID = "ez0-KY-EbB"; */
-"ez0-KY-EbB.text" = "Annie nasceu no Alabama no ano de 1933. Ela foi uma cientista da computação, de foguetes e matemática estadunidense que incentivava a igualdade racial e de gênero. Easley trabalhou muitos anos para a NASA e foi líder do time de software do foguete Centauro. ";
+"ez0-KY-EbB.text" = "Annie was born in Alabama in the year 1933. She was an American computer, rocket and math scientist who encouraged racial and gender equality. Easley worked for NASA for many years and was the leader of the Centauro rocket software team.";
 
 /* Class = "UIButton"; normalTitle = "Return"; ObjectID = "gBI-VP-Ca4"; */
-"gBI-VP-Ca4.normalTitle" = "Voltar";
+"gBI-VP-Ca4.normalTitle" = "Return";
 
 /* Class = "UILabel"; text = "Math"; ObjectID = "i5n-Bl-zSf"; */
-"i5n-Bl-zSf.text" = "Matemática";
+"i5n-Bl-zSf.text" = "Math";
 
 /* Class = "UILabel"; text = "Katherine Johnson"; ObjectID = "mIJ-Kh-kTd"; */
 "mIJ-Kh-kTd.text" = "Katherine Johnson";
@@ -78,17 +78,16 @@
 "nDg-Zr-ShX.text" = "Annie Easley";
 
 /* Class = "UILabel"; text = "Cooming soon!"; ObjectID = "nSX-wk-1Ie"; */
-"nSX-wk-1Ie.text" = "Em breve!";
+"nSX-wk-1Ie.text" = "Cooming soon!";
 
 /* Class = "UITextView"; text = "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Mé faiz elementum girarzis, nisi eros vermeio. Delegadis gente finis, bibendum egestas augue arcu ut est. Manduma pindureta quium dia nois paga."; ObjectID = "q1j-RV-zjf"; */
-"q1j-RV-zjf.text" = "Lise nasceu em Viena no ano de 1878. Ela foi uma física judaica que estudou radioatividade, física e química. Meitner foi real a descobridora da fissão nuclear e suas descobertas nos deu uma nova forma de energia que mudou a física pra sempre.";
+"q1j-RV-zjf.text" = "Lise was born in Vienna in the year 1878. She was a Jewish physicist who studied radioactivity, physics and chemistry. Meitner was the real discoverer of nuclear fission and her discoveries gave us a new form of energy that changed physics forever.";
 
 /* Class = "UILabel"; text = "Lilian Gilbreth"; ObjectID = "t0p-cM-9jq"; */
 "t0p-cM-9jq.text" = "Lilian Gilbreth";
 
 /* Class = "UIButton"; normalTitle = "About"; ObjectID = "tpx-Cp-FYB"; */
-"tpx-Cp-FYB.normalTitle" = "Sobre";
+"tpx-Cp-FYB.normalTitle" = "About";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "x99-xG-2Un"; */
 "x99-xG-2Un.text" = "Label";
-

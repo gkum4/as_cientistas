@@ -26,7 +26,7 @@ class IntroHistoriaViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setupTextViewSinopse()
+ //       setupTextViewSinopse()
     }
     
   private func loadScene(vc: UIViewController) {

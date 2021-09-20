@@ -193,6 +193,7 @@
 		42C4A79026F23C84008EEA3F /* IntroHistoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroHistoriaViewController.swift; sourceTree = "<group>"; };
 		42E5B00626F37F1D00D614AB /* MenuAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAboutViewController.swift; sourceTree = "<group>"; };
 		42E5B00826F3865000D614AB /* MenuAboutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAboutTableViewCell.swift; sourceTree = "<group>"; };
+		42F2C17E26F7F92C00F3C715 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C42204E126DD6C3800293DDE /* PeriodicTableSceneHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneHapticsManager.swift; sourceTree = "<group>"; };
 		C42204E326DD9E6400293DDE /* PeriodicTableSceneCoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableSceneCoreHapticsManager.swift; sourceTree = "<group>"; };
 		C422050A26DDBB0800293DDE /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
@@ -893,6 +894,7 @@
 			children = (
 				0C3CCE2226D52C20007A4CEA /* Base */,
 				C453BCAB26F516E9001280FF /* pt-BR */,
+				42F2C17E26F7F92C00F3C715 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1043,14 +1045,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L5C36X97NN;
+				DEVELOPMENT_TEAM = THSG8VL67S;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hersciencestories;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
@@ -1064,14 +1066,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L5C36X97NN;
+				DEVELOPMENT_TEAM = THSG8VL67S;
 				INFOPLIST_FILE = TimMaia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hersciencestories;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
