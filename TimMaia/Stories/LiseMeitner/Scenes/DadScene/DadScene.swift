@@ -74,8 +74,17 @@ class DadScene: SKScene {
       }
     }
     
-    if result == textNodes.count {
+    if result >= textNodes.count/2 {
+      showAllChars()
       onGameEnd()
+    }
+  }
+  
+  private func showAllChars() {
+    for charNode in textNodes {
+      if charNode.alpha != 1 {
+        charNode.run(.fadeIn(withDuration: 1.5))
+      }
     }
   }
   
