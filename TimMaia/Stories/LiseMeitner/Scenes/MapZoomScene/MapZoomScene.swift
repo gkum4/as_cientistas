@@ -50,6 +50,8 @@ class MapZoomScene: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    BackgroundMusicManager.shared.play(fileName: "Hopeful-Freedom-Asher-Fulero", fileType: "mp3")
+    
     self.backgroundColor = .systemBackground
 
     let camera = SKCameraNode()

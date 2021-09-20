@@ -123,7 +123,8 @@ class LiseFinalScene: SKScene {
       }
     }
     
-    if count >= totalNodes-4 {
+    if count >= totalNodes/2 {
+      showAllChars()
       gameEnded = true
       goBackButton.run(.repeatForever(.sequence([
         .fadeIn(withDuration: 1),
@@ -133,12 +134,23 @@ class LiseFinalScene: SKScene {
     }
   }
   
+  func showAllChars() {
+    for totalText in 0..<textSizes.count {
+      for i in 0..<textSizes[totalText] {
+        if textNodes[totalText][i].alpha != 1 {
+          textNodes[totalText][i].run(.fadeIn(withDuration: 1.5))
+        }
+      }
+    }
+  }
+  
   func touchDown(atPoint pos : CGPoint) {
     tooltipManager.stopAnimation()
     
     if gameEnded && goBackButton.contains(pos) {
       if let vc = self.parentViewController,
          let delegate = vc as? LiseFinalSceneDelegate {
+        BackgroundMusicManager.shared.stop()
         delegate.didFinishScene()
       }
     }

@@ -14,13 +14,31 @@ class BackgroundMusicManager {
   
   private init() {}
   
-  private var AudioPlayer = AVAudioPlayer()
+  private var audioPlayer = AVAudioPlayer()
   
-  private func play(fileName: String, fileType: String) {
+  private var isPlaying = false
+  
+  func play(fileName: String, fileType: String) {
+    if isPlaying {
+      return
+    }
+    
     let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: fileName, ofType: fileType)!)
-    AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
-    AudioPlayer.prepareToPlay()
-    AudioPlayer.numberOfLoops = -1
-    AudioPlayer.play()
+    audioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+    audioPlayer.prepareToPlay()
+    audioPlayer.numberOfLoops = -1
+    audioPlayer.volume = 0.5
+    audioPlayer.play()
+    
+    isPlaying = true
+  }
+  
+  func stop() {
+    if !isPlaying {
+      return
+    }
+    
+    audioPlayer.stop()
+    isPlaying = false
   }
 }
